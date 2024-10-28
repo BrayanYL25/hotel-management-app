@@ -38,7 +38,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(110, 183);
+            button1.Location = new Point(74, 151);
             button1.Name = "button1";
             button1.Size = new Size(137, 30);
             button1.TabIndex = 2;
@@ -58,7 +58,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(23, 134);
+            label2.Location = new Point(23, 103);
             label2.Name = "label2";
             label2.Size = new Size(58, 15);
             label2.TabIndex = 4;
@@ -66,15 +66,15 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(110, 136);
+            textBox1.Location = new Point(90, 103);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(100, 23);
+            textBox1.Size = new Size(121, 23);
             textBox1.TabIndex = 5;
             // 
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(110, 95);
+            comboBox1.Location = new Point(90, 72);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(121, 23);
             comboBox1.TabIndex = 6;
@@ -82,7 +82,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(23, 95);
+            label3.Location = new Point(23, 75);
             label3.Name = "label3";
             label3.Size = new Size(61, 15);
             label3.TabIndex = 7;
@@ -92,7 +92,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(310, 262);
+            ClientSize = new Size(248, 220);
             Controls.Add(label3);
             Controls.Add(comboBox1);
             Controls.Add(textBox1);
