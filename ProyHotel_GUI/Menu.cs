@@ -16,7 +16,6 @@ namespace ProyHotel_GUI
     {
         Computer computer = new Computer();
         TimeSpan horaentrada = new TimeSpan();
-        public int usuarioId;
         public Menu()
         {
             InitializeComponent();
@@ -103,9 +102,10 @@ namespace ProyHotel_GUI
             frmTipoUsuario.Show();
         }
 
-        private void reservaToolStripMenuItem_Click(object sender, EventArgs e)
+        private void reservToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            FrmReserva frmReserva = new FrmReserva();
+            frmReserva.Show();
         }
     }
 }

@@ -141,7 +141,7 @@ namespace ProyHotel_ADO
                 cnx.ConnectionString = conexion.ObtenerCadenaCnx();
                 cmd.Connection = cnx;
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = "usp_Actualizar_Estado_Usuario";
+                cmd.CommandText = "usp_actualizar_estado_usuario";
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@id", id);
                 cnx.Open();
@@ -152,7 +152,6 @@ namespace ProyHotel_ADO
             catch (SqlException ex)
             {
                 throw new Exception(ex.Message);
-                return false;
             }
             finally
             {

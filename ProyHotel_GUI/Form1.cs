@@ -32,11 +32,11 @@ namespace ProyHotel_GUI
                     {
                         this.Hide();
                         timer1.Enabled = false;
+                        clsCredenciales.id = objUsuarioBE.usuarioId;
                         clsCredenciales.Usuario = objUsuarioBE.usuarioNombre;
                         clsCredenciales.Password = objUsuarioBE.usuarioContraseña;
                         clsCredenciales.Nivel = objUsuarioBE.usuarioEstado;
                         Menu men = new Menu();
-                        men.usuarioId = objUsuarioBE.usuarioId;
                         men.ShowDialog();
                     }
                 }

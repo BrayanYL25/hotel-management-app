@@ -30,7 +30,7 @@ namespace ProyHotel_GUI
         private void CargarDatos(string filtro)
         {
             dataView = new DataView(servicioBusiness.ListarServicio());
-            dataView.RowFilter = "[Servicio Descripcion] like '%" + filtro + "%'";
+            dataView.RowFilter = $"[Servicio Descripcion] like '%{filtro}%'";
             gridServicios.DataSource = dataView;
             recordsCount.Text = gridServicios.Rows.Count.ToString();
 
@@ -60,6 +60,11 @@ namespace ProyHotel_GUI
         private void botonBuscar_Click(object sender, EventArgs e)
         {
             CargarDatos(buscarServicioTextbox.Text);
+        }
+
+        private void botonRefrescar_Click(object sender, EventArgs e)
+        {
+            CargarDatos("");
         }
     }
 }
