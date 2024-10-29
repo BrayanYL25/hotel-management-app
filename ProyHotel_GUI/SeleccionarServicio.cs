@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ProyHotel_BE;
 
 namespace ProyHotel_GUI
 {
@@ -20,15 +21,39 @@ namespace ProyHotel_GUI
             InitializeComponent();
         }
 
-        private void CargarDatos(string filtro)
+        private List<ServicioBE> CargarServicios()
         {
-            DataView dataView = new DataView(servicioBusiness.ListarServicio());
+            List<ServicioBE> servicioLista = new List<ServicioBE>();
+            DataTable dataTable = servicioBusiness.ListarServicio();
+            foreach (DataRow row in dataTable.Rows)
+            {
+                ServicioBE servicio = new ServicioBE();
+                servicio.servicioId = Convert.ToInt16(row["Id"]);
+                servicio.servicioDescripcion = row["Servicio Descripcion"].ToString();
+                servicioLista.Add(servicio);
+            }
 
+            return servicioLista;
         }
 
         private void SeleccionarServicio_Load(object sender, EventArgs e)
         {
-            CargarDatos("");
+            comboboxServicios.DataSource = CargarServicios();
+            comboboxServicios.DisplayMember = "servicioDescripcion";
+            comboboxServicios.ValueMember = "servicioId";
+        }
+
+        private void numericoCantidad_ValueChanged(object sender, EventArgs e)
+        {
+            if (numericoCantidad.Value == 0)
+            {
+                numericoCantidad.Value = 1;
+            }
+        }
+
+        private void botonCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
