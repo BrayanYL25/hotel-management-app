@@ -22,21 +22,21 @@ namespace ProyHotel_BL
         {
             return objHuespedADO.ListarHuesped();
         }
-        //public HuespedBE ConsultarHuesped(Int16 strCodigo)
-        //{
-        //    return objHuespedADO.ConsultarHuesped(strCodigo);
-        //}
-        //public Boolean InsertarHuesped(HuespedBE objHuespedBE)
-        //{
-        //    return objHuespedADO.InsertarHuesped(objHuespedBE);
-        //}
-        //public Boolean ActualizarHuesped(HuespedBE objHuespedBE)
-        //{
-        //    return objHuespedADO.ActualizarHuesped(objHuespedBE);
-        //}
-        //public Boolean EliminarHabitacion(String strCodigo)
-        //{
-        //    return objHuespedADO.EliminarHuesped(strCodigo);
-        //}
+        public HuespedBE ConsultarHuesped(String strCodigo)
+        {
+            return objHuespedADO.ConsultarHuesped(strCodigo);
+        }
+        public Boolean InsertarHuesped(HuespedBE objHuespedBE)
+        {
+            return objHuespedADO.InsertarHuesped(objHuespedBE);
+        }
+        public Boolean ActualizarHuesped(HuespedBE objHuespedBE)
+        {
+            return objHuespedADO.ActualizarHuesped(objHuespedBE);
+        }
+        public Boolean EliminarHuesped(String strCodigo)
+        {
+            return objHuespedADO.EliminarHuesped(strCodigo);
+        }
     }
 }

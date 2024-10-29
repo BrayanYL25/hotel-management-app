@@ -42,51 +42,60 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(12, 51);
+            label1.Location = new Point(13, 42);
             label1.Name = "label1";
-            label1.Size = new Size(126, 20);
+            label1.Size = new Size(100, 15);
             label1.TabIndex = 0;
             label1.Text = "Filtro por nombre";
             // 
             // dgtDatosHuesped
             // 
+            dgtDatosHuesped.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dgtDatosHuesped.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgtDatosHuesped.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgtDatosHuesped.Location = new Point(27, 131);
+            dgtDatosHuesped.Location = new Point(12, 98);
+            dgtDatosHuesped.Margin = new Padding(3, 2, 3, 2);
             dgtDatosHuesped.Name = "dgtDatosHuesped";
+            dgtDatosHuesped.ReadOnly = true;
             dgtDatosHuesped.RowHeadersWidth = 51;
-            dgtDatosHuesped.Size = new Size(741, 296);
+            dgtDatosHuesped.Size = new Size(646, 240);
             dgtDatosHuesped.TabIndex = 1;
             // 
             // lblRegistroHuesped
             // 
+            lblRegistroHuesped.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             lblRegistroHuesped.BorderStyle = BorderStyle.FixedSingle;
-            lblRegistroHuesped.Location = new Point(633, 455);
+            lblRegistroHuesped.Location = new Point(77, 389);
             lblRegistroHuesped.Name = "lblRegistroHuesped";
-            lblRegistroHuesped.Size = new Size(89, 28);
+            lblRegistroHuesped.Size = new Size(78, 22);
             lblRegistroHuesped.TabIndex = 2;
             // 
             // label2
             // 
+            label2.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             label2.AutoSize = true;
-            label2.Location = new Point(512, 463);
+            label2.Location = new Point(13, 390);
             label2.Name = "label2";
-            label2.Size = new Size(72, 20);
+            label2.Size = new Size(58, 15);
             label2.TabIndex = 0;
             label2.Text = "Cantidad:";
             // 
             // txtFiltro
             // 
-            txtFiltro.Location = new Point(157, 48);
+            txtFiltro.Location = new Point(119, 39);
+            txtFiltro.Margin = new Padding(3, 2, 3, 2);
             txtFiltro.Name = "txtFiltro";
-            txtFiltro.Size = new Size(125, 27);
+            txtFiltro.Size = new Size(110, 23);
             txtFiltro.TabIndex = 3;
             txtFiltro.TextChanged += txtFiltro_TextChanged;
             // 
             // btnAgregarHuesped
             // 
-            btnAgregarHuesped.Location = new Point(387, 523);
+            btnAgregarHuesped.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnAgregarHuesped.Location = new Point(577, 391);
+            btnAgregarHuesped.Margin = new Padding(3, 2, 3, 2);
             btnAgregarHuesped.Name = "btnAgregarHuesped";
-            btnAgregarHuesped.Size = new Size(94, 29);
+            btnAgregarHuesped.Size = new Size(82, 25);
             btnAgregarHuesped.TabIndex = 4;
             btnAgregarHuesped.Text = "Agregar";
             btnAgregarHuesped.UseVisualStyleBackColor = true;
@@ -94,9 +103,11 @@
             // 
             // btnActualizarHuesped
             // 
-            btnActualizarHuesped.Location = new Point(512, 523);
+            btnActualizarHuesped.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnActualizarHuesped.Location = new Point(489, 391);
+            btnActualizarHuesped.Margin = new Padding(3, 2, 3, 2);
             btnActualizarHuesped.Name = "btnActualizarHuesped";
-            btnActualizarHuesped.Size = new Size(94, 29);
+            btnActualizarHuesped.Size = new Size(82, 25);
             btnActualizarHuesped.TabIndex = 4;
             btnActualizarHuesped.Text = "Actualizar";
             btnActualizarHuesped.UseVisualStyleBackColor = true;
@@ -104,18 +115,21 @@
             // 
             // btnEliminarHuesped
             // 
-            btnEliminarHuesped.Location = new Point(633, 523);
+            btnEliminarHuesped.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnEliminarHuesped.Location = new Point(401, 391);
+            btnEliminarHuesped.Margin = new Padding(3, 2, 3, 2);
             btnEliminarHuesped.Name = "btnEliminarHuesped";
-            btnEliminarHuesped.Size = new Size(94, 29);
+            btnEliminarHuesped.Size = new Size(82, 25);
             btnEliminarHuesped.TabIndex = 4;
             btnEliminarHuesped.Text = "Eliminar";
             btnEliminarHuesped.UseVisualStyleBackColor = true;
+            btnEliminarHuesped.Click += btnEliminar_Click;
             // 
             // FrmHuespedes
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 602);
+            ClientSize = new Size(670, 438);
             Controls.Add(btnEliminarHuesped);
             Controls.Add(btnActualizarHuesped);
             Controls.Add(btnAgregarHuesped);
@@ -124,8 +138,9 @@
             Controls.Add(dgtDatosHuesped);
             Controls.Add(label2);
             Controls.Add(label1);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "FrmHuespedes";
-            Text = "FrmHuespedes";
+            Text = "Gestion de Huespedes";
             Load += FrmHuespedes_Load;
             ((System.ComponentModel.ISupportInitialize)dgtDatosHuesped).EndInit();
             ResumeLayout(false);

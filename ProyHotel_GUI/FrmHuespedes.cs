@@ -75,14 +75,39 @@ namespace ProyHotel_GUI
         {
             try
             {
-                ////codigo
-                ////instanciamos
-                //FrmActualizarHuesped objAgregarHuesped = new FrmActualizarHuesped();
-                //objAgregarHuesped.Codigo = dgtDatosHuesped.CurrentRow.Cells[0].Value.ToString();
-                //objAgregarHuesped.ShowDialog();//evita que habras mas ventanas 
+                //codigo
+                //instanciamos
+                FrmActualizarHuesped objActualizarHuesped = new FrmActualizarHuesped();
+                objActualizarHuesped.Codigo = dgtDatosHuesped.CurrentRow.Cells[0].Value.ToString();
+                objActualizarHuesped.ShowDialog();//evita que habras mas ventanas 
 
-                ////despues de cerrar actualizar
-                //CargarDatos(txtFiltro.Text.Trim());
+                //despues de cerrar actualizar
+                CargarDatos(txtFiltro.Text.Trim());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DialogResult vrpta = MessageBox.Show("Seguro que quiere eliminar este registro", "Mensaje", MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question);
+                if (vrpta == DialogResult.Yes)
+                {
+                    String strCodigo = dgtDatosHuesped.CurrentRow.Cells[0].Value.ToString();
+                    if (objHuespedBL.EliminarHuesped(strCodigo) == true)
+                    {
+                        CargarDatos(txtFiltro.Text.Trim());
+                    }
+                    else
+                    {
+                        throw new Exception("No se logro la ejecucion consulte a soporte");
+                    }
+                }
             }
             catch (Exception ex)
             {
