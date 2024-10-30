@@ -48,6 +48,36 @@ namespace ProyHotel_ADO
             }
 
         }
+
+        public DataTable ListarHabitacionTipo(int tipoHabitacionId)
+        {
+            try
+            {
+                cnx.ConnectionString = Miconexion.ObtenerCadenaCnx();
+                cmd.Connection = cnx;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "usp_obtener_tb_habitacion_tipo_id";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@tipo_habitacion_id", tipoHabitacionId);
+
+                SqlDataAdapter ada = new SqlDataAdapter(cmd);
+                DataSet dts = new();
+
+                ada.Fill(dts, "HabitacionTipoId");
+                return dts.Tables["HabitacionTipoId"];
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+            finally
+            {
+                if (cnx.State == ConnectionState.Open)
+                {
+                    cnx.Close();
+                }
+            }
+        }
         public HabitacionBE ConsultarHabitacion(String strCodigo)
         {
             try

@@ -164,7 +164,7 @@
             Controls.Add(label2);
             Margin = new Padding(3, 2, 3, 2);
             Name = "FrmrAgregarHuesped";
-            Text = "FrmrAgregarHuesped";
+            Text = "Agregar Huesped";
             Load += FrmrAgregarHuesped_Load;
             ResumeLayout(false);
             PerformLayout();

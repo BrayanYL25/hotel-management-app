@@ -191,7 +191,7 @@
             MaximizeBox = false;
             Name = "Usuario_Ingresar";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Usuario_Ingresar";
+            Text = "Crear Usuario";
             Load += Usuario_Ingresar_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();

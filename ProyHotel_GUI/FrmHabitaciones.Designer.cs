@@ -166,7 +166,7 @@
             Controls.Add(label1);
             Margin = new Padding(3, 2, 3, 2);
             Name = "FrmHabitaciones";
-            Text = "FrmHabitaciones";
+            Text = "Gestion Habitaciones";
             Load += FrmHabitaciones_Load;
             ((System.ComponentModel.ISupportInitialize)dgtDatosHabitaciones).EndInit();
             ResumeLayout(false);

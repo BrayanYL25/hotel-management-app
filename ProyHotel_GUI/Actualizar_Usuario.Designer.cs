@@ -214,7 +214,7 @@
             Controls.Add(label1);
             Name = "Actualizar_Usuario";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Actualizar_Usuario";
+            Text = "Editar Usuario";
             Load += Actualizar_Usuario_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();

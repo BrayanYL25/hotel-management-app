@@ -19,6 +19,11 @@ namespace ProyHotel_BL
         {
             return objHabitacionADO.ListarHabitacion();
         }
+
+        public DataTable ListarHabitacionTipo(int tipoHabitacionId)
+        {
+            return objHabitacionADO.ListarHabitacionTipo(tipoHabitacionId);
+        }
         public HabitacionBE ConsultarHabitacion(String strCodigo)
         {
             return objHabitacionADO.ConsultarHabitacion(strCodigo);

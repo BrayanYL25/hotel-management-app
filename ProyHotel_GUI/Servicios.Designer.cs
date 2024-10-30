@@ -200,7 +200,7 @@
             Controls.Add(gridServicios);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "Servicios";
-            Text = "Servicios";
+            Text = "Gestion Servicios";
             Load += Servicios_Load;
             ((System.ComponentModel.ISupportInitialize)gridServicios).EndInit();
             ResumeLayout(false);

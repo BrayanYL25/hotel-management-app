@@ -45,78 +45,83 @@
             // label1
             // 
             label1.Font = new Font("Segoe UI", 20F);
-            label1.Location = new Point(200, 48);
+            label1.Location = new Point(175, 36);
             label1.Name = "label1";
-            label1.Size = new Size(382, 48);
+            label1.Size = new Size(334, 36);
             label1.TabIndex = 0;
             label1.Text = "AGREGAR HABITACION";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(59, 140);
+            label2.Location = new Point(52, 105);
             label2.Name = "label2";
-            label2.Size = new Size(71, 20);
+            label2.Size = new Size(57, 15);
             label2.TabIndex = 1;
             label2.Text = "Nombre: ";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(473, 140);
+            label3.Location = new Point(414, 105);
             label3.Name = "label3";
-            label3.Size = new Size(42, 20);
+            label3.Size = new Size(33, 15);
             label3.TabIndex = 1;
             label3.Text = "Tipo:";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(65, 215);
+            label4.Location = new Point(57, 161);
             label4.Name = "label4";
-            label4.Size = new Size(127, 20);
+            label4.Size = new Size(102, 15);
             label4.TabIndex = 1;
             label4.Text = "Precio por Noche:";
             // 
             // chkActivo
             // 
             chkActivo.AutoSize = true;
-            chkActivo.Location = new Point(522, 282);
+            chkActivo.Location = new Point(457, 212);
+            chkActivo.Margin = new Padding(3, 2, 3, 2);
             chkActivo.Name = "chkActivo";
-            chkActivo.Size = new Size(73, 24);
+            chkActivo.Size = new Size(60, 19);
             chkActivo.TabIndex = 2;
             chkActivo.Text = "Activo";
             chkActivo.UseVisualStyleBackColor = true;
             // 
             // txtPrecioPorNoche
             // 
-            txtPrecioPorNoche.Location = new Point(214, 215);
+            txtPrecioPorNoche.Location = new Point(187, 161);
+            txtPrecioPorNoche.Margin = new Padding(3, 2, 3, 2);
             txtPrecioPorNoche.Name = "txtPrecioPorNoche";
-            txtPrecioPorNoche.Size = new Size(171, 27);
+            txtPrecioPorNoche.Size = new Size(150, 23);
             txtPrecioPorNoche.TabIndex = 3;
             txtPrecioPorNoche.KeyPress += txtPrecioPorNoche_KeyPress;
             // 
             // txtNombre
             // 
-            txtNombre.Location = new Point(156, 133);
+            txtNombre.Location = new Point(136, 100);
+            txtNombre.Margin = new Padding(3, 2, 3, 2);
             txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(171, 27);
+            txtNombre.Size = new Size(150, 23);
             txtNombre.TabIndex = 3;
             // 
             // cboTipo
             // 
             cboTipo.FormattingEnabled = true;
-            cboTipo.Location = new Point(547, 140);
+            cboTipo.Location = new Point(479, 105);
+            cboTipo.Margin = new Padding(3, 2, 3, 2);
             cboTipo.Name = "cboTipo";
-            cboTipo.Size = new Size(151, 28);
+            cboTipo.Size = new Size(133, 23);
             cboTipo.TabIndex = 4;
             // 
             // btnGuardar
             // 
             btnGuardar.AutoSize = true;
-            btnGuardar.Location = new Point(368, 351);
+            btnGuardar.Location = new Point(322, 263);
+            btnGuardar.Margin = new Padding(3, 2, 3, 2);
             btnGuardar.Name = "btnGuardar";
-            btnGuardar.Size = new Size(126, 44);
+            btnGuardar.Size = new Size(110, 33);
             btnGuardar.TabIndex = 5;
             btnGuardar.Text = "GUARDAR";
             btnGuardar.UseVisualStyleBackColor = true;
@@ -125,9 +130,10 @@
             // btnCancelar
             // 
             btnCancelar.AutoSize = true;
-            btnCancelar.Location = new Point(531, 351);
+            btnCancelar.Location = new Point(465, 263);
+            btnCancelar.Margin = new Padding(3, 2, 3, 2);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(126, 44);
+            btnCancelar.Size = new Size(110, 33);
             btnCancelar.TabIndex = 5;
             btnCancelar.Text = "CANCELAR";
             btnCancelar.UseVisualStyleBackColor = true;
@@ -136,25 +142,26 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(485, 215);
+            label5.Location = new Point(424, 161);
             label5.Name = "label5";
-            label5.Size = new Size(50, 20);
+            label5.Size = new Size(40, 15);
             label5.TabIndex = 1;
             label5.Text = "Aforo:";
             // 
             // txtAforo
             // 
-            txtAforo.Location = new Point(560, 215);
+            txtAforo.Location = new Point(490, 161);
+            txtAforo.Margin = new Padding(3, 2, 3, 2);
             txtAforo.Name = "txtAforo";
-            txtAforo.Size = new Size(125, 27);
+            txtAforo.Size = new Size(110, 23);
             txtAforo.TabIndex = 6;
             txtAforo.KeyPress += txtAforo_KeyPress;
             // 
             // FrmAgregarHabitacion
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(700, 338);
             Controls.Add(txtAforo);
             Controls.Add(btnCancelar);
             Controls.Add(btnGuardar);
@@ -167,8 +174,9 @@
             Controls.Add(label4);
             Controls.Add(label2);
             Controls.Add(label1);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "FrmAgregarHabitacion";
-            Text = "FrmAgregarHabitacion";
+            Text = "Agregar Habitacion";
             Load += FrmAgregarHabitacion_Load;
             ResumeLayout(false);
             PerformLayout();

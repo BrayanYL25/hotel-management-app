@@ -160,7 +160,7 @@
             Controls.Add(label1);
             Margin = new Padding(3, 2, 3, 2);
             Name = "FrmActualizarHuesped";
-            Text = "FrmActualizarHuesped";
+            Text = "Actualizar Huesped";
             Load += FrmActualizarHuesped_Load;
             ResumeLayout(false);
             PerformLayout();

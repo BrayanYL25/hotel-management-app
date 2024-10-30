@@ -151,7 +151,7 @@
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "Usuarios";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Usuarios";
+            Text = "Gestion Usuarios";
             Load += Usuarios_Load;
             ((System.ComponentModel.ISupportInitialize)dtgUsuarios).EndInit();
             ResumeLayout(false);

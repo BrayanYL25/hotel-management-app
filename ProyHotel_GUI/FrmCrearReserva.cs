@@ -27,10 +27,12 @@ namespace ProyHotel_GUI
             e.Handled = !char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back;
         }
 
-        private void botonAgregarServicio_Click(object sender, EventArgs e)
+        private void botonGuardar_Click(object sender, EventArgs e)
         {
-            SeleccionarServicio seleccionarServicio = new();
-            seleccionarServicio.Show();
+            FrmDetalleReserva frmDetalleReserva = new FrmDetalleReserva();
+            frmDetalleReserva.Show();
+
+            this.Close();
         }
     }
 }
