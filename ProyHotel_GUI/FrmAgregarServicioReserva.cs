@@ -12,11 +12,11 @@ using ProyHotel_BE;
 
 namespace ProyHotel_GUI
 {
-    public partial class SeleccionarServicio : Form
+    public partial class FrmAgregarServicioReserva : Form
     {
         ServicioBL servicioBusiness = new();
 
-        public SeleccionarServicio()
+        public FrmAgregarServicioReserva()
         {
             InitializeComponent();
         }

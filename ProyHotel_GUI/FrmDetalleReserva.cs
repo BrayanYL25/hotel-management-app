@@ -25,7 +25,7 @@ namespace ProyHotel_GUI
 
         private void botonAgregarServicio_Click(object sender, EventArgs e)
         {
-            SeleccionarServicio seleccionarServicio = new();
+            FrmAgregarServicioReserva seleccionarServicio = new();
             seleccionarServicio.Show();
         }
     }

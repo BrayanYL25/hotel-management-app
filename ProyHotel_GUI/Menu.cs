@@ -107,5 +107,11 @@ namespace ProyHotel_GUI
             FrmReserva frmReserva = new FrmReserva();
             frmReserva.Show();
         }
+
+        private void crearReservaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmCrearReserva frmCrearReserva = new FrmCrearReserva();
+            frmCrearReserva.Show();
+        }
     }
 }
