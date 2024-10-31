@@ -12,13 +12,13 @@ using ProyHotel_BL;
 
 namespace ProyHotel_GUI
 {
-    public partial class EditarServicio : Form
+    public partial class FrmActualizarServicio : Form
     {
         ServicioBE servicioBE;
         ServicioBL servicioBL = new();
         public int id { get; set; }
 
-        public EditarServicio()
+        public FrmActualizarServicio()
         {
             InitializeComponent();
         }

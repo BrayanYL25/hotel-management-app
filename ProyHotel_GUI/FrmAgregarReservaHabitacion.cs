@@ -12,11 +12,11 @@ using System.Windows.Forms;
 
 namespace ProyHotel_GUI
 {
-    public partial class AgregarReservaHabitacion : Form
+    public partial class FrmAgregarReservaHabitacion : Form
     {
         TipoHabitacionesBL tipoHabitacionesBL = new();
         HabitacionesBL habitacionesBL = new();
-        public AgregarReservaHabitacion()
+        public FrmAgregarReservaHabitacion()
         {
             InitializeComponent();
         }

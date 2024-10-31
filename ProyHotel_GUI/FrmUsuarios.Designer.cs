@@ -1,6 +1,6 @@
 ﻿namespace ProyHotel_GUI
 {
-    partial class Usuarios
+    partial class FrmUsuarios
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Usuarios));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmUsuarios));
             dtgUsuarios = new DataGridView();
             label1 = new Label();
             txtNombre = new TextBox();

@@ -1,6 +1,6 @@
 ﻿namespace ProyHotel_GUI
 {
-    partial class FrmrAgregarHuesped
+    partial class FrmAgregarHuesped
     {
         /// <summary>
         /// Required designer variable.

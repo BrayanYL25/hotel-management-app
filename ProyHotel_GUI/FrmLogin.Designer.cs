@@ -1,6 +1,6 @@
 ﻿namespace ProyHotel_GUI
 {
-    partial class Form1
+    partial class FrmLogin
     {
         /// <summary>
         ///  Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
             pictureBox1 = new PictureBox();
             label3 = new Label();
             pictureBox2 = new PictureBox();

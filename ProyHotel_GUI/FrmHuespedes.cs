@@ -59,7 +59,7 @@ namespace ProyHotel_GUI
             {
                 //codigo
                 //instanciamos
-                FrmrAgregarHuesped objAgregarHabitacion = new FrmrAgregarHuesped();
+                FrmAgregarHuesped objAgregarHabitacion = new FrmAgregarHuesped();
                 objAgregarHabitacion.ShowDialog();//evita que habras mas ventanas 
 
                 //despues de cerrar actualizar

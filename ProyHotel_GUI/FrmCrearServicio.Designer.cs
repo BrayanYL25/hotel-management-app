@@ -1,6 +1,6 @@
 ﻿namespace ProyHotel_GUI
 {
-    partial class CrearServicio
+    partial class FrmCrearServicio
     {
         /// <summary>
         /// Required designer variable.

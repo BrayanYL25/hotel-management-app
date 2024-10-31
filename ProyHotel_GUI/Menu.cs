@@ -23,7 +23,7 @@ namespace ProyHotel_GUI
 
         private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Usuarios frm1 = new Usuarios();
+            FrmUsuarios frm1 = new FrmUsuarios();
             frm1.MdiParent = this;
             frm1.Show();
         }
@@ -62,7 +62,7 @@ namespace ProyHotel_GUI
 
         private void cRUDToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Usuarios usuarios = new Usuarios();
+            FrmUsuarios usuarios = new FrmUsuarios();
             usuarios.MdiParent = this;
             usuarios.Show();
         }
@@ -76,14 +76,14 @@ namespace ProyHotel_GUI
 
         private void usuariosToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            Usuarios usuarios = new Usuarios();
+            FrmUsuarios usuarios = new FrmUsuarios();
             usuarios.MdiParent = this;
             usuarios.Show();
         }
 
         private void serviciosToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            Servicios servicios = new();
+            FrmServicios servicios = new();
             servicios.MdiParent = this;
             servicios.Show();
         }

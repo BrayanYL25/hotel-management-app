@@ -14,10 +14,10 @@ using ProyHotel_BE;
 
 namespace ProyHotel_GUI
 {
-    public partial class CrearServicio : Form
+    public partial class FrmCrearServicio : Form
     {
         ServicioBL ServicioBL = new();
-        public CrearServicio()
+        public FrmCrearServicio()
         {
             InitializeComponent();
         }

@@ -5,13 +5,13 @@ using System.Drawing.Imaging;
 
 namespace ProyHotel_GUI
 {
-    public partial class Form1 : Form
+    public partial class FrmLogin : Form
     {
         Int16 intentos = 0;
         Int16 tiempo = 20;
         UsuarioBE objUsuarioBE = new UsuarioBE();
         UsuarioBL objUsuarioBL = new UsuarioBL();
-        public Form1()
+        public FrmLogin()
         {
             InitializeComponent();
         }

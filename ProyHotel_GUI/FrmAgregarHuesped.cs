@@ -12,11 +12,11 @@ using System.Windows.Forms;
 
 namespace ProyHotel_GUI
 {
-    public partial class FrmrAgregarHuesped : Form
+    public partial class FrmAgregarHuesped : Form
     {
         HuespedBL objHuespedBL = new HuespedBL();
         HuespedBE objHuespedBE = new HuespedBE();
-        public FrmrAgregarHuesped()
+        public FrmAgregarHuesped()
         {
             InitializeComponent();
         }

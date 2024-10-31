@@ -11,12 +11,12 @@ using ProyHotel_BL;
 
 namespace ProyHotel_GUI
 {
-    public partial class Servicios : Form
+    public partial class FrmServicios : Form
     {
         ServicioBL servicioBusiness = new();
         DataView dataView;
 
-        public Servicios()
+        public FrmServicios()
         {
             InitializeComponent();
         }
@@ -38,13 +38,13 @@ namespace ProyHotel_GUI
 
         private void botonCrear_Click(object sender, EventArgs e)
         {
-            CrearServicio crearServicio = new();
+            FrmCrearServicio crearServicio = new();
             crearServicio.Show();
         }
 
         private void botonEditar_Click(object sender, EventArgs e)
         {
-            EditarServicio editarServicio = new();
+            FrmActualizarServicio editarServicio = new();
             editarServicio.id = Convert.ToInt16(gridServicios.CurrentRow.Cells[0].Value.ToString());
             editarServicio.Show();
         }

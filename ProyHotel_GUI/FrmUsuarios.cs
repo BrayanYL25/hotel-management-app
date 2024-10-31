@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace ProyHotel_GUI
 {
-    public partial class Usuarios : Form
+    public partial class FrmUsuarios : Form
     {
-        public Usuarios()
+        public FrmUsuarios()
         {
             InitializeComponent();
         }
@@ -73,7 +73,7 @@ namespace ProyHotel_GUI
 
         private void BtnAgregar_Click(object sender, EventArgs e)
         {
-            Usuario_Ingresar frm1 = new Usuario_Ingresar();
+            FrmAgregarUsuario frm1 = new FrmAgregarUsuario();
             frm1.ShowDialog();
             CargarDatos(txtNombre.Text);
         }
@@ -85,7 +85,7 @@ namespace ProyHotel_GUI
                 DialogResult result = MessageBox.Show("Estas seguro de Editar los datos de la fila Selecciona", "Confirmacion", MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes)
                 {
-                    Actualizar_Usuario frm1 = new Actualizar_Usuario();
+                    FrmActualizarUsuario frm1 = new FrmActualizarUsuario();
                     frm1.idUsuario = dtgUsuarios.CurrentRow.Cells[0].Value.ToString();
                     frm1.ShowDialog();
                     CargarDatos(txtNombre.Text);
