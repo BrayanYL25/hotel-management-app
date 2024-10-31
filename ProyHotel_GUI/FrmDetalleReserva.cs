@@ -7,14 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ProyHotel_BE;
 
 namespace ProyHotel_GUI
 {
     public partial class FrmDetalleReserva : Form
     {
-        public FrmDetalleReserva()
+        ReservaBE reservaBE;
+        public FrmDetalleReserva(ReservaBE reservaBE)
         {
             InitializeComponent();
+            this.reservaBE = reservaBE;
         }
 
         private void botonAgregarHabitacion_Click(object sender, EventArgs e)
@@ -27,6 +30,14 @@ namespace ProyHotel_GUI
         {
             FrmAgregarServicioReserva seleccionarServicio = new();
             seleccionarServicio.Show();
+        }
+
+        private void FrmDetalleReserva_Load(object sender, EventArgs e)
+        {
+            labelResultadoId.Text = reservaBE.reservaId.ToString();
+            labelResultadoDocumento.Text = reservaBE.usuarioDni;
+            labelResultadoNombre.Text = reservaBE.reservaNombre;
+            labelResultadoTelefono.Text = reservaBE.usuarioTelefono;
         }
     }
 }

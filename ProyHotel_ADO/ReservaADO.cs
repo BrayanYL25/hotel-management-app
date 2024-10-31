@@ -95,6 +95,7 @@ namespace ProyHotel_ADO
                 cmd.Parameters.Clear();
 
                 cmd.Parameters.AddWithValue("@usuario_id", reserva.usuarioId);
+                cmd.Parameters.AddWithValue("@reserva_nombre", reserva.reservaNombre);
                 cmd.Parameters.AddWithValue("@usuario_dni", reserva.usuarioDni);
                 cmd.Parameters.AddWithValue("@usuario_telefono", reserva.usuarioTelefono);
 
@@ -106,7 +107,6 @@ namespace ProyHotel_ADO
             catch (SqlException ex)
             {
                 throw new Exception(ex.Message);
-                return false;
             }
             finally
             {

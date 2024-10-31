@@ -25,6 +25,10 @@ namespace ProyHotel_GUI
         {
             List<ServicioBE> servicioLista = new List<ServicioBE>();
             DataTable dataTable = servicioBusiness.ListarServicio();
+            DataRow dataRow = dataTable.NewRow();
+            dataRow["Id"] = "0";
+            dataRow["Servicio Descripcion"] = "--Seleccione--";
+            dataTable.Rows.InsertAt(dataRow, 0);
             foreach (DataRow row in dataTable.Rows)
             {
                 ServicioBE servicio = new ServicioBE();

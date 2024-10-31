@@ -105,12 +105,14 @@ namespace ProyHotel_GUI
         private void reservToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmReserva frmReserva = new FrmReserva();
+            frmReserva.MdiParent = this;
             frmReserva.Show();
         }
 
         private void crearReservaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmCrearReserva frmCrearReserva = new FrmCrearReserva();
+            frmCrearReserva.MdiParent = this;
             frmCrearReserva.Show();
         }
     }

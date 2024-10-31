@@ -1,4 +1,5 @@
 ﻿using ProyHotel_BL;
+using ProyHotel_BE;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -49,6 +50,30 @@ namespace ProyHotel_GUI
         {
             FrmCrearReserva frmCrearReserva = new();
             frmCrearReserva.Show();
+        }
+
+        private void gridReservas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void gridReservas_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                ReservaBE reservaBE = new();
+                reservaBE.reservaId = Convert.ToInt16(gridReservas.Rows[e.RowIndex].Cells[0].Value);
+                reservaBE.reservaNombre = gridReservas.Rows[e.RowIndex].Cells[5].Value.ToString();
+                reservaBE.usuarioTelefono = gridReservas.Rows[e.RowIndex].Cells[4].Value.ToString();
+                reservaBE.usuarioDni = gridReservas.Rows[e.RowIndex].Cells[3].Value.ToString();
+                var cellValue = gridReservas.Rows[e.RowIndex].Cells[0].Value;
+                DialogResult dialog = MessageBox.Show("¿Desea abrir el detalle de esta reserva?", "Abrir Detalle Reserva", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dialog == DialogResult.Yes)
+                {
+                    FrmDetalleReserva frmDetalleReserva = new FrmDetalleReserva(reservaBE);
+                    frmDetalleReserva.Show();
+                }
+            }
         }
     }
 }

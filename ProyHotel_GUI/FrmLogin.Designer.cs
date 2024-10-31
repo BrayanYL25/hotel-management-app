@@ -49,7 +49,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(55, 12);
+            pictureBox1.Location = new Point(52, 12);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(281, 151);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -140,7 +140,7 @@
             btnCancelar.FlatStyle = FlatStyle.Flat;
             btnCancelar.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnCancelar.ForeColor = Color.White;
-            btnCancelar.Location = new Point(226, 373);
+            btnCancelar.Location = new Point(171, 373);
             btnCancelar.Margin = new Padding(4, 3, 4, 3);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(89, 28);
@@ -155,12 +155,12 @@
             btnAceptar.FlatStyle = FlatStyle.Flat;
             btnAceptar.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnAceptar.ForeColor = Color.White;
-            btnAceptar.Location = new Point(58, 373);
+            btnAceptar.Location = new Point(268, 373);
             btnAceptar.Margin = new Padding(4, 3, 4, 3);
             btnAceptar.Name = "btnAceptar";
             btnAceptar.Size = new Size(89, 28);
             btnAceptar.TabIndex = 13;
-            btnAceptar.Text = "Aceptar";
+            btnAceptar.Text = "Ingresar";
             btnAceptar.UseVisualStyleBackColor = false;
             btnAceptar.Click += btnAceptar_Click;
             // 
@@ -170,12 +170,12 @@
             timer1.Interval = 1000;
             timer1.Tick += timer1_Tick;
             // 
-            // Form1
+            // FrmLogin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(378, 522);
+            ClientSize = new Size(378, 425);
             Controls.Add(btnCancelar);
             Controls.Add(btnAceptar);
             Controls.Add(pictureBox3);
@@ -188,7 +188,7 @@
             Controls.Add(label3);
             MaximizeBox = false;
             MinimizeBox = false;
-            Name = "Form1";
+            Name = "FrmLogin";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             FormClosed += Form1_FormClosed;

@@ -88,9 +88,9 @@
             label4.AutoSize = true;
             label4.Location = new Point(16, 68);
             label4.Name = "label4";
-            label4.Size = new Size(54, 15);
+            label4.Size = new Size(109, 15);
             label4.TabIndex = 8;
-            label4.Text = "Nombre:";
+            label4.Text = "Nombre del Titular:";
             label4.TextAlign = ContentAlignment.TopRight;
             // 
             // textboxTelefono
@@ -107,7 +107,7 @@
             botonGuardar.Name = "botonGuardar";
             botonGuardar.Size = new Size(75, 23);
             botonGuardar.TabIndex = 8;
-            botonGuardar.Text = "Guardar";
+            botonGuardar.Text = "Crear";
             botonGuardar.UseVisualStyleBackColor = true;
             botonGuardar.Click += botonGuardar_Click;
             // 

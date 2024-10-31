@@ -74,6 +74,7 @@
             gridReservas.RowHeadersVisible = false;
             gridReservas.Size = new Size(854, 349);
             gridReservas.TabIndex = 1;
+            gridReservas.CellClick += gridReservas_CellClick;
             // 
             // reservaId
             // 

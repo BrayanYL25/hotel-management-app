@@ -156,6 +156,7 @@
             btnCancelar.TabIndex = 4;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.Click += btnCancelar_Click;
             // 
             // label5
             // 
@@ -187,7 +188,7 @@
             comboboxHabitacion.Size = new Size(219, 23);
             comboboxHabitacion.TabIndex = 7;
             // 
-            // AgregarReservaHabitacion
+            // FrmAgregarReservaHabitacion
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -211,7 +212,7 @@
             Margin = new Padding(3, 2, 3, 2);
             MaximizeBox = false;
             MinimizeBox = false;
-            Name = "AgregarReservaHabitacion";
+            Name = "FrmAgregarReservaHabitacion";
             Text = "Agregar Reserva a la Habitacion";
             Load += AgregarReservaHabitacion_Load;
             ResumeLayout(false);

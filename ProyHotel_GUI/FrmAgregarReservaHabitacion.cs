@@ -82,5 +82,10 @@ namespace ProyHotel_GUI
             comboboxHabitacion.DisplayMember = "habitacion_nombre";
             comboboxHabitacion.ValueMember = "habitacion_id";
         }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

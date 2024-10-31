@@ -1,4 +1,7 @@
-﻿using System;
+﻿using ProyHotel_BE;
+using ProyHotel_BL;
+using ProyVentas_GUI;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +15,7 @@ namespace ProyHotel_GUI
 {
     public partial class FrmCrearReserva : Form
     {
+        ReservasBL reservasBL = new();
         public FrmCrearReserva()
         {
             InitializeComponent();
@@ -29,10 +33,30 @@ namespace ProyHotel_GUI
 
         private void botonGuardar_Click(object sender, EventArgs e)
         {
-            FrmDetalleReserva frmDetalleReserva = new FrmDetalleReserva();
-            frmDetalleReserva.Show();
+            try
+            {
+                ReservaBE reservaBE = new();
+                reservaBE.usuarioId = clsCredenciales.id;
+                reservaBE.reservaNombre = textboxNombre.Text;
+                reservaBE.usuarioDni = textboxDNI.Text;
+                reservaBE.usuarioTelefono = textboxTelefono.Text;
 
-            this.Close();
+                bool reservaRealizada = reservasBL.InsertarReserva(reservaBE);
+
+                if (reservaRealizada)
+                {
+                    //FrmDetalleReserva frmDetalleReserva = new FrmDetalleReserva();
+                    //frmDetalleReserva.Show();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error Creando Reserva", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                this.Close();
+            }
         }
     }
 }
