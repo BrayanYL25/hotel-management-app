@@ -41,17 +41,21 @@
             labelResultadoNombre = new Label();
             labelResultadoId = new Label();
             groupboxHabitacion = new GroupBox();
-            listView1 = new ListView();
+            gridHabitaciones = new DataGridView();
             groupboxServicio = new GroupBox();
-            listView2 = new ListView();
+            gridServiciosReserva = new DataGridView();
+            Servicio = new DataGridViewTextBoxColumn();
+            PrecioTotal = new DataGridViewTextBoxColumn();
             groupBox1.SuspendLayout();
             groupboxHabitacion.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)gridHabitaciones).BeginInit();
             groupboxServicio.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)gridServiciosReserva).BeginInit();
             SuspendLayout();
             // 
             // botonAgregarHabitacion
             // 
-            botonAgregarHabitacion.Location = new Point(338, 22);
+            botonAgregarHabitacion.Location = new Point(321, 22);
             botonAgregarHabitacion.Name = "botonAgregarHabitacion";
             botonAgregarHabitacion.Size = new Size(23, 23);
             botonAgregarHabitacion.TabIndex = 0;
@@ -170,41 +174,64 @@
             // 
             // groupboxHabitacion
             // 
-            groupboxHabitacion.Controls.Add(listView1);
+            groupboxHabitacion.Controls.Add(gridHabitaciones);
             groupboxHabitacion.Controls.Add(botonAgregarHabitacion);
             groupboxHabitacion.Location = new Point(12, 179);
             groupboxHabitacion.Name = "groupboxHabitacion";
-            groupboxHabitacion.Size = new Size(367, 259);
+            groupboxHabitacion.Size = new Size(350, 259);
             groupboxHabitacion.TabIndex = 8;
             groupboxHabitacion.TabStop = false;
             groupboxHabitacion.Text = "Habitaciones";
             // 
-            // listView1
+            // gridHabitaciones
             // 
-            listView1.Location = new Point(6, 22);
-            listView1.Name = "listView1";
-            listView1.Size = new Size(326, 231);
-            listView1.TabIndex = 1;
-            listView1.UseCompatibleStateImageBehavior = false;
+            gridHabitaciones.AllowUserToAddRows = false;
+            gridHabitaciones.AllowUserToDeleteRows = false;
+            gridHabitaciones.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            gridHabitaciones.Location = new Point(6, 22);
+            gridHabitaciones.Name = "gridHabitaciones";
+            gridHabitaciones.ReadOnly = true;
+            gridHabitaciones.Size = new Size(309, 231);
+            gridHabitaciones.TabIndex = 1;
             // 
             // groupboxServicio
             // 
-            groupboxServicio.Controls.Add(listView2);
+            groupboxServicio.Controls.Add(gridServiciosReserva);
             groupboxServicio.Controls.Add(botonAgregarServicio);
             groupboxServicio.Location = new Point(385, 179);
             groupboxServicio.Name = "groupboxServicio";
-            groupboxServicio.Size = new Size(354, 259);
+            groupboxServicio.Size = new Size(350, 259);
             groupboxServicio.TabIndex = 9;
             groupboxServicio.TabStop = false;
             groupboxServicio.Text = "Servicios";
             // 
-            // listView2
+            // gridServiciosReserva
             // 
-            listView2.Location = new Point(6, 22);
-            listView2.Name = "listView2";
-            listView2.Size = new Size(313, 231);
-            listView2.TabIndex = 2;
-            listView2.UseCompatibleStateImageBehavior = false;
+            gridServiciosReserva.AllowUserToAddRows = false;
+            gridServiciosReserva.AllowUserToDeleteRows = false;
+            gridServiciosReserva.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            gridServiciosReserva.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            gridServiciosReserva.Columns.AddRange(new DataGridViewColumn[] { Servicio, PrecioTotal });
+            gridServiciosReserva.Location = new Point(6, 22);
+            gridServiciosReserva.Name = "gridServiciosReserva";
+            gridServiciosReserva.ReadOnly = true;
+            gridServiciosReserva.RowHeadersVisible = false;
+            gridServiciosReserva.Size = new Size(309, 231);
+            gridServiciosReserva.TabIndex = 2;
+            // 
+            // Servicio
+            // 
+            Servicio.DataPropertyName = "servicio_descripcion";
+            Servicio.HeaderText = "Servicio";
+            Servicio.Name = "Servicio";
+            Servicio.ReadOnly = true;
+            // 
+            // PrecioTotal
+            // 
+            PrecioTotal.DataPropertyName = "precio_total";
+            PrecioTotal.HeaderText = "Precio Total";
+            PrecioTotal.Name = "PrecioTotal";
+            PrecioTotal.ReadOnly = true;
             // 
             // FrmDetalleReserva
             // 
@@ -222,7 +249,9 @@
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             groupboxHabitacion.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)gridHabitaciones).EndInit();
             groupboxServicio.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)gridServiciosReserva).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -243,7 +272,9 @@
         private Label labelResultadoId;
         private GroupBox groupboxHabitacion;
         private GroupBox groupboxServicio;
-        private ListView listView1;
-        private ListView listView2;
+        private DataGridView gridHabitaciones;
+        private DataGridView gridServiciosReserva;
+        private DataGridViewTextBoxColumn Servicio;
+        private DataGridViewTextBoxColumn PrecioTotal;
     }
 }
