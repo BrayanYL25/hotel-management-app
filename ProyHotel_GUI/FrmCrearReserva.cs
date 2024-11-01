@@ -43,7 +43,6 @@ namespace ProyHotel_GUI
 
                 ReservaBE reservaRealizada = reservasBL.InsertarReserva(reservaBE);
 
-                MessageBox.Show($"{reservaRealizada.reservaId} - {reservaRealizada.reservaNombre} - {reservaRealizada.usuarioDni} - {reservaRealizada.usuarioTelefono}", "Reserva Creada");
                 FrmDetalleReserva frmDetalleReserva = new FrmDetalleReserva(reservaRealizada);
                 frmDetalleReserva.Show();
             }
