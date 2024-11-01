@@ -22,7 +22,7 @@ namespace ProyHotel_BL
             return objReserva.ConsultarReserva(idReserva);
 
         }
-        public Boolean InsertarReserva(ReservaBE reserva)
+        public ReservaBE InsertarReserva(ReservaBE reserva)
         {
             return objReserva.InsertarReserva(reserva);
         }

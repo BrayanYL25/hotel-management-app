@@ -41,13 +41,11 @@ namespace ProyHotel_GUI
                 reservaBE.usuarioDni = textboxDNI.Text;
                 reservaBE.usuarioTelefono = textboxTelefono.Text;
 
-                bool reservaRealizada = reservasBL.InsertarReserva(reservaBE);
+                ReservaBE reservaRealizada = reservasBL.InsertarReserva(reservaBE);
 
-                if (reservaRealizada)
-                {
-                    //FrmDetalleReserva frmDetalleReserva = new FrmDetalleReserva();
-                    //frmDetalleReserva.Show();
-                }
+                MessageBox.Show($"{reservaRealizada.reservaId} - {reservaRealizada.reservaNombre} - {reservaRealizada.usuarioDni} - {reservaRealizada.usuarioTelefono}", "Reserva Creada");
+                FrmDetalleReserva frmDetalleReserva = new FrmDetalleReserva(reservaRealizada);
+                frmDetalleReserva.Show();
             }
             catch (Exception ex)
             {

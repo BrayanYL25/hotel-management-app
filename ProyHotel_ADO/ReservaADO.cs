@@ -84,10 +84,11 @@ namespace ProyHotel_ADO
             }
         }
 
-        public Boolean InsertarReserva(ReservaBE reserva)
+        public ReservaBE InsertarReserva(ReservaBE reserva)
         {
             try
             {
+                ReservaBE reservaBE = new ReservaBE();
                 cnx.ConnectionString = conexion.ObtenerCadenaCnx();
                 cmd.Connection = cnx;
                 cmd.CommandType = CommandType.StoredProcedure;
@@ -100,9 +101,18 @@ namespace ProyHotel_ADO
                 cmd.Parameters.AddWithValue("@usuario_telefono", reserva.usuarioTelefono);
 
                 cnx.Open();
-                cmd.ExecuteNonQuery();
-                return true;
+                dtr = cmd.ExecuteReader();
+                if (dtr.HasRows)
+                {
+                    dtr.Read();
+                    reservaBE.reservaId = Convert.ToInt16(dtr["reserva_id"].ToString());
+                    reservaBE.reservaNombre = dtr["reserva_nombre"].ToString();
+                    reservaBE.usuarioDni = dtr["usuario_dni"].ToString();
+                    reservaBE.usuarioTelefono = dtr["usuario_telefono"].ToString();
+                    dtr.Close();
+                }
 
+                return reservaBE;
             }
             catch (SqlException ex)
             {
