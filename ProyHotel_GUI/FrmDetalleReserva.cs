@@ -15,6 +15,7 @@ namespace ProyHotel_GUI
     public partial class FrmDetalleReserva : Form
     {
         ReservaBE reservaBE;
+        ReservasBL reservasBL = new();
         ReservaServicioBL reservaServicioBL = new();
         
         public FrmDetalleReserva(ReservaBE reservaBE)
@@ -30,6 +31,16 @@ namespace ProyHotel_GUI
             gridServiciosReserva.DataSource = dataView;
         }
 
+        private void RefrescarDatosReserva()
+        {
+            reservaBE = reservasBL.ConsultarReserva(reservaBE.reservaId);
+            labelResultadoId.Text = reservaBE.reservaId.ToString();
+            labelResultadoDocumento.Text = reservaBE.usuarioDni;
+            labelResultadoNombre.Text = reservaBE.reservaNombre;
+            labelResultadoTelefono.Text = reservaBE.usuarioTelefono;
+            labelResultadoPrecioTotal.Text = reservaBE.precioTotal.ToString("C2");
+        }
+
         private void botonAgregarHabitacion_Click(object sender, EventArgs e)
         {
             FrmAgregarReservaHabitacion agregarReservaHabitacion = new();
@@ -38,8 +49,10 @@ namespace ProyHotel_GUI
 
         private void botonAgregarServicio_Click(object sender, EventArgs e)
         {
-            FrmAgregarServicioReserva seleccionarServicio = new();
-            seleccionarServicio.Show();
+            FrmAgregarServicioReserva seleccionarServicio = new FrmAgregarServicioReserva(reservaBE.reservaId);
+            seleccionarServicio.ShowDialog();
+            CargarServicioReserva();
+            RefrescarDatosReserva();
         }
 
         private void FrmDetalleReserva_Load(object sender, EventArgs e)
@@ -49,6 +62,7 @@ namespace ProyHotel_GUI
             labelResultadoDocumento.Text = reservaBE.usuarioDni;
             labelResultadoNombre.Text = reservaBE.reservaNombre;
             labelResultadoTelefono.Text = reservaBE.usuarioTelefono;
+            labelResultadoPrecioTotal.Text = reservaBE.precioTotal.ToString("C2");
         }
     }
 }

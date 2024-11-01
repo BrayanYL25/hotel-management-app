@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ProyHotel_ADO;
+using ProyHotel_BE;
 
 namespace ProyHotel_BL
 {
@@ -15,6 +16,11 @@ namespace ProyHotel_BL
         public DataTable ListarReservaServicioPorIdReserva (int reservaId)
         {
             return reservaServicioADO.ListarReservaServicioPorIdReserva(reservaId);
+        }
+
+        public bool AgregarServicioReserva(int reservaId, int cantidad, ServicioBE servicioBE)
+        {
+            return reservaServicioADO.AgregarServicioReserva(reservaId, cantidad, servicioBE);
         }
     }
 }

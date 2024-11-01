@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
+            botonAgregar = new Button();
             label1 = new Label();
             label2 = new Label();
             comboboxServicios = new ComboBox();
             label3 = new Label();
             label4 = new Label();
-            label5 = new Label();
+            labelResultadoReservaId = new Label();
             botonCancelar = new Button();
             numericoCantidad = new NumericUpDown();
             precioTotal = new Label();
@@ -42,14 +42,15 @@
             ((System.ComponentModel.ISupportInitialize)numericoCantidad).BeginInit();
             SuspendLayout();
             // 
-            // button1
+            // botonAgregar
             // 
-            button1.Location = new Point(223, 219);
-            button1.Name = "button1";
-            button1.Size = new Size(79, 30);
-            button1.TabIndex = 2;
-            button1.Text = "Agregar";
-            button1.UseVisualStyleBackColor = true;
+            botonAgregar.Location = new Point(223, 219);
+            botonAgregar.Name = "botonAgregar";
+            botonAgregar.Size = new Size(79, 30);
+            botonAgregar.TabIndex = 2;
+            botonAgregar.Text = "Agregar";
+            botonAgregar.UseVisualStyleBackColor = true;
+            botonAgregar.Click += botonAgregar_Click;
             // 
             // label1
             // 
@@ -78,6 +79,7 @@
             comboboxServicios.Name = "comboboxServicios";
             comboboxServicios.Size = new Size(204, 23);
             comboboxServicios.TabIndex = 0;
+            comboboxServicios.SelectedIndexChanged += comboboxServicios_SelectedIndexChanged;
             // 
             // label3
             // 
@@ -99,14 +101,14 @@
             label4.Text = "Id:";
             label4.TextAlign = ContentAlignment.TopRight;
             // 
-            // label5
+            // labelResultadoReservaId
             // 
-            label5.BorderStyle = BorderStyle.FixedSingle;
-            label5.Location = new Point(98, 46);
-            label5.Name = "label5";
-            label5.Size = new Size(204, 23);
-            label5.TabIndex = 9;
-            label5.TextAlign = ContentAlignment.MiddleLeft;
+            labelResultadoReservaId.BorderStyle = BorderStyle.FixedSingle;
+            labelResultadoReservaId.Location = new Point(98, 46);
+            labelResultadoReservaId.Name = "labelResultadoReservaId";
+            labelResultadoReservaId.Size = new Size(204, 23);
+            labelResultadoReservaId.TabIndex = 9;
+            labelResultadoReservaId.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // botonCancelar
             // 
@@ -146,7 +148,7 @@
             labelPrecioTotal.TabIndex = 13;
             labelPrecioTotal.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // SeleccionarServicio
+            // FrmAgregarServicioReserva
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -155,15 +157,15 @@
             Controls.Add(precioTotal);
             Controls.Add(numericoCantidad);
             Controls.Add(botonCancelar);
-            Controls.Add(label5);
+            Controls.Add(labelResultadoReservaId);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(comboboxServicios);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(button1);
+            Controls.Add(botonAgregar);
             FormBorderStyle = FormBorderStyle.FixedSingle;
-            Name = "SeleccionarServicio";
+            Name = "FrmAgregarServicioReserva";
             Text = "Agregar servicio a la reserva";
             Load += SeleccionarServicio_Load;
             ((System.ComponentModel.ISupportInitialize)numericoCantidad).EndInit();
@@ -172,13 +174,13 @@
         }
 
         #endregion
-        private Button button1;
+        private Button botonAgregar;
         private Label label1;
         private Label label2;
         private ComboBox comboboxServicios;
         private Label label3;
         private Label label4;
-        private Label label5;
+        private Label labelResultadoReservaId;
         private Button botonCancelar;
         private NumericUpDown numericoCantidad;
         private Label precioTotal;

@@ -66,6 +66,7 @@ namespace ProyHotel_GUI
                 reservaBE.reservaNombre = gridReservas.Rows[e.RowIndex].Cells[5].Value.ToString();
                 reservaBE.usuarioTelefono = gridReservas.Rows[e.RowIndex].Cells[4].Value.ToString();
                 reservaBE.usuarioDni = gridReservas.Rows[e.RowIndex].Cells[3].Value.ToString();
+                reservaBE.precioTotal = Convert.ToSingle(gridReservas.Rows[e.RowIndex].Cells[6].Value.ToString());
                 var cellValue = gridReservas.Rows[e.RowIndex].Cells[0].Value;
                 DialogResult dialog = MessageBox.Show("¿Desea abrir el detalle de esta reserva?", "Abrir Detalle Reserva", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dialog == DialogResult.Yes)

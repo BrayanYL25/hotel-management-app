@@ -62,8 +62,13 @@ namespace ProyHotel_ADO
                     reserva.precioTotal = Convert.ToSingle(dtr["precio_total"].ToString());
                     reserva.reservaEstado = Convert.ToBoolean(dtr["reserva_estado"]);
                     reserva.fechaRegistro = Convert.ToDateTime(dtr["fecha_registro"].ToString());
-                    reserva.fechaModificacion = Convert.ToDateTime(dtr["fecha_modificacion"].ToString());
-                    reserva.fechaPago = Convert.ToDateTime(dtr["fecha_pago"].ToString());
+                    DateTime fechaMod;
+                    DateTime fechaPago;
+                    if (DateTime.TryParse(dtr["fecha_modificacion"].ToString(), out fechaMod) && DateTime.TryParse(dtr["fecha_pago"].ToString(), out fechaPago))
+                    {
+                        reserva.fechaModificacion = Convert.ToDateTime(dtr["fecha_modificacion"].ToString());
+                        reserva.fechaPago = Convert.ToDateTime(dtr["fecha_pago"].ToString());
+                    }
                     reserva.estadoPago = Convert.ToBoolean(dtr["estado_pago"].ToString());
                     dtr.Close();
                 }
@@ -109,6 +114,7 @@ namespace ProyHotel_ADO
                     reservaBE.reservaNombre = dtr["reserva_nombre"].ToString();
                     reservaBE.usuarioDni = dtr["usuario_dni"].ToString();
                     reservaBE.usuarioTelefono = dtr["usuario_telefono"].ToString();
+                    reservaBE.precioTotal = Convert.ToSingle(dtr["precio_total"]);
                     dtr.Close();
                 }
 

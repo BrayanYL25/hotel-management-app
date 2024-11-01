@@ -19,6 +19,7 @@ namespace ProyHotel_GUI
         public Menu()
         {
             InitializeComponent();
+            this.WindowState = FormWindowState.Maximized;
         }
 
         private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)

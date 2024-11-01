@@ -44,8 +44,11 @@
             gridHabitaciones = new DataGridView();
             groupboxServicio = new GroupBox();
             gridServiciosReserva = new DataGridView();
+            label1 = new Label();
+            labelResultadoPrecioTotal = new Label();
             Servicio = new DataGridViewTextBoxColumn();
             PrecioTotal = new DataGridViewTextBoxColumn();
+            cantidad = new DataGridViewTextBoxColumn();
             groupBox1.SuspendLayout();
             groupboxHabitacion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)gridHabitaciones).BeginInit();
@@ -210,14 +213,33 @@
             gridServiciosReserva.AllowUserToAddRows = false;
             gridServiciosReserva.AllowUserToDeleteRows = false;
             gridServiciosReserva.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            gridServiciosReserva.BackgroundColor = SystemColors.ControlLightLight;
             gridServiciosReserva.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            gridServiciosReserva.Columns.AddRange(new DataGridViewColumn[] { Servicio, PrecioTotal });
+            gridServiciosReserva.Columns.AddRange(new DataGridViewColumn[] { Servicio, PrecioTotal, cantidad });
             gridServiciosReserva.Location = new Point(6, 22);
             gridServiciosReserva.Name = "gridServiciosReserva";
             gridServiciosReserva.ReadOnly = true;
             gridServiciosReserva.RowHeadersVisible = false;
             gridServiciosReserva.Size = new Size(309, 231);
             gridServiciosReserva.TabIndex = 2;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(562, 18);
+            label1.Name = "label1";
+            label1.Size = new Size(71, 15);
+            label1.TabIndex = 10;
+            label1.Text = "Precio Total:";
+            // 
+            // labelResultadoPrecioTotal
+            // 
+            labelResultadoPrecioTotal.BorderStyle = BorderStyle.FixedSingle;
+            labelResultadoPrecioTotal.Location = new Point(639, 14);
+            labelResultadoPrecioTotal.Name = "labelResultadoPrecioTotal";
+            labelResultadoPrecioTotal.Size = new Size(100, 23);
+            labelResultadoPrecioTotal.TabIndex = 11;
+            labelResultadoPrecioTotal.TextAlign = ContentAlignment.MiddleRight;
             // 
             // Servicio
             // 
@@ -233,11 +255,20 @@
             PrecioTotal.Name = "PrecioTotal";
             PrecioTotal.ReadOnly = true;
             // 
+            // cantidad
+            // 
+            cantidad.DataPropertyName = "cantidad";
+            cantidad.HeaderText = "Cantidad";
+            cantidad.Name = "cantidad";
+            cantidad.ReadOnly = true;
+            // 
             // FrmDetalleReserva
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(751, 450);
+            Controls.Add(labelResultadoPrecioTotal);
+            Controls.Add(label1);
             Controls.Add(groupboxServicio);
             Controls.Add(groupboxHabitacion);
             Controls.Add(groupBox1);
@@ -274,7 +305,10 @@
         private GroupBox groupboxServicio;
         private DataGridView gridHabitaciones;
         private DataGridView gridServiciosReserva;
+        private Label label1;
+        private Label labelResultadoPrecioTotal;
         private DataGridViewTextBoxColumn Servicio;
         private DataGridViewTextBoxColumn PrecioTotal;
+        private DataGridViewTextBoxColumn cantidad;
     }
 }

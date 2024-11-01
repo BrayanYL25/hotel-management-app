@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProyHotel_BE;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -30,6 +31,30 @@ namespace ProyHotel_ADO
 
                 ada.Fill(dts, "ReservaServivio");
                 return dts.Tables["ReservaServivio"];
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public bool AgregarServicioReserva(int reservaId, int cantidad, ServicioBE servicioBE)
+        {
+            try
+            {
+                cnx.ConnectionString = conexion.ObtenerCadenaCnx();
+                cmd.Connection = cnx;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "usp_crear_tb_reserva_servicio";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@reserva_id", reservaId);
+                cmd.Parameters.AddWithValue("@servicio_id", servicioBE.servicioId);
+                cmd.Parameters.AddWithValue("@cantidad", cantidad);
+
+                cnx.Open();
+                cmd.ExecuteNonQuery();
+
+                return true;
             }
             catch (SqlException ex)
             {
