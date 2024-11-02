@@ -29,8 +29,8 @@ namespace ProyHotel_ADO
                 SqlDataAdapter ada = new SqlDataAdapter(cmd);
                 DataSet dts = new DataSet();
 
-                ada.Fill(dts, "ReservaServivio");
-                return dts.Tables["ReservaServivio"];
+                ada.Fill(dts, "ReservaServicio");
+                return dts.Tables["ReservaServicio"];
             }
             catch (SqlException ex)
             {

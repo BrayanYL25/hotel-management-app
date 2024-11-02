@@ -17,6 +17,8 @@ namespace ProyHotel_GUI
         ReservaBE reservaBE;
         ReservasBL reservasBL = new();
         ReservaServicioBL reservaServicioBL = new();
+        ReservaHabitacionesBL reservaHabitacionesBL = new();
+
         
         public FrmDetalleReserva(ReservaBE reservaBE)
         {
@@ -29,6 +31,12 @@ namespace ProyHotel_GUI
             DataView dataView = new DataView(reservaServicioBL.ListarReservaServicioPorIdReserva(reservaBE.reservaId));
             gridServiciosReserva.AutoGenerateColumns = false;
             gridServiciosReserva.DataSource = dataView;
+        }
+        private void CargarHabitacionReserva()
+        {
+            DataView dataView = new DataView(reservaHabitacionesBL.ListarReservaHabitacionPorIdReserva(reservaBE.reservaId));
+            gridHabitaciones.AutoGenerateColumns = false;
+            gridHabitaciones.DataSource = dataView;
         }
 
         private void RefrescarDatosReserva()
@@ -57,6 +65,7 @@ namespace ProyHotel_GUI
 
         private void FrmDetalleReserva_Load(object sender, EventArgs e)
         {
+            CargarHabitacionReserva();
             CargarServicioReserva();
             labelResultadoId.Text = reservaBE.reservaId.ToString();
             labelResultadoDocumento.Text = reservaBE.usuarioDni;
