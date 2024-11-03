@@ -27,7 +27,7 @@ namespace ProyHotel_GUI
 
         private void CargarDatos()
         {
-            DataView dataView = new DataView(reservaHabitacionHuespedBL.ListarReservaHabitacionHuesped(5, 1));
+            DataView dataView = new DataView(reservaHabitacionHuespedBL.ListarReservaHabitacionHuesped(this.reservaId, this.habitacionId));
             gridHuespedes.AutoGenerateColumns = false;
             gridHuespedes.DataSource = dataView;
         }

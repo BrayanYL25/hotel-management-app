@@ -19,7 +19,7 @@ namespace ProyHotel_GUI
         ReservaServicioBL reservaServicioBL = new();
         ReservaHabitacionesBL reservaHabitacionesBL = new();
 
-        
+
         public FrmDetalleReserva(ReservaBE reservaBE)
         {
             InitializeComponent();
@@ -72,6 +72,21 @@ namespace ProyHotel_GUI
             labelResultadoNombre.Text = reservaBE.reservaNombre;
             labelResultadoTelefono.Text = reservaBE.usuarioTelefono;
             labelResultadoPrecioTotal.Text = reservaBE.precioTotal.ToString("C2");
+        }
+
+        private void gridHabitaciones_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DialogResult abrirDetalleHuesped = MessageBox.Show("¿Desea abrir ver los huespedes de esta habitacion?", "Huespedes", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (abrirDetalleHuesped == DialogResult.Yes)
+                {
+                    int habitacionId = Convert.ToInt16(gridHabitaciones.Rows[e.RowIndex].Cells[0].Value);
+                    string habitacionNombre = gridHabitaciones.Rows[e.RowIndex].Cells[1].Value.ToString();
+                    FrmDetalleHuespedHabitacionReserva frmDetalleHuespedHabitacionReserva = new(reservaBE.reservaId, habitacionId, habitacionNombre);
+                    frmDetalleHuespedHabitacionReserva.Show();
+                }
+            }
         }
     }
 }

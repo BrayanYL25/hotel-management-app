@@ -114,7 +114,7 @@ namespace ProyHotel_ADO
                     reservaBE.reservaNombre = dtr["reserva_nombre"].ToString();
                     reservaBE.usuarioDni = dtr["usuario_dni"].ToString();
                     reservaBE.usuarioTelefono = dtr["usuario_telefono"].ToString();
-                    reservaBE.precioTotal = Convert.ToSingle(dtr["precio_total"]);
+                    reservaBE.precioTotal = Convert.ToSingle(dtr["precio_total"].ToString());
                     dtr.Close();
                 }
 
