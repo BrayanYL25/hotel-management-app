@@ -26,17 +26,17 @@ namespace ProyHotel_GUI
             this.reservaBE = reservaBE;
         }
 
-        private void CargarServicioReserva()
+        private void CargarTodo()
         {
+            //  Carga los servicios asignados a la reserva
             DataView dataView = new DataView(reservaServicioBL.ListarReservaServicioPorIdReserva(reservaBE.reservaId));
             gridServiciosReserva.AutoGenerateColumns = false;
             gridServiciosReserva.DataSource = dataView;
-        }
-        private void CargarHabitacionReserva()
-        {
-            DataView dataView = new DataView(reservaHabitacionesBL.ListarReservaHabitacionPorIdReserva(reservaBE.reservaId));
+
+            //  Carga las habitaciones reservadas
+            DataView dataViewHabitaciones = new DataView(reservaHabitacionesBL.ListarReservaHabitacionPorIdReserva(reservaBE.reservaId));
             gridHabitaciones.AutoGenerateColumns = false;
-            gridHabitaciones.DataSource = dataView;
+            gridHabitaciones.DataSource = dataViewHabitaciones;
         }
 
         private void RefrescarDatosReserva()
@@ -59,14 +59,13 @@ namespace ProyHotel_GUI
         {
             FrmAgregarServicioReserva seleccionarServicio = new FrmAgregarServicioReserva(reservaBE.reservaId);
             seleccionarServicio.ShowDialog();
-            CargarServicioReserva();
+            CargarTodo();
             RefrescarDatosReserva();
         }
 
         private void FrmDetalleReserva_Load(object sender, EventArgs e)
         {
-            CargarHabitacionReserva();
-            CargarServicioReserva();
+            CargarTodo();
             labelResultadoId.Text = reservaBE.reservaId.ToString();
             labelResultadoDocumento.Text = reservaBE.usuarioDni;
             labelResultadoNombre.Text = reservaBE.reservaNombre;
@@ -74,7 +73,7 @@ namespace ProyHotel_GUI
             labelResultadoPrecioTotal.Text = reservaBE.precioTotal.ToString("C2");
         }
 
-        private void gridHabitaciones_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void gridHabitaciones_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
@@ -86,6 +85,61 @@ namespace ProyHotel_GUI
                     FrmDetalleHuespedHabitacionReserva frmDetalleHuespedHabitacionReserva = new(reservaBE.reservaId, habitacionId, habitacionNombre);
                     frmDetalleHuespedHabitacionReserva.Show();
                 }
+            }
+        }
+
+        private void botonBorrarServicio_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (gridServiciosReserva.SelectedCells.Count <= 0)
+                {
+                    MessageBox.Show("La celda seleccionada está vacía.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                var cellValue = gridServiciosReserva.SelectedCells[0].OwningRow.Cells[0].Value ?? throw new Exception("No se hallo el valor seleccionado.");
+                int servicioId = Convert.ToInt16(cellValue);
+                DialogResult confirmarBorrado = MessageBox.Show("¿Seguro que desea eliminar este servicio?", "Eliminar Servicio", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (confirmarBorrado == DialogResult.Yes)
+                {
+                    reservaServicioBL.BorrarServicioReserva(reservaBE.reservaId, servicioId);
+                    CargarTodo();
+                }
+            }
+            catch (Exception er)
+            {
+                MessageBox.Show($"Hubo un error {er.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void botonEditarServicio_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (gridServiciosReserva.SelectedCells.Count <= 0)
+                {
+                    MessageBox.Show("La celda seleccionada está vacía.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                var cellId = gridServiciosReserva.SelectedCells[0].OwningRow.Cells[0].Value ?? throw new Exception("No se hallo el id seleccionado.");
+                var cellNombre = gridServiciosReserva.SelectedCells[0].OwningRow.Cells[1].Value.ToString() ?? throw new Exception("No se hallo el nombre del servicio seleccionado.");
+                int servicioId = Convert.ToInt16(cellId);
+                DialogResult confirmarEdicion = MessageBox.Show("¿Seguro que desea editar este servicio?", "Editar Servicio", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (confirmarEdicion == DialogResult.Yes)
+                {
+                    ReservaServicioBE reservaServicioBE = new ReservaServicioBE();
+                    reservaServicioBE.reservaId = reservaBE.reservaId;
+                    reservaServicioBE.servicioId = servicioId;
+                    FrmActualizarServicioReserva frmActualizarServicioReserva = new(reservaServicioBE);
+                    frmActualizarServicioReserva.ShowDialog();
+                    CargarTodo();
+                }
+            }
+            catch (Exception er)
+            {
+                MessageBox.Show($"Hubo un error {er.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

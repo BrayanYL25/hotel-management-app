@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDetalleReserva));
             botonAgregarHabitacion = new Button();
             tituloDetalleReserva = new Label();
             labelIdReserva = new Label();
@@ -40,19 +41,24 @@
             labelResultadoNombre = new Label();
             labelResultadoId = new Label();
             groupboxHabitacion = new GroupBox();
+            botonBorrarHabitacion = new Button();
+            botonEditarHabitacion = new Button();
             gridHabitaciones = new DataGridView();
-            label1 = new Label();
-            labelResultadoPrecioTotal = new Label();
-            botonAgregarServicio = new Button();
-            gridServiciosReserva = new DataGridView();
-            Servicio = new DataGridViewTextBoxColumn();
-            PrecioTotal = new DataGridViewTextBoxColumn();
-            cantidad = new DataGridViewTextBoxColumn();
-            groupboxServicio = new GroupBox();
             idReserva = new DataGridViewTextBoxColumn();
             habitacion = new DataGridViewTextBoxColumn();
             tipoHabitacion = new DataGridViewTextBoxColumn();
             precioTotalHabitacion = new DataGridViewTextBoxColumn();
+            label1 = new Label();
+            labelResultadoPrecioTotal = new Label();
+            botonAgregarServicio = new Button();
+            gridServiciosReserva = new DataGridView();
+            idServicio = new DataGridViewTextBoxColumn();
+            Servicio = new DataGridViewTextBoxColumn();
+            PrecioTotal = new DataGridViewTextBoxColumn();
+            cantidad = new DataGridViewTextBoxColumn();
+            groupboxServicio = new GroupBox();
+            botonEditarServicio = new Button();
+            botonBorrarServicio = new Button();
             groupBox1.SuspendLayout();
             groupboxHabitacion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)gridHabitaciones).BeginInit();
@@ -62,11 +68,11 @@
             // 
             // botonAgregarHabitacion
             // 
-            botonAgregarHabitacion.Location = new Point(386, 22);
+            botonAgregarHabitacion.Image = (Image)resources.GetObject("botonAgregarHabitacion.Image");
+            botonAgregarHabitacion.Location = new Point(394, 22);
             botonAgregarHabitacion.Name = "botonAgregarHabitacion";
-            botonAgregarHabitacion.Size = new Size(23, 23);
+            botonAgregarHabitacion.Size = new Size(25, 25);
             botonAgregarHabitacion.TabIndex = 0;
-            botonAgregarHabitacion.Text = "+";
             botonAgregarHabitacion.UseVisualStyleBackColor = true;
             botonAgregarHabitacion.Click += botonAgregarHabitacion_Click;
             // 
@@ -171,14 +177,34 @@
             // 
             // groupboxHabitacion
             // 
+            groupboxHabitacion.Controls.Add(botonBorrarHabitacion);
+            groupboxHabitacion.Controls.Add(botonEditarHabitacion);
             groupboxHabitacion.Controls.Add(gridHabitaciones);
             groupboxHabitacion.Controls.Add(botonAgregarHabitacion);
             groupboxHabitacion.Location = new Point(12, 179);
             groupboxHabitacion.Name = "groupboxHabitacion";
-            groupboxHabitacion.Size = new Size(414, 259);
+            groupboxHabitacion.Size = new Size(425, 259);
             groupboxHabitacion.TabIndex = 8;
             groupboxHabitacion.TabStop = false;
             groupboxHabitacion.Text = "Habitaciones";
+            // 
+            // botonBorrarHabitacion
+            // 
+            botonBorrarHabitacion.Image = (Image)resources.GetObject("botonBorrarHabitacion.Image");
+            botonBorrarHabitacion.Location = new Point(394, 228);
+            botonBorrarHabitacion.Name = "botonBorrarHabitacion";
+            botonBorrarHabitacion.Size = new Size(25, 25);
+            botonBorrarHabitacion.TabIndex = 3;
+            botonBorrarHabitacion.UseVisualStyleBackColor = true;
+            // 
+            // botonEditarHabitacion
+            // 
+            botonEditarHabitacion.Image = (Image)resources.GetObject("botonEditarHabitacion.Image");
+            botonEditarHabitacion.Location = new Point(394, 53);
+            botonEditarHabitacion.Name = "botonEditarHabitacion";
+            botonEditarHabitacion.Size = new Size(25, 25);
+            botonEditarHabitacion.TabIndex = 2;
+            botonEditarHabitacion.UseVisualStyleBackColor = true;
             // 
             // gridHabitaciones
             // 
@@ -193,88 +219,9 @@
             gridHabitaciones.ReadOnly = true;
             gridHabitaciones.RowHeadersVisible = false;
             gridHabitaciones.RowHeadersWidth = 51;
-            gridHabitaciones.Size = new Size(374, 231);
+            gridHabitaciones.Size = new Size(382, 231);
             gridHabitaciones.TabIndex = 1;
-            gridHabitaciones.CellClick += gridHabitaciones_CellClick;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(620, 14);
-            label1.Name = "label1";
-            label1.Size = new Size(71, 15);
-            label1.TabIndex = 10;
-            label1.Text = "Precio Total:";
-            // 
-            // labelResultadoPrecioTotal
-            // 
-            labelResultadoPrecioTotal.BorderStyle = BorderStyle.FixedSingle;
-            labelResultadoPrecioTotal.Location = new Point(697, 10);
-            labelResultadoPrecioTotal.Name = "labelResultadoPrecioTotal";
-            labelResultadoPrecioTotal.Size = new Size(100, 23);
-            labelResultadoPrecioTotal.TabIndex = 11;
-            labelResultadoPrecioTotal.TextAlign = ContentAlignment.MiddleRight;
-            // 
-            // botonAgregarServicio
-            // 
-            botonAgregarServicio.Location = new Point(337, 22);
-            botonAgregarServicio.Name = "botonAgregarServicio";
-            botonAgregarServicio.Size = new Size(23, 23);
-            botonAgregarServicio.TabIndex = 1;
-            botonAgregarServicio.Text = "+";
-            botonAgregarServicio.UseVisualStyleBackColor = true;
-            botonAgregarServicio.Click += botonAgregarServicio_Click;
-            // 
-            // gridServiciosReserva
-            // 
-            gridServiciosReserva.AllowUserToAddRows = false;
-            gridServiciosReserva.AllowUserToDeleteRows = false;
-            gridServiciosReserva.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            gridServiciosReserva.BackgroundColor = SystemColors.ControlLightLight;
-            gridServiciosReserva.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            gridServiciosReserva.Columns.AddRange(new DataGridViewColumn[] { Servicio, PrecioTotal, cantidad });
-            gridServiciosReserva.Location = new Point(6, 22);
-            gridServiciosReserva.Name = "gridServiciosReserva";
-            gridServiciosReserva.ReadOnly = true;
-            gridServiciosReserva.RowHeadersVisible = false;
-            gridServiciosReserva.RowHeadersWidth = 51;
-            gridServiciosReserva.Size = new Size(309, 231);
-            gridServiciosReserva.TabIndex = 2;
-            // 
-            // Servicio
-            // 
-            Servicio.DataPropertyName = "servicio_descripcion";
-            Servicio.HeaderText = "Servicio";
-            Servicio.MinimumWidth = 6;
-            Servicio.Name = "Servicio";
-            Servicio.ReadOnly = true;
-            // 
-            // PrecioTotal
-            // 
-            PrecioTotal.DataPropertyName = "precio_total";
-            PrecioTotal.HeaderText = "Precio Total";
-            PrecioTotal.MinimumWidth = 6;
-            PrecioTotal.Name = "PrecioTotal";
-            PrecioTotal.ReadOnly = true;
-            // 
-            // cantidad
-            // 
-            cantidad.DataPropertyName = "cantidad";
-            cantidad.HeaderText = "Cantidad";
-            cantidad.MinimumWidth = 6;
-            cantidad.Name = "cantidad";
-            cantidad.ReadOnly = true;
-            // 
-            // groupboxServicio
-            // 
-            groupboxServicio.Controls.Add(gridServiciosReserva);
-            groupboxServicio.Controls.Add(botonAgregarServicio);
-            groupboxServicio.Location = new Point(431, 179);
-            groupboxServicio.Name = "groupboxServicio";
-            groupboxServicio.Size = new Size(366, 259);
-            groupboxServicio.TabIndex = 9;
-            groupboxServicio.TabStop = false;
-            groupboxServicio.Text = "Servicios";
+            gridHabitaciones.CellDoubleClick += gridHabitaciones_CellDoubleClick;
             // 
             // idReserva
             // 
@@ -307,6 +254,116 @@
             precioTotalHabitacion.MinimumWidth = 6;
             precioTotalHabitacion.Name = "precioTotalHabitacion";
             precioTotalHabitacion.ReadOnly = true;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(620, 14);
+            label1.Name = "label1";
+            label1.Size = new Size(71, 15);
+            label1.TabIndex = 10;
+            label1.Text = "Precio Total:";
+            // 
+            // labelResultadoPrecioTotal
+            // 
+            labelResultadoPrecioTotal.BorderStyle = BorderStyle.FixedSingle;
+            labelResultadoPrecioTotal.Location = new Point(697, 10);
+            labelResultadoPrecioTotal.Name = "labelResultadoPrecioTotal";
+            labelResultadoPrecioTotal.Size = new Size(100, 23);
+            labelResultadoPrecioTotal.TabIndex = 11;
+            labelResultadoPrecioTotal.TextAlign = ContentAlignment.MiddleRight;
+            // 
+            // botonAgregarServicio
+            // 
+            botonAgregarServicio.Image = (Image)resources.GetObject("botonAgregarServicio.Image");
+            botonAgregarServicio.Location = new Point(323, 22);
+            botonAgregarServicio.Name = "botonAgregarServicio";
+            botonAgregarServicio.Size = new Size(25, 25);
+            botonAgregarServicio.TabIndex = 1;
+            botonAgregarServicio.UseVisualStyleBackColor = true;
+            botonAgregarServicio.Click += botonAgregarServicio_Click;
+            // 
+            // gridServiciosReserva
+            // 
+            gridServiciosReserva.AllowUserToAddRows = false;
+            gridServiciosReserva.AllowUserToDeleteRows = false;
+            gridServiciosReserva.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            gridServiciosReserva.BackgroundColor = SystemColors.ControlLightLight;
+            gridServiciosReserva.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            gridServiciosReserva.Columns.AddRange(new DataGridViewColumn[] { idServicio, Servicio, PrecioTotal, cantidad });
+            gridServiciosReserva.Location = new Point(6, 22);
+            gridServiciosReserva.Name = "gridServiciosReserva";
+            gridServiciosReserva.ReadOnly = true;
+            gridServiciosReserva.RowHeadersVisible = false;
+            gridServiciosReserva.RowHeadersWidth = 51;
+            gridServiciosReserva.Size = new Size(309, 231);
+            gridServiciosReserva.TabIndex = 2;
+            // 
+            // idServicio
+            // 
+            idServicio.DataPropertyName = "servicio_id";
+            idServicio.HeaderText = "Id";
+            idServicio.Name = "idServicio";
+            idServicio.ReadOnly = true;
+            idServicio.Visible = false;
+            // 
+            // Servicio
+            // 
+            Servicio.DataPropertyName = "servicio_descripcion";
+            Servicio.HeaderText = "Servicio";
+            Servicio.MinimumWidth = 6;
+            Servicio.Name = "Servicio";
+            Servicio.ReadOnly = true;
+            // 
+            // PrecioTotal
+            // 
+            PrecioTotal.DataPropertyName = "precio_total";
+            PrecioTotal.HeaderText = "Precio Total";
+            PrecioTotal.MinimumWidth = 6;
+            PrecioTotal.Name = "PrecioTotal";
+            PrecioTotal.ReadOnly = true;
+            // 
+            // cantidad
+            // 
+            cantidad.DataPropertyName = "cantidad";
+            cantidad.HeaderText = "Cantidad";
+            cantidad.MinimumWidth = 6;
+            cantidad.Name = "cantidad";
+            cantidad.ReadOnly = true;
+            // 
+            // groupboxServicio
+            // 
+            groupboxServicio.Controls.Add(botonEditarServicio);
+            groupboxServicio.Controls.Add(botonBorrarServicio);
+            groupboxServicio.Controls.Add(gridServiciosReserva);
+            groupboxServicio.Controls.Add(botonAgregarServicio);
+            groupboxServicio.Location = new Point(443, 179);
+            groupboxServicio.Name = "groupboxServicio";
+            groupboxServicio.Size = new Size(354, 259);
+            groupboxServicio.TabIndex = 9;
+            groupboxServicio.TabStop = false;
+            groupboxServicio.Text = "Servicios";
+            // 
+            // botonEditarServicio
+            // 
+            botonEditarServicio.Image = (Image)resources.GetObject("botonEditarServicio.Image");
+            botonEditarServicio.Location = new Point(323, 53);
+            botonEditarServicio.Name = "botonEditarServicio";
+            botonEditarServicio.Size = new Size(25, 25);
+            botonEditarServicio.TabIndex = 4;
+            botonEditarServicio.Text = "e";
+            botonEditarServicio.UseVisualStyleBackColor = true;
+            botonEditarServicio.Click += botonEditarServicio_Click;
+            // 
+            // botonBorrarServicio
+            // 
+            botonBorrarServicio.Image = (Image)resources.GetObject("botonBorrarServicio.Image");
+            botonBorrarServicio.Location = new Point(323, 228);
+            botonBorrarServicio.Name = "botonBorrarServicio";
+            botonBorrarServicio.Size = new Size(25, 25);
+            botonBorrarServicio.TabIndex = 3;
+            botonBorrarServicio.UseVisualStyleBackColor = true;
+            botonBorrarServicio.Click += botonBorrarServicio_Click;
             // 
             // FrmDetalleReserva
             // 
@@ -352,13 +409,18 @@
         private Label labelResultadoPrecioTotal;
         private Button botonAgregarServicio;
         private DataGridView gridServiciosReserva;
-        private DataGridViewTextBoxColumn Servicio;
-        private DataGridViewTextBoxColumn PrecioTotal;
-        private DataGridViewTextBoxColumn cantidad;
         private GroupBox groupboxServicio;
         private DataGridViewTextBoxColumn idReserva;
         private DataGridViewTextBoxColumn habitacion;
         private DataGridViewTextBoxColumn tipoHabitacion;
         private DataGridViewTextBoxColumn precioTotalHabitacion;
+        private Button botonBorrarServicio;
+        private DataGridViewTextBoxColumn idServicio;
+        private DataGridViewTextBoxColumn Servicio;
+        private DataGridViewTextBoxColumn PrecioTotal;
+        private DataGridViewTextBoxColumn cantidad;
+        private Button botonEditarServicio;
+        private Button botonEditarHabitacion;
+        private Button botonBorrarHabitacion;
     }
 }

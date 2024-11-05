@@ -10,9 +10,11 @@ namespace ProyHotel_BE
     {
         public int reservaId {  get; set; }
         public int servicioId { get; set; }
+        public string? servicioDescripcion { get; set; }
         public int cantidad {  get; set; }
+        public float? servicioPrecio {  get; set; }
         public float precioTotal {  get; set; }
-        public DateTime fechaCreacion {  get; set; }
-        public DateTime fechaUltimaModificacion { get; set; }
+        public DateTime? fechaCreacion {  get; set; }
+        public DateTime? fechaUltimaModificacion { get; set; }
     }
 }

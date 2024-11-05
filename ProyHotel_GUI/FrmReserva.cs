@@ -57,7 +57,7 @@ namespace ProyHotel_GUI
 
         }
 
-        private void gridReservas_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void gridReservas_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
