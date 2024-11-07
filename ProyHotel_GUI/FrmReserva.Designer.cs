@@ -182,6 +182,7 @@
             botonEditar.TabIndex = 5;
             botonEditar.Text = "Editar Reserva";
             botonEditar.UseVisualStyleBackColor = true;
+            botonEditar.Click += botonEditar_Click;
             // 
             // tituoResultado
             // 

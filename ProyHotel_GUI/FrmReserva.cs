@@ -76,5 +76,19 @@ namespace ProyHotel_GUI
                 }
             }
         }
+
+        private void botonEditar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                FrmActualizarReserva frmActualizarReserva = new();
+                frmActualizarReserva.Codigo = int.Parse(gridReservas.CurrentRow.Cells[0].Value.ToString());
+                frmActualizarReserva.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
     }
 }

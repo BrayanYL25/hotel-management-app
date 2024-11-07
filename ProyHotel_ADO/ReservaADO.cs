@@ -146,8 +146,11 @@ namespace ProyHotel_ADO
                 cmd.Parameters.AddWithValue("@reserva_id", reserva.reservaId);
                 cmd.Parameters.AddWithValue("@usuario_id", reserva.usuarioId);
                 cmd.Parameters.AddWithValue("@usuario_dni", reserva.usuarioDni);
+                cmd.Parameters.AddWithValue("@reserva_nombre", reserva.reservaNombre);
                 cmd.Parameters.AddWithValue("@usuario_telefono", reserva.usuarioTelefono);
-                cmd.Parameters.AddWithValue("@precio_total", reserva.precioTotal);
+                //cmd.Parameters.AddWithValue("@precio_total", reserva.precioTotal);
+                cmd.Parameters.AddWithValue("@reserva_estado", reserva.reservaEstado);
+                cmd.Parameters.AddWithValue("@estado_pago", reserva.estadoPago);
 
                 cnx.Open();
                 cmd.ExecuteNonQuery();
@@ -157,13 +160,15 @@ namespace ProyHotel_ADO
             catch (SqlException ex)
             {
                 throw new Exception(ex.Message);
-                return false;
             }
             finally
             {
-                if (cnx.State == ConnectionState.Open) { cnx.Close(); }
-            }
+                if (cnx.State == ConnectionState.Open)
+                {
+                    cnx.Close();
+                }
 
+            }
         }
 
         public Boolean EliminarReserva(Int16 idReserva)
@@ -190,9 +195,6 @@ namespace ProyHotel_ADO
             {
                 if (cnx.State == ConnectionState.Open) { cnx.Close(); }
             }
-
         }
-
-
     }
 }

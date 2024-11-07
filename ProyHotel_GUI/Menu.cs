@@ -116,5 +116,12 @@ namespace ProyHotel_GUI
             frmCrearReserva.MdiParent = this;
             frmCrearReserva.Show();
         }
+
+        private void reporteDeUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmReportes frmReportes = new FrmReportes();
+            frmReportes.MdiParent = this;
+            frmReportes.Show();
+        }
     }
 }
