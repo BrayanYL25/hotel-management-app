@@ -30,14 +30,21 @@
         {
             label1 = new Label();
             button1 = new Button();
-            label2 = new Label();
             txtFiltroHabitacion = new TextBox();
             dgtDatosHabitaciones = new DataGridView();
+            habitacionId = new DataGridViewTextBoxColumn();
+            tipoHabitacionId = new DataGridViewTextBoxColumn();
+            habitacionNombre = new DataGridViewTextBoxColumn();
+            tipoHabitacion = new DataGridViewTextBoxColumn();
+            precioNoche = new DataGridViewTextBoxColumn();
+            habitacionAforo = new DataGridViewTextBoxColumn();
+            estado = new DataGridViewTextBoxColumn();
             lblRegistroHabitaciones = new Label();
             label3 = new Label();
             btnAgregarHabitacion = new Button();
             btnActualizar = new Button();
             btnEliminar = new Button();
+            botonBuscar = new Button();
             ((System.ComponentModel.ISupportInitialize)dgtDatosHabitaciones).BeginInit();
             SuspendLayout();
             // 
@@ -62,36 +69,71 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(597, 23);
-            label2.Name = "label2";
-            label2.Size = new Size(48, 15);
-            label2.TabIndex = 2;
-            label2.Text = "Buscar: ";
-            // 
             // txtFiltroHabitacion
             // 
-            txtFiltroHabitacion.Location = new Point(651, 19);
+            txtFiltroHabitacion.Location = new Point(503, 15);
             txtFiltroHabitacion.Margin = new Padding(3, 2, 3, 2);
             txtFiltroHabitacion.Name = "txtFiltroHabitacion";
-            txtFiltroHabitacion.Size = new Size(110, 23);
+            txtFiltroHabitacion.PlaceholderText = "Ingrese la habitacion";
+            txtFiltroHabitacion.Size = new Size(172, 23);
             txtFiltroHabitacion.TabIndex = 3;
-            txtFiltroHabitacion.TextChanged += txtFiltroHabitacion_TextChanged;
             // 
             // dgtDatosHabitaciones
             // 
+            dgtDatosHabitaciones.AllowUserToAddRows = false;
             dgtDatosHabitaciones.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             dgtDatosHabitaciones.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgtDatosHabitaciones.BackgroundColor = SystemColors.ControlLightLight;
             dgtDatosHabitaciones.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgtDatosHabitaciones.Columns.AddRange(new DataGridViewColumn[] { habitacionId, tipoHabitacionId, habitacionNombre, tipoHabitacion, precioNoche, habitacionAforo, estado });
             dgtDatosHabitaciones.Location = new Point(12, 57);
             dgtDatosHabitaciones.Name = "dgtDatosHabitaciones";
             dgtDatosHabitaciones.RowHeadersVisible = false;
             dgtDatosHabitaciones.RowHeadersWidth = 51;
             dgtDatosHabitaciones.Size = new Size(750, 341);
             dgtDatosHabitaciones.TabIndex = 0;
+            // 
+            // habitacionId
+            // 
+            habitacionId.DataPropertyName = "Habitacion Id";
+            habitacionId.HeaderText = "Habitacion Id";
+            habitacionId.Name = "habitacionId";
+            // 
+            // tipoHabitacionId
+            // 
+            tipoHabitacionId.DataPropertyName = "Tipo Habitacion Id";
+            tipoHabitacionId.HeaderText = "Tipo Habitacion Id";
+            tipoHabitacionId.Name = "tipoHabitacionId";
+            // 
+            // habitacionNombre
+            // 
+            habitacionNombre.DataPropertyName = "Habitacion Nombre";
+            habitacionNombre.HeaderText = "Habitacion Nombre";
+            habitacionNombre.Name = "habitacionNombre";
+            // 
+            // tipoHabitacion
+            // 
+            tipoHabitacion.DataPropertyName = "Tipo Habitacion";
+            tipoHabitacion.HeaderText = "Tipo Habitacion";
+            tipoHabitacion.Name = "tipoHabitacion";
+            // 
+            // precioNoche
+            // 
+            precioNoche.DataPropertyName = "Precio Noche";
+            precioNoche.HeaderText = "Precio Noche";
+            precioNoche.Name = "precioNoche";
+            // 
+            // habitacionAforo
+            // 
+            habitacionAforo.DataPropertyName = "Habitacion Aforo";
+            habitacionAforo.HeaderText = "Habitacion Aforo";
+            habitacionAforo.Name = "habitacionAforo";
+            // 
+            // estado
+            // 
+            estado.DataPropertyName = "Estado";
+            estado.HeaderText = "Estado";
+            estado.Name = "estado";
             // 
             // lblRegistroHabitaciones
             // 
@@ -101,6 +143,7 @@
             lblRegistroHabitaciones.Name = "lblRegistroHabitaciones";
             lblRegistroHabitaciones.Size = new Size(84, 22);
             lblRegistroHabitaciones.TabIndex = 4;
+            lblRegistroHabitaciones.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // label3
             // 
@@ -111,7 +154,6 @@
             label3.Size = new Size(102, 15);
             label3.TabIndex = 2;
             label3.Text = "Total de registros: ";
-            label3.Click += label3_Click;
             // 
             // btnAgregarHabitacion
             // 
@@ -152,11 +194,22 @@
             btnEliminar.UseVisualStyleBackColor = true;
             btnEliminar.Click += btnEliminar_Click;
             // 
+            // botonBuscar
+            // 
+            botonBuscar.Location = new Point(686, 15);
+            botonBuscar.Name = "botonBuscar";
+            botonBuscar.Size = new Size(75, 23);
+            botonBuscar.TabIndex = 6;
+            botonBuscar.Text = "Buscar";
+            botonBuscar.UseVisualStyleBackColor = true;
+            botonBuscar.Click += botonBuscar_Click;
+            // 
             // FrmHabitaciones
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(774, 458);
+            Controls.Add(botonBuscar);
             Controls.Add(btnEliminar);
             Controls.Add(btnActualizar);
             Controls.Add(btnAgregarHabitacion);
@@ -164,7 +217,6 @@
             Controls.Add(dgtDatosHabitaciones);
             Controls.Add(txtFiltroHabitacion);
             Controls.Add(label3);
-            Controls.Add(label2);
             Controls.Add(button1);
             Controls.Add(label1);
             Margin = new Padding(3, 2, 3, 2);
@@ -180,7 +232,6 @@
 
         private Label label1;
         private Button button1;
-        private Label label2;
         private TextBox txtFiltroHabitacion;
         private DataGridView dgtDatosHabitaciones;
         private Label lblRegistroHabitaciones;
@@ -188,5 +239,13 @@
         private Button btnAgregarHabitacion;
         private Button btnActualizar;
         private Button btnEliminar;
+        private DataGridViewTextBoxColumn habitacionId;
+        private DataGridViewTextBoxColumn tipoHabitacionId;
+        private DataGridViewTextBoxColumn habitacionNombre;
+        private DataGridViewTextBoxColumn tipoHabitacion;
+        private DataGridViewTextBoxColumn precioNoche;
+        private DataGridViewTextBoxColumn habitacionAforo;
+        private DataGridViewTextBoxColumn estado;
+        private Button botonBuscar;
     }
 }

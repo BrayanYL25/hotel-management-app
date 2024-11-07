@@ -53,11 +53,13 @@
             // 
             dgtDatosHuesped.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dgtDatosHuesped.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgtDatosHuesped.BackgroundColor = SystemColors.ControlLightLight;
             dgtDatosHuesped.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgtDatosHuesped.Location = new Point(12, 71);
             dgtDatosHuesped.Margin = new Padding(3, 2, 3, 2);
             dgtDatosHuesped.Name = "dgtDatosHuesped";
             dgtDatosHuesped.ReadOnly = true;
+            dgtDatosHuesped.RowHeadersVisible = false;
             dgtDatosHuesped.RowHeadersWidth = 51;
             dgtDatosHuesped.Size = new Size(646, 265);
             dgtDatosHuesped.TabIndex = 1;

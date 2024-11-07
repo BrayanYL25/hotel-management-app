@@ -28,40 +28,18 @@ namespace ProyHotel_GUI
         }
         private void FrmHabitaciones_Load(object sender, EventArgs e)
         {
-            //mostrar los datos por defecto al momento de cargar el formulario
-
             CargarDatos("");
         }
 
         private void CargarDatos(String strFiltro)
         {
             dtv = new DataView(objHabitacionesBL.listarHabitacion());
-            dtv.RowFilter = "[habitacion nombre] like '%" + strFiltro + "%'";
-
-            //relacion form cod
+            dtv.RowFilter = $"[Habitacion Nombre] like '%{strFiltro}%'";
+            dgtDatosHabitaciones.AutoGenerateColumns = false;
             dgtDatosHabitaciones.DataSource = dtv;
             lblRegistroHabitaciones.Text = dgtDatosHabitaciones.Rows.Count.ToString();
-
-
-        }
-        private void txtFiltroHabitacion_TextChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                CargarDatos(txtFiltroHabitacion.Text.Trim());
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message);
-            }
-
         }
 
-
-
-
-
-        //cerrar el formulario
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -71,17 +49,13 @@ namespace ProyHotel_GUI
         {
             try
             {
-                //codigo
-                //instanciamos
                 FrmAgregarHabitacion objAgregarHabitacion = new FrmAgregarHabitacion();
-                objAgregarHabitacion.ShowDialog();//evita que habras mas ventanas 
-
-                //despues de cerrar actualizar
+                objAgregarHabitacion.ShowDialog();
                 CargarDatos(txtFiltroHabitacion.Text.Trim());
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message);
+                MessageBox.Show($"Error: {ex.Message}");
             }
         }
 
@@ -89,18 +63,14 @@ namespace ProyHotel_GUI
         {
             try
             {
-                //codigo
-                //instanciamos
                 FrmActualizarHabitacion objAgregarHabitacion = new FrmActualizarHabitacion();
                 objAgregarHabitacion.Codigo = dgtDatosHabitaciones.CurrentRow.Cells[0].Value.ToString();
-                objAgregarHabitacion.ShowDialog();//evita que habras mas ventanas 
-
-                //despues de cerrar actualizar
-                CargarDatos(txtFiltroHabitacion.Text.Trim());
+                objAgregarHabitacion.ShowDialog();
+                CargarDatos("");
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message);
+                MessageBox.Show($"Hubo un error: {ex.Message}");
             }
         }
 
@@ -108,14 +78,14 @@ namespace ProyHotel_GUI
         {
             try
             {
-                DialogResult vrpta = MessageBox.Show("Seguro que quiere eliminar este registro", "Mensaje", MessageBoxButtons.YesNo,
+                DialogResult vrpta = MessageBox.Show("¿Seguro que quiere eliminar este registro?", "Mensaje", MessageBoxButtons.YesNo,
                     MessageBoxIcon.Question);
                 if (vrpta == DialogResult.Yes)
                 {
                     String strCodigo = dgtDatosHabitaciones.CurrentRow.Cells[0].Value.ToString();
-                    if (objHabitacionesBL.EliminarHabitacion(strCodigo) == true)
+                    if (objHabitacionesBL.EliminarHabitacion(strCodigo))
                     {
-                        CargarDatos(txtFiltroHabitacion.Text.Trim());
+                        CargarDatos("");
                     }
                     else
                     {
@@ -125,13 +95,20 @@ namespace ProyHotel_GUI
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message);
+                MessageBox.Show($"Hubo un error: {ex.Message}");
             }
         }
 
-        private void label3_Click(object sender, EventArgs e)
+        private void botonBuscar_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                CargarDatos(txtFiltroHabitacion.Text.Trim());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Hubo un error: {ex.Message}");
+            }
         }
     }
 }
