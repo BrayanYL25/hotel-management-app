@@ -26,48 +26,27 @@ namespace ProyHotel_GUI
 
         private void FrmHuespedes_Load(object sender, EventArgs e)
         {
-            //mostrar los datos por defecto
-
             CargarDatos("");
         }
         private void CargarDatos(String strFiltro)
         {
             dtv = new DataView(objHuespedBL.listarHuesped());
-            dtv.RowFilter = "Nombre like '%" + strFiltro + "%'";
-
-            //relacion form cod
+            dtv.RowFilter = $"Nombre like '%{strFiltro}%'";
             dgtDatosHuesped.DataSource = dtv;
             lblRegistroHuesped.Text = dgtDatosHuesped.Rows.Count.ToString();
-
-        }
-
-        private void txtFiltro_TextChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                CargarDatos(txtFiltro.Text.Trim());
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message);
-            }
         }
 
         private void btnAgregarHuesped_Click(object sender, EventArgs e)
         {
             try
             {
-                //codigo
-                //instanciamos
                 FrmAgregarHuesped objAgregarHabitacion = new FrmAgregarHuesped();
-                objAgregarHabitacion.ShowDialog();//evita que habras mas ventanas 
-
-                //despues de cerrar actualizar
-                CargarDatos(txtFiltro.Text.Trim());
+                objAgregarHabitacion.ShowDialog();
+                CargarDatos("");
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message);
+                MessageBox.Show($"Hubo un error: {ex.Message}");
             }
         }
 
@@ -75,14 +54,10 @@ namespace ProyHotel_GUI
         {
             try
             {
-                //codigo
-                //instanciamos
                 FrmActualizarHuesped objActualizarHuesped = new FrmActualizarHuesped();
                 objActualizarHuesped.Codigo = dgtDatosHuesped.CurrentRow.Cells[0].Value.ToString();
-                objActualizarHuesped.ShowDialog();//evita que habras mas ventanas 
-
-                //despues de cerrar actualizar
-                CargarDatos(txtFiltro.Text.Trim());
+                objActualizarHuesped.ShowDialog();
+                CargarDatos("");
             }
             catch (Exception ex)
             {
@@ -101,7 +76,7 @@ namespace ProyHotel_GUI
                     String strCodigo = dgtDatosHuesped.CurrentRow.Cells[0].Value.ToString();
                     if (objHuespedBL.EliminarHuesped(strCodigo) == true)
                     {
-                        CargarDatos(txtFiltro.Text.Trim());
+                        CargarDatos("");
                     }
                     else
                     {
@@ -112,6 +87,18 @@ namespace ProyHotel_GUI
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message);
+            }
+        }
+
+        private void botonBuscar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                CargarDatos(txtFiltro.Text.Trim());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Hubo un error: {ex.Message}");
             }
         }
     }

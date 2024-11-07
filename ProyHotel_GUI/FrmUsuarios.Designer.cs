@@ -28,8 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmUsuarios));
             dtgUsuarios = new DataGridView();
+            id = new DataGridViewTextBoxColumn();
+            usuario = new DataGridViewTextBoxColumn();
+            password = new DataGridViewTextBoxColumn();
+            tipo = new DataGridViewTextBoxColumn();
+            correo = new DataGridViewTextBoxColumn();
+            estado = new DataGridViewTextBoxColumn();
             txtNombre = new TextBox();
             btn_Editar = new Button();
             BtnAgregar = new Button();
@@ -37,12 +42,6 @@
             label3 = new Label();
             labelResultados = new Label();
             botonBuscar = new Button();
-            id = new DataGridViewTextBoxColumn();
-            usuario = new DataGridViewTextBoxColumn();
-            password = new DataGridViewTextBoxColumn();
-            tipo = new DataGridViewTextBoxColumn();
-            correo = new DataGridViewTextBoxColumn();
-            estado = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dtgUsuarios).BeginInit();
             SuspendLayout();
             // 
@@ -61,82 +60,6 @@
             dtgUsuarios.RowHeadersVisible = false;
             dtgUsuarios.Size = new Size(787, 317);
             dtgUsuarios.TabIndex = 0;
-            // 
-            // txtNombre
-            // 
-            txtNombre.Location = new Point(497, 22);
-            txtNombre.MaxLength = 30;
-            txtNombre.Name = "txtNombre";
-            txtNombre.PlaceholderText = "Ingrese nombre de usuario";
-            txtNombre.Size = new Size(221, 23);
-            txtNombre.TabIndex = 2;
-            // 
-            // btn_Editar
-            // 
-            btn_Editar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            btn_Editar.Image = (Image)resources.GetObject("btn_Editar.Image");
-            btn_Editar.ImageAlign = ContentAlignment.MiddleLeft;
-            btn_Editar.Location = new Point(551, 404);
-            btn_Editar.Name = "btn_Editar";
-            btn_Editar.Size = new Size(123, 43);
-            btn_Editar.TabIndex = 3;
-            btn_Editar.Text = "EDITAR";
-            btn_Editar.UseVisualStyleBackColor = true;
-            btn_Editar.Click += btn_Editar_Click;
-            // 
-            // BtnAgregar
-            // 
-            BtnAgregar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            BtnAgregar.Image = (Image)resources.GetObject("BtnAgregar.Image");
-            BtnAgregar.ImageAlign = ContentAlignment.MiddleLeft;
-            BtnAgregar.Location = new Point(680, 404);
-            BtnAgregar.Name = "BtnAgregar";
-            BtnAgregar.Size = new Size(119, 43);
-            BtnAgregar.TabIndex = 4;
-            BtnAgregar.Text = "AGREGAR";
-            BtnAgregar.TextAlign = ContentAlignment.MiddleRight;
-            BtnAgregar.UseVisualStyleBackColor = true;
-            BtnAgregar.Click += BtnAgregar_Click;
-            // 
-            // label2
-            // 
-            label2.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            label2.AutoSize = true;
-            label2.Location = new Point(20, 418);
-            label2.Name = "label2";
-            label2.Size = new Size(58, 15);
-            label2.TabIndex = 6;
-            label2.Text = "Registros:";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(12, 19);
-            label3.Name = "label3";
-            label3.Size = new Size(161, 21);
-            label3.TabIndex = 8;
-            label3.Text = "Gestión de Usuarios";
-            // 
-            // labelResultados
-            // 
-            labelResultados.BorderStyle = BorderStyle.FixedSingle;
-            labelResultados.Location = new Point(84, 414);
-            labelResultados.Name = "labelResultados";
-            labelResultados.Size = new Size(100, 23);
-            labelResultados.TabIndex = 9;
-            labelResultados.Text = "0";
-            labelResultados.TextAlign = ContentAlignment.MiddleLeft;
-            // 
-            // botonBuscar
-            // 
-            botonBuscar.Location = new Point(724, 21);
-            botonBuscar.Name = "botonBuscar";
-            botonBuscar.Size = new Size(75, 23);
-            botonBuscar.TabIndex = 10;
-            botonBuscar.Text = "Buscar";
-            botonBuscar.UseVisualStyleBackColor = true;
-            botonBuscar.Click += botonBuscar_Click;
             // 
             // id
             // 
@@ -179,6 +102,79 @@
             estado.HeaderText = "Estado";
             estado.Name = "estado";
             estado.ReadOnly = true;
+            // 
+            // txtNombre
+            // 
+            txtNombre.Location = new Point(497, 22);
+            txtNombre.MaxLength = 30;
+            txtNombre.Name = "txtNombre";
+            txtNombre.PlaceholderText = "Ingrese nombre de usuario";
+            txtNombre.Size = new Size(221, 23);
+            txtNombre.TabIndex = 2;
+            // 
+            // btn_Editar
+            // 
+            btn_Editar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btn_Editar.ImageAlign = ContentAlignment.MiddleLeft;
+            btn_Editar.Location = new Point(633, 410);
+            btn_Editar.Name = "btn_Editar";
+            btn_Editar.Size = new Size(80, 30);
+            btn_Editar.TabIndex = 3;
+            btn_Editar.Text = "Editar";
+            btn_Editar.UseVisualStyleBackColor = true;
+            btn_Editar.Click += btn_Editar_Click;
+            // 
+            // BtnAgregar
+            // 
+            BtnAgregar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            BtnAgregar.ImageAlign = ContentAlignment.MiddleLeft;
+            BtnAgregar.Location = new Point(719, 410);
+            BtnAgregar.Name = "BtnAgregar";
+            BtnAgregar.Size = new Size(80, 30);
+            BtnAgregar.TabIndex = 4;
+            BtnAgregar.Text = "Crear";
+            BtnAgregar.UseVisualStyleBackColor = true;
+            BtnAgregar.Click += BtnAgregar_Click;
+            // 
+            // label2
+            // 
+            label2.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            label2.AutoSize = true;
+            label2.Location = new Point(20, 418);
+            label2.Name = "label2";
+            label2.Size = new Size(58, 15);
+            label2.TabIndex = 6;
+            label2.Text = "Registros:";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.Location = new Point(12, 19);
+            label3.Name = "label3";
+            label3.Size = new Size(161, 21);
+            label3.TabIndex = 8;
+            label3.Text = "Gestión de Usuarios";
+            // 
+            // labelResultados
+            // 
+            labelResultados.BorderStyle = BorderStyle.FixedSingle;
+            labelResultados.Location = new Point(84, 414);
+            labelResultados.Name = "labelResultados";
+            labelResultados.Size = new Size(100, 23);
+            labelResultados.TabIndex = 9;
+            labelResultados.Text = "0";
+            labelResultados.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // botonBuscar
+            // 
+            botonBuscar.Location = new Point(724, 21);
+            botonBuscar.Name = "botonBuscar";
+            botonBuscar.Size = new Size(75, 23);
+            botonBuscar.TabIndex = 10;
+            botonBuscar.Text = "Buscar";
+            botonBuscar.UseVisualStyleBackColor = true;
+            botonBuscar.Click += botonBuscar_Click;
             // 
             // FrmUsuarios
             // 

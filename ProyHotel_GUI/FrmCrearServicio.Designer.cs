@@ -36,42 +36,45 @@
             checkboxDisponible = new CheckBox();
             button1 = new Button();
             botonCancelar = new Button();
+            label3 = new Label();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // textboxServicio
             // 
-            textboxServicio.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textboxServicio.Location = new Point(90, 51);
+            textboxServicio.Font = new Font("Segoe UI", 9F);
+            textboxServicio.Location = new Point(87, 62);
             textboxServicio.Name = "textboxServicio";
-            textboxServicio.Size = new Size(203, 29);
+            textboxServicio.Size = new Size(219, 23);
             textboxServicio.TabIndex = 0;
             textboxServicio.Validating += textboxServicio_Validating_1;
             // 
             // label1
             // 
-            label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(17, 51);
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 9F);
+            label1.Location = new Point(17, 65);
             label1.Name = "label1";
-            label1.Size = new Size(67, 29);
+            label1.Size = new Size(48, 15);
             label1.TabIndex = 1;
             label1.Text = "Servicio";
             // 
             // label2
             // 
-            label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(17, 105);
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 9F);
+            label2.Location = new Point(17, 112);
             label2.Name = "label2";
-            label2.Size = new Size(67, 29);
+            label2.Size = new Size(40, 15);
             label2.TabIndex = 3;
             label2.Text = "Precio";
             // 
             // textboxPrecio
             // 
-            textboxPrecio.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textboxPrecio.Location = new Point(90, 105);
+            textboxPrecio.Font = new Font("Segoe UI", 9F);
+            textboxPrecio.Location = new Point(87, 109);
             textboxPrecio.Name = "textboxPrecio";
-            textboxPrecio.Size = new Size(203, 29);
+            textboxPrecio.Size = new Size(219, 23);
             textboxPrecio.TabIndex = 1;
             textboxPrecio.KeyPress += textBox2_KeyPress;
             textboxPrecio.Validating += textboxPrecio_Validating;
@@ -79,9 +82,9 @@
             // groupBox1
             // 
             groupBox1.Controls.Add(checkboxDisponible);
-            groupBox1.Location = new Point(17, 167);
+            groupBox1.Location = new Point(17, 153);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(276, 100);
+            groupBox1.Size = new Size(289, 100);
             groupBox1.TabIndex = 2;
             groupBox1.TabStop = false;
             groupBox1.Text = "Estado";
@@ -98,7 +101,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(218, 297);
+            button1.Location = new Point(231, 272);
             button1.Name = "button1";
             button1.Size = new Size(75, 23);
             button1.TabIndex = 3;
@@ -109,7 +112,7 @@
             // botonCancelar
             // 
             botonCancelar.CausesValidation = false;
-            botonCancelar.Location = new Point(123, 297);
+            botonCancelar.Location = new Point(150, 272);
             botonCancelar.Name = "botonCancelar";
             botonCancelar.Size = new Size(75, 23);
             botonCancelar.TabIndex = 4;
@@ -117,12 +120,23 @@
             botonCancelar.UseVisualStyleBackColor = true;
             botonCancelar.Click += button2_Click;
             // 
-            // CrearServicio
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.Location = new Point(12, 9);
+            label3.Name = "label3";
+            label3.Size = new Size(122, 21);
+            label3.TabIndex = 5;
+            label3.Text = "Nuevo Servico";
+            // 
+            // FrmCrearServicio
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             CausesValidation = false;
-            ClientSize = new Size(318, 332);
+            ClientSize = new Size(318, 307);
+            Controls.Add(label3);
             Controls.Add(botonCancelar);
             Controls.Add(button1);
             Controls.Add(groupBox1);
@@ -131,7 +145,7 @@
             Controls.Add(label1);
             Controls.Add(textboxServicio);
             FormBorderStyle = FormBorderStyle.FixedSingle;
-            Name = "CrearServicio";
+            Name = "FrmCrearServicio";
             Text = "Crear Servicio";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
@@ -149,5 +163,6 @@
         private CheckBox checkboxDisponible;
         private Button button1;
         private Button botonCancelar;
+        private Label label3;
     }
 }

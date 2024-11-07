@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
             dgtDatosHuesped = new DataGridView();
             lblRegistroHuesped = new Label();
             label2 = new Label();
@@ -37,20 +36,14 @@
             btnActualizarHuesped = new Button();
             btnEliminarHuesped = new Button();
             label3 = new Label();
+            botonBuscar = new Button();
             ((System.ComponentModel.ISupportInitialize)dgtDatosHuesped).BeginInit();
             SuspendLayout();
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(559, 30);
-            label1.Name = "label1";
-            label1.Size = new Size(100, 15);
-            label1.TabIndex = 0;
-            label1.Text = "Filtro por nombre";
-            // 
             // dgtDatosHuesped
             // 
+            dgtDatosHuesped.AllowUserToAddRows = false;
+            dgtDatosHuesped.AllowUserToDeleteRows = false;
             dgtDatosHuesped.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dgtDatosHuesped.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgtDatosHuesped.BackgroundColor = SystemColors.ControlLightLight;
@@ -85,13 +78,12 @@
             // 
             // txtFiltro
             // 
-            txtFiltro.Location = new Point(401, 27);
+            txtFiltro.Location = new Point(419, 27);
             txtFiltro.Margin = new Padding(3, 2, 3, 2);
             txtFiltro.Name = "txtFiltro";
-            txtFiltro.PlaceholderText = "Ingrese...";
+            txtFiltro.PlaceholderText = "Ingrese el nombre";
             txtFiltro.Size = new Size(152, 23);
             txtFiltro.TabIndex = 3;
-            txtFiltro.TextChanged += txtFiltro_TextChanged;
             // 
             // btnAgregarHuesped
             // 
@@ -139,11 +131,22 @@
             label3.TabIndex = 5;
             label3.Text = "Gestion de Huéspedes";
             // 
+            // botonBuscar
+            // 
+            botonBuscar.Location = new Point(583, 26);
+            botonBuscar.Name = "botonBuscar";
+            botonBuscar.Size = new Size(75, 23);
+            botonBuscar.TabIndex = 6;
+            botonBuscar.Text = "Buscar";
+            botonBuscar.UseVisualStyleBackColor = true;
+            botonBuscar.Click += botonBuscar_Click;
+            // 
             // FrmHuespedes
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(670, 399);
+            Controls.Add(botonBuscar);
             Controls.Add(label3);
             Controls.Add(btnEliminarHuesped);
             Controls.Add(btnActualizarHuesped);
@@ -152,7 +155,6 @@
             Controls.Add(lblRegistroHuesped);
             Controls.Add(dgtDatosHuesped);
             Controls.Add(label2);
-            Controls.Add(label1);
             Margin = new Padding(3, 2, 3, 2);
             Name = "FrmHuespedes";
             Text = "Gestion de Huespedes";
@@ -163,8 +165,6 @@
         }
 
         #endregion
-
-        private Label label1;
         private DataGridView dgtDatosHuesped;
         private Label lblRegistroHuesped;
         private Label label2;
@@ -173,5 +173,6 @@
         private Button btnActualizarHuesped;
         private Button btnEliminarHuesped;
         private Label label3;
+        private Button botonBuscar;
     }
 }

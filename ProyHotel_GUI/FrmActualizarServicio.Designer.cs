@@ -38,15 +38,16 @@
             label1 = new Label();
             label3 = new Label();
             labelId = new Label();
+            label4 = new Label();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // groupBox1
             // 
             groupBox1.Controls.Add(checkboxDisponible);
-            groupBox1.Location = new Point(21, 165);
+            groupBox1.Location = new Point(12, 165);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(276, 100);
+            groupBox1.Size = new Size(294, 81);
             groupBox1.TabIndex = 8;
             groupBox1.TabStop = false;
             groupBox1.Text = "Estado";
@@ -54,7 +55,7 @@
             // checkboxDisponible
             // 
             checkboxDisponible.AutoSize = true;
-            checkboxDisponible.Location = new Point(15, 42);
+            checkboxDisponible.Location = new Point(17, 37);
             checkboxDisponible.Name = "checkboxDisponible";
             checkboxDisponible.Size = new Size(82, 19);
             checkboxDisponible.TabIndex = 0;
@@ -63,24 +64,24 @@
             // 
             // textboxPrecio
             // 
-            textboxPrecio.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textboxPrecio.Location = new Point(94, 115);
+            textboxPrecio.Font = new Font("Segoe UI", 9F);
+            textboxPrecio.Location = new Point(74, 127);
             textboxPrecio.Name = "textboxPrecio";
-            textboxPrecio.Size = new Size(203, 29);
+            textboxPrecio.Size = new Size(232, 23);
             textboxPrecio.TabIndex = 6;
             // 
             // textboxServicio
             // 
-            textboxServicio.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textboxServicio.Location = new Point(94, 59);
+            textboxServicio.Font = new Font("Segoe UI", 9F);
+            textboxServicio.Location = new Point(74, 88);
             textboxServicio.Name = "textboxServicio";
-            textboxServicio.Size = new Size(203, 29);
+            textboxServicio.Size = new Size(232, 23);
             textboxServicio.TabIndex = 5;
             // 
             // botonCancelar
             // 
             botonCancelar.CausesValidation = false;
-            botonCancelar.Location = new Point(127, 295);
+            botonCancelar.Location = new Point(150, 275);
             botonCancelar.Name = "botonCancelar";
             botonCancelar.Size = new Size(75, 23);
             botonCancelar.TabIndex = 11;
@@ -90,7 +91,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(222, 295);
+            button1.Location = new Point(231, 275);
             button1.Name = "button1";
             button1.Size = new Size(75, 23);
             button1.TabIndex = 9;
@@ -100,48 +101,62 @@
             // 
             // label2
             // 
-            label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(21, 115);
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 9F);
+            label2.Location = new Point(12, 130);
             label2.Name = "label2";
-            label2.Size = new Size(67, 29);
+            label2.Size = new Size(43, 15);
             label2.TabIndex = 10;
-            label2.Text = "Precio";
+            label2.Text = "Precio:";
             label2.TextAlign = ContentAlignment.TopRight;
             // 
             // label1
             // 
-            label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(21, 59);
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 9F);
+            label1.Location = new Point(12, 91);
             label1.Name = "label1";
-            label1.Size = new Size(67, 29);
+            label1.Size = new Size(51, 15);
             label1.TabIndex = 7;
-            label1.Text = "Servicio";
+            label1.Text = "Servicio:";
             label1.TextAlign = ContentAlignment.TopRight;
             // 
             // label3
             // 
-            label3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(21, 12);
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 9F);
+            label3.Location = new Point(12, 52);
             label3.Name = "label3";
-            label3.Size = new Size(67, 29);
+            label3.Size = new Size(20, 15);
             label3.TabIndex = 13;
-            label3.Text = "Id";
+            label3.Text = "Id:";
             label3.TextAlign = ContentAlignment.TopRight;
             // 
             // labelId
             // 
             labelId.BorderStyle = BorderStyle.FixedSingle;
-            labelId.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            labelId.Location = new Point(94, 12);
+            labelId.Font = new Font("Segoe UI", 9F);
+            labelId.Location = new Point(74, 51);
             labelId.Name = "labelId";
-            labelId.Size = new Size(203, 23);
+            labelId.Size = new Size(232, 23);
             labelId.TabIndex = 14;
             // 
-            // EditarServicio
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.Location = new Point(12, 9);
+            label4.Name = "label4";
+            label4.Size = new Size(121, 21);
+            label4.TabIndex = 15;
+            label4.Text = "Editar Servicio";
+            // 
+            // FrmActualizarServicio
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(318, 332);
+            ClientSize = new Size(318, 310);
+            Controls.Add(label4);
             Controls.Add(labelId);
             Controls.Add(label3);
             Controls.Add(groupBox1);
@@ -151,7 +166,7 @@
             Controls.Add(button1);
             Controls.Add(label2);
             Controls.Add(label1);
-            Name = "EditarServicio";
+            Name = "FrmActualizarServicio";
             Text = "Editar Servicio";
             Load += EditarServicio_Load;
             groupBox1.ResumeLayout(false);
@@ -172,5 +187,6 @@
         private Label label1;
         private Label label3;
         private Label labelId;
+        private Label label4;
     }
 }
