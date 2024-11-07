@@ -42,14 +42,14 @@
             reservaToolStripMenuItem = new ToolStripMenuItem();
             reservToolStripMenuItem = new ToolStripMenuItem();
             crearReservaToolStripMenuItem = new ToolStripMenuItem();
+            reporteToolStripMenuItem = new ToolStripMenuItem();
+            reporteDeUsuariosToolStripMenuItem = new ToolStripMenuItem();
             statusStrip1 = new StatusStrip();
             tlblUsuario = new ToolStripStatusLabel();
             tlblComputer = new ToolStripStatusLabel();
             tlblconexion = new ToolStripStatusLabel();
             tlblsesion = new ToolStripStatusLabel();
             timer1 = new System.Windows.Forms.Timer(components);
-            reporteToolStripMenuItem = new ToolStripMenuItem();
-            reporteDeUsuariosToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             statusStrip1.SuspendLayout();
             SuspendLayout();
@@ -139,7 +139,7 @@
             // 
             reservToolStripMenuItem.Image = (Image)resources.GetObject("reservToolStripMenuItem.Image");
             reservToolStripMenuItem.Name = "reservToolStripMenuItem";
-            reservToolStripMenuItem.Size = new Size(180, 22);
+            reservToolStripMenuItem.Size = new Size(145, 22);
             reservToolStripMenuItem.Text = "Reservas";
             reservToolStripMenuItem.Click += reservToolStripMenuItem_Click;
             // 
@@ -147,9 +147,24 @@
             // 
             crearReservaToolStripMenuItem.Image = (Image)resources.GetObject("crearReservaToolStripMenuItem.Image");
             crearReservaToolStripMenuItem.Name = "crearReservaToolStripMenuItem";
-            crearReservaToolStripMenuItem.Size = new Size(180, 22);
+            crearReservaToolStripMenuItem.Size = new Size(145, 22);
             crearReservaToolStripMenuItem.Text = "Crear Reserva";
             crearReservaToolStripMenuItem.Click += crearReservaToolStripMenuItem_Click;
+            // 
+            // reporteToolStripMenuItem
+            // 
+            reporteToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { reporteDeUsuariosToolStripMenuItem });
+            reporteToolStripMenuItem.Image = (Image)resources.GetObject("reporteToolStripMenuItem.Image");
+            reporteToolStripMenuItem.Name = "reporteToolStripMenuItem";
+            reporteToolStripMenuItem.Size = new Size(76, 20);
+            reporteToolStripMenuItem.Text = "Reporte";
+            // 
+            // reporteDeUsuariosToolStripMenuItem
+            // 
+            reporteDeUsuariosToolStripMenuItem.Name = "reporteDeUsuariosToolStripMenuItem";
+            reporteDeUsuariosToolStripMenuItem.Size = new Size(179, 22);
+            reporteDeUsuariosToolStripMenuItem.Text = "Reporte de Usuarios";
+            reporteDeUsuariosToolStripMenuItem.Click += reporteDeUsuariosToolStripMenuItem_Click;
             // 
             // statusStrip1
             // 
@@ -191,21 +206,6 @@
             timer1.Interval = 1000;
             timer1.Tick += timer1_Tick;
             // 
-            // reporteToolStripMenuItem
-            // 
-            reporteToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { reporteDeUsuariosToolStripMenuItem });
-            reporteToolStripMenuItem.Image = (Image)resources.GetObject("reporteToolStripMenuItem.Image");
-            reporteToolStripMenuItem.Name = "reporteToolStripMenuItem";
-            reporteToolStripMenuItem.Size = new Size(76, 20);
-            reporteToolStripMenuItem.Text = "Reporte";
-            // 
-            // reporteDeUsuariosToolStripMenuItem
-            // 
-            reporteDeUsuariosToolStripMenuItem.Name = "reporteDeUsuariosToolStripMenuItem";
-            reporteDeUsuariosToolStripMenuItem.Size = new Size(180, 22);
-            reporteDeUsuariosToolStripMenuItem.Text = "Reporte de Usuarios";
-            reporteDeUsuariosToolStripMenuItem.Click += reporteDeUsuariosToolStripMenuItem_Click;
-            // 
             // Menu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -220,6 +220,7 @@
             Name = "Menu";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Menu";
+            FormClosing += Menu_FormClosing;
             FormClosed += Menu_FormClosed;
             Load += Menu_Load;
             menuStrip1.ResumeLayout(false);

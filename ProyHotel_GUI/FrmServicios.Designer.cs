@@ -42,7 +42,6 @@
             botonEliminar = new Button();
             botonBuscar = new Button();
             buscarServicioTextbox = new TextBox();
-            botonRefrescar = new Button();
             ((System.ComponentModel.ISupportInitialize)gridServicios).BeginInit();
             SuspendLayout();
             // 
@@ -173,22 +172,11 @@
             buscarServicioTextbox.Size = new Size(168, 23);
             buscarServicioTextbox.TabIndex = 8;
             // 
-            // botonRefrescar
-            // 
-            botonRefrescar.Location = new Point(98, 26);
-            botonRefrescar.Name = "botonRefrescar";
-            botonRefrescar.Size = new Size(80, 25);
-            botonRefrescar.TabIndex = 9;
-            botonRefrescar.Text = "Refrescar";
-            botonRefrescar.UseVisualStyleBackColor = true;
-            botonRefrescar.Click += botonRefrescar_Click;
-            // 
-            // Servicios
+            // FrmServicios
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(797, 535);
-            Controls.Add(botonRefrescar);
             Controls.Add(buscarServicioTextbox);
             Controls.Add(botonBuscar);
             Controls.Add(botonEliminar);
@@ -199,7 +187,7 @@
             Controls.Add(label1);
             Controls.Add(gridServicios);
             FormBorderStyle = FormBorderStyle.FixedSingle;
-            Name = "Servicios";
+            Name = "FrmServicios";
             Text = "Gestion Servicios";
             Load += Servicios_Load;
             ((System.ComponentModel.ISupportInitialize)gridServicios).EndInit();
@@ -223,6 +211,5 @@
         private Button botonEliminar;
         private Button botonBuscar;
         private TextBox buscarServicioTextbox;
-        private Button botonRefrescar;
     }
 }

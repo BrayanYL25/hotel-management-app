@@ -52,11 +52,6 @@ namespace ProyHotel_GUI
             frmCrearReserva.Show();
         }
 
-        private void gridReservas_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void gridReservas_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)

@@ -39,14 +39,16 @@ namespace ProyHotel_GUI
         private void botonCrear_Click(object sender, EventArgs e)
         {
             FrmCrearServicio crearServicio = new();
-            crearServicio.Show();
+            crearServicio.ShowDialog();
+            CargarDatos("");
         }
 
         private void botonEditar_Click(object sender, EventArgs e)
         {
             FrmActualizarServicio editarServicio = new();
             editarServicio.id = Convert.ToInt16(gridServicios.CurrentRow.Cells[0].Value.ToString());
-            editarServicio.Show();
+            editarServicio.ShowDialog();
+            CargarDatos("");
         }
 
         private void botonEliminar_Click(object sender, EventArgs e)
@@ -60,11 +62,6 @@ namespace ProyHotel_GUI
         private void botonBuscar_Click(object sender, EventArgs e)
         {
             CargarDatos(buscarServicioTextbox.Text);
-        }
-
-        private void botonRefrescar_Click(object sender, EventArgs e)
-        {
-            CargarDatos("");
         }
     }
 }

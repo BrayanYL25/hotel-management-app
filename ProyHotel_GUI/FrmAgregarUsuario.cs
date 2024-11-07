@@ -36,74 +36,35 @@ namespace ProyHotel_GUI
             cmbUsuario.DataSource = dt;
             cmbUsuario.ValueMember = "tipo_usuario_id";
             cmbUsuario.DisplayMember = "tipo_usuario_descripcion";
-
-
-
-        }
-
-        private void checkActivo_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkActivo.Checked)
-            {
-                checkInactivo.Checked = false;
-            }
-        }
-
-        private void checkInactivo_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkInactivo.Checked)
-            {
-                checkActivo.Checked = false;
-            }
         }
 
         private void btn_Guardar_Click(object sender, EventArgs e)
         {
-
             try
             {
-                if (txtUsuario.Text.Trim().Length > 0 && txtCorreo.Text.Trim().Length > 0 && txtContraseña.Text.Trim().Length > 0)
-                {
-                    if (cmbUsuario.SelectedIndex > 0)
-                    {
-                        objusuarioEntidades.usuarioTipoId = Convert.ToInt16(cmbUsuario.SelectedValue);
-                        objusuarioEntidades.usuarioNombre = txtUsuario.Text.Trim();
-                        objusuarioEntidades.usuarioContraseña = txtContraseña.Text.Trim();
-                        if (checkActivo.Checked)
-                        {
-                            objusuarioEntidades.usuarioEstado = true;
-                        }
-                        else
-                        {
-                            objusuarioEntidades.usuarioEstado = false;
-                        }
-                        objusuarioEntidades.usuarioCorreo = txtCorreo.Text.Trim();
-                        if (objusuario.InsertarUsuario(objusuarioEntidades) == true)
-                        {
-                            this.Close();
-                        }
-                        else
-                        {
-                            throw new Exception("No se inserto el registro contactar con TI");
-                        }
-                    }
-                    else
-                    {
-                        throw new Exception("Debe seleccionar un tipo de Usuario");
-                    }
-                    
-                }
-                else
+                if (txtUsuario.Text.Trim().Length == 0 && txtCorreo.Text.Trim().Length == 0 && txtContraseña.Text.Trim().Length == 0)
                 {
                     throw new Exception("Debe llenar los campos correctamente");
                 }
 
-
+                if (cmbUsuario.SelectedIndex <= 0)
+                {
+                    throw new Exception("Debe seleccionar un tipo de Usuario");
+                }
+                objusuarioEntidades.usuarioTipoId = Convert.ToInt16(cmbUsuario.SelectedValue);
+                objusuarioEntidades.usuarioNombre = txtUsuario.Text.Trim();
+                objusuarioEntidades.usuarioContraseña = txtContraseña.Text.Trim();
+                objusuarioEntidades.usuarioEstado = checkEstado.Checked;
+                objusuarioEntidades.usuarioCorreo = txtCorreo.Text.Trim();
+                if (!objusuario.InsertarUsuario(objusuarioEntidades))
+                {
+                    throw new Exception("No se inserto el registro contactar con TI");
+                }
+                this.Close();
             }
-
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex);
+                MessageBox.Show($"Hubo un error: {ex.Message}");
             }
             
 

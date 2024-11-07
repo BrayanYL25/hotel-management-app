@@ -37,8 +37,6 @@ namespace ProyHotel_GUI
             cmbUsuario.ValueMember = "tipo_usuario_id";
             cmbUsuario.DisplayMember = "tipo_usuario_descripcion";
             cmbUsuario.SelectedIndex = tipousuario;
-
-
         }
 
         private void Actualizar_Usuario_Load(object sender, EventArgs e)
@@ -53,16 +51,7 @@ namespace ProyHotel_GUI
             txtUsuario.Text = objentidades.usuarioNombre;
             txtCorreo.Text = objentidades.usuarioCorreo;
             txtContraseña.Text = objentidades.usuarioContraseña;
-            if (objentidades.usuarioEstado == true)
-            {
-                checkInactivo.Checked = false;
-                checkActivo.Checked = true;
-            }
-            else
-            {
-                checkInactivo.Checked = true;
-                checkActivo.Checked = false;
-            }
+            objentidades.usuarioEstado = checkEstado.Checked;
             tipousuario = objentidades.usuarioTipoId;
         }
 
@@ -70,65 +59,31 @@ namespace ProyHotel_GUI
         {
             try
             {
-                if (txtUsuario.Text.Trim().Length > 0 && txtCorreo.Text.Trim().Length > 0 && txtContraseña.Text.Trim().Length > 0)
-                {
-                    if (cmbUsuario.SelectedIndex > 0)
-                    {
-                        objentidades.usuarioId = Convert.ToInt16(txtId.Text.Trim());
-                        objentidades.usuarioTipoId = Convert.ToInt16(cmbUsuario.SelectedValue);
-                        objentidades.usuarioNombre = txtUsuario.Text.Trim();
-                        objentidades.usuarioContraseña = txtContraseña.Text.Trim();
-                        if (checkActivo.Checked)
-                        {
-                            objentidades.usuarioEstado = true;
-                        }
-                        else
-                        {
-                            objentidades.usuarioEstado = false;
-                        }
-                        objentidades.usuarioCorreo = txtCorreo.Text.Trim();
-                        if (objusuario.ActualizarUsuario(objentidades) == true)
-                        {
-                            this.Close();
-                        }
-                        else
-                        {
-                            throw new Exception("No se Actualizo el registro contactar con TI");
-                        }
-                    }
-                    else
-                    {
-                        throw new Exception("Debe seleccionar un tipo de Usuario");
-                    }
-
-                }
-                else
+                if (txtUsuario.Text.Trim().Length == 0 && txtCorreo.Text.Trim().Length == 0 && txtContraseña.Text.Trim().Length == 0)
                 {
                     throw new Exception("Debe llenar los campos correctamente");
                 }
 
+                if (cmbUsuario.SelectedIndex <= 0)
+                {
+                    throw new Exception("Debe seleccionar un tipo de Usuario");
+                }
 
+                objentidades.usuarioId = Convert.ToInt16(txtId.Text.Trim());
+                objentidades.usuarioTipoId = Convert.ToInt16(cmbUsuario.SelectedValue);
+                objentidades.usuarioNombre = txtUsuario.Text.Trim();
+                objentidades.usuarioContraseña = txtContraseña.Text.Trim();
+                objentidades.usuarioEstado = checkEstado.Checked;
+                objentidades.usuarioCorreo = txtCorreo.Text.Trim();
+                if (!objusuario.ActualizarUsuario(objentidades))
+                {
+                    throw new Exception("No se Actualizo el registro contactar con TI");
+                }
+                this.Close();
             }
-
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex);
-            }
-        }
-
-        private void checkActivo_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkActivo.Checked)
-            {
-                checkInactivo.Checked = false;
-            }
-        }
-
-        private void checkInactivo_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkInactivo.Checked)
-            {
-                checkActivo.Checked = false;
             }
         }
     }

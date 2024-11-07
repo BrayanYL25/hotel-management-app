@@ -123,5 +123,14 @@ namespace ProyHotel_GUI
             frmReportes.MdiParent = this;
             frmReportes.Show();
         }
+
+        private void Menu_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult confirmarCierre = MessageBox.Show("¿Desea cerrar la aplicación?", "Confirmar cierre", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (confirmarCierre != DialogResult.Yes)
+            {
+                e.Cancel = true;
+            }
+        }
     }
 }
