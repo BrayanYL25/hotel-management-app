@@ -38,7 +38,7 @@ namespace ProyHotel_GUI
             dtv = new DataView(objusuario.ListarUsuarios());
             dtv.RowFilter = "Usuario LIKE '%" + filtro + "%'";
             dtgUsuarios.DataSource = dtv;
-            txtRegistros.Text = dtgUsuarios.Rows.Count.ToString();
+            labelResultados.Text = dtgUsuarios.Rows.Count.ToString();
         }
 
         private void dtgUsuarios_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)

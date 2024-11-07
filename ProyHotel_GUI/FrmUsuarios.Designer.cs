@@ -36,7 +36,8 @@
             BtnAgregar = new Button();
             btn_bloquear = new Button();
             label2 = new Label();
-            txtRegistros = new TextBox();
+            label3 = new Label();
+            labelResultados = new Label();
             ((System.ComponentModel.ISupportInitialize)dtgUsuarios).BeginInit();
             SuspendLayout();
             // 
@@ -48,26 +49,26 @@
             dtgUsuarios.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dtgUsuarios.BackgroundColor = Color.White;
             dtgUsuarios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dtgUsuarios.Location = new Point(56, 89);
+            dtgUsuarios.Location = new Point(12, 89);
             dtgUsuarios.Name = "dtgUsuarios";
             dtgUsuarios.ReadOnly = true;
-            dtgUsuarios.Size = new Size(1159, 456);
+            dtgUsuarios.Size = new Size(787, 279);
             dtgUsuarios.TabIndex = 0;
             dtgUsuarios.CellFormatting += dtgUsuarios_CellFormatting;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Yu Gothic UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(61, 34);
+            label1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Location = new Point(518, 34);
             label1.Name = "label1";
-            label1.Size = new Size(71, 21);
+            label1.Size = new Size(54, 15);
             label1.TabIndex = 1;
             label1.Text = "Nombre:";
             // 
             // txtNombre
             // 
-            txtNombre.Location = new Point(138, 36);
+            txtNombre.Location = new Point(578, 30);
             txtNombre.MaxLength = 30;
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(221, 23);
@@ -79,7 +80,7 @@
             btn_Editar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btn_Editar.Image = (Image)resources.GetObject("btn_Editar.Image");
             btn_Editar.ImageAlign = ContentAlignment.MiddleLeft;
-            btn_Editar.Location = new Point(1092, 581);
+            btn_Editar.Location = new Point(551, 393);
             btn_Editar.Name = "btn_Editar";
             btn_Editar.Size = new Size(123, 43);
             btn_Editar.TabIndex = 3;
@@ -92,7 +93,7 @@
             BtnAgregar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             BtnAgregar.Image = (Image)resources.GetObject("BtnAgregar.Image");
             BtnAgregar.ImageAlign = ContentAlignment.MiddleLeft;
-            BtnAgregar.Location = new Point(925, 581);
+            BtnAgregar.Location = new Point(680, 393);
             BtnAgregar.Name = "BtnAgregar";
             BtnAgregar.Size = new Size(119, 43);
             BtnAgregar.TabIndex = 4;
@@ -106,7 +107,7 @@
             btn_bloquear.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btn_bloquear.Image = (Image)resources.GetObject("btn_bloquear.Image");
             btn_bloquear.ImageAlign = ContentAlignment.MiddleLeft;
-            btn_bloquear.Location = new Point(1092, 25);
+            btn_bloquear.Location = new Point(365, 19);
             btn_bloquear.Name = "btn_bloquear";
             btn_bloquear.Size = new Size(109, 43);
             btn_bloquear.TabIndex = 5;
@@ -119,28 +120,40 @@
             // 
             label2.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             label2.AutoSize = true;
-            label2.Location = new Point(62, 554);
+            label2.Location = new Point(19, 407);
             label2.Name = "label2";
             label2.Size = new Size(58, 15);
             label2.TabIndex = 6;
             label2.Text = "Registros:";
             // 
-            // txtRegistros
+            // label3
             // 
-            txtRegistros.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            txtRegistros.Enabled = false;
-            txtRegistros.Location = new Point(126, 551);
-            txtRegistros.Name = "txtRegistros";
-            txtRegistros.Size = new Size(49, 23);
-            txtRegistros.TabIndex = 7;
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.Location = new Point(12, 28);
+            label3.Name = "label3";
+            label3.Size = new Size(161, 21);
+            label3.TabIndex = 8;
+            label3.Text = "Gestión de Usuarios";
             // 
-            // Usuarios
+            // labelResultados
+            // 
+            labelResultados.BorderStyle = BorderStyle.FixedSingle;
+            labelResultados.Location = new Point(83, 403);
+            labelResultados.Name = "labelResultados";
+            labelResultados.Size = new Size(100, 23);
+            labelResultados.TabIndex = 9;
+            labelResultados.Text = "0";
+            labelResultados.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // FrmUsuarios
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
-            ClientSize = new Size(1304, 636);
-            Controls.Add(txtRegistros);
+            BackColor = SystemColors.Control;
+            ClientSize = new Size(811, 459);
+            Controls.Add(labelResultados);
+            Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(btn_bloquear);
             Controls.Add(BtnAgregar);
@@ -149,7 +162,7 @@
             Controls.Add(label1);
             Controls.Add(dtgUsuarios);
             FormBorderStyle = FormBorderStyle.FixedSingle;
-            Name = "Usuarios";
+            Name = "FrmUsuarios";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Gestion Usuarios";
             Load += Usuarios_Load;
@@ -167,6 +180,7 @@
         private Button BtnAgregar;
         private Button btn_bloquear;
         private Label label2;
-        private TextBox txtRegistros;
+        private Label label3;
+        private Label labelResultados;
     }
 }

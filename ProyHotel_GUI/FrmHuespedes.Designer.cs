@@ -36,13 +36,14 @@
             btnAgregarHuesped = new Button();
             btnActualizarHuesped = new Button();
             btnEliminarHuesped = new Button();
+            label3 = new Label();
             ((System.ComponentModel.ISupportInitialize)dgtDatosHuesped).BeginInit();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(13, 42);
+            label1.Location = new Point(559, 30);
             label1.Name = "label1";
             label1.Size = new Size(100, 15);
             label1.TabIndex = 0;
@@ -53,19 +54,19 @@
             dgtDatosHuesped.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dgtDatosHuesped.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgtDatosHuesped.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgtDatosHuesped.Location = new Point(12, 98);
+            dgtDatosHuesped.Location = new Point(12, 71);
             dgtDatosHuesped.Margin = new Padding(3, 2, 3, 2);
             dgtDatosHuesped.Name = "dgtDatosHuesped";
             dgtDatosHuesped.ReadOnly = true;
             dgtDatosHuesped.RowHeadersWidth = 51;
-            dgtDatosHuesped.Size = new Size(646, 240);
+            dgtDatosHuesped.Size = new Size(646, 265);
             dgtDatosHuesped.TabIndex = 1;
             // 
             // lblRegistroHuesped
             // 
             lblRegistroHuesped.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             lblRegistroHuesped.BorderStyle = BorderStyle.FixedSingle;
-            lblRegistroHuesped.Location = new Point(77, 389);
+            lblRegistroHuesped.Location = new Point(77, 361);
             lblRegistroHuesped.Name = "lblRegistroHuesped";
             lblRegistroHuesped.Size = new Size(78, 22);
             lblRegistroHuesped.TabIndex = 2;
@@ -74,7 +75,7 @@
             // 
             label2.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             label2.AutoSize = true;
-            label2.Location = new Point(13, 390);
+            label2.Location = new Point(13, 362);
             label2.Name = "label2";
             label2.Size = new Size(58, 15);
             label2.TabIndex = 0;
@@ -82,17 +83,18 @@
             // 
             // txtFiltro
             // 
-            txtFiltro.Location = new Point(119, 39);
+            txtFiltro.Location = new Point(401, 27);
             txtFiltro.Margin = new Padding(3, 2, 3, 2);
             txtFiltro.Name = "txtFiltro";
-            txtFiltro.Size = new Size(110, 23);
+            txtFiltro.PlaceholderText = "Ingrese...";
+            txtFiltro.Size = new Size(152, 23);
             txtFiltro.TabIndex = 3;
             txtFiltro.TextChanged += txtFiltro_TextChanged;
             // 
             // btnAgregarHuesped
             // 
             btnAgregarHuesped.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            btnAgregarHuesped.Location = new Point(577, 391);
+            btnAgregarHuesped.Location = new Point(577, 363);
             btnAgregarHuesped.Margin = new Padding(3, 2, 3, 2);
             btnAgregarHuesped.Name = "btnAgregarHuesped";
             btnAgregarHuesped.Size = new Size(82, 25);
@@ -104,7 +106,7 @@
             // btnActualizarHuesped
             // 
             btnActualizarHuesped.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            btnActualizarHuesped.Location = new Point(489, 391);
+            btnActualizarHuesped.Location = new Point(489, 363);
             btnActualizarHuesped.Margin = new Padding(3, 2, 3, 2);
             btnActualizarHuesped.Name = "btnActualizarHuesped";
             btnActualizarHuesped.Size = new Size(82, 25);
@@ -116,7 +118,7 @@
             // btnEliminarHuesped
             // 
             btnEliminarHuesped.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            btnEliminarHuesped.Location = new Point(401, 391);
+            btnEliminarHuesped.Location = new Point(401, 363);
             btnEliminarHuesped.Margin = new Padding(3, 2, 3, 2);
             btnEliminarHuesped.Name = "btnEliminarHuesped";
             btnEliminarHuesped.Size = new Size(82, 25);
@@ -125,11 +127,22 @@
             btnEliminarHuesped.UseVisualStyleBackColor = true;
             btnEliminarHuesped.Click += btnEliminar_Click;
             // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.Location = new Point(13, 27);
+            label3.Name = "label3";
+            label3.Size = new Size(178, 21);
+            label3.TabIndex = 5;
+            label3.Text = "Gestion de Huéspedes";
+            // 
             // FrmHuespedes
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(670, 438);
+            ClientSize = new Size(670, 399);
+            Controls.Add(label3);
             Controls.Add(btnEliminarHuesped);
             Controls.Add(btnActualizarHuesped);
             Controls.Add(btnAgregarHuesped);
@@ -157,5 +170,6 @@
         private Button btnAgregarHuesped;
         private Button btnActualizarHuesped;
         private Button btnEliminarHuesped;
+        private Label label3;
     }
 }

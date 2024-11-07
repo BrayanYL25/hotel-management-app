@@ -113,7 +113,7 @@ namespace ProyHotel_GUI
                 if (vrpta == DialogResult.Yes)
                 {
                     String strCodigo = dgtDatosHabitaciones.CurrentRow.Cells[0].Value.ToString();
-                    if(objHabitacionesBL.EliminarHabitacion(strCodigo) == true)
+                    if (objHabitacionesBL.EliminarHabitacion(strCodigo) == true)
                     {
                         CargarDatos(txtFiltroHabitacion.Text.Trim());
                     }
@@ -125,8 +125,13 @@ namespace ProyHotel_GUI
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " +ex.Message);
+                MessageBox.Show("Error: " + ex.Message);
             }
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

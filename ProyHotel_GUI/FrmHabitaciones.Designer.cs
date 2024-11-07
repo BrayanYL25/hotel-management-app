@@ -44,12 +44,12 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 20F);
-            label1.Location = new Point(366, 33);
+            label1.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(12, 18);
             label1.Name = "label1";
-            label1.Size = new Size(368, 37);
+            label1.Size = new Size(178, 20);
             label1.TabIndex = 0;
-            label1.Text = "FORMULARIO HABITACIONES";
+            label1.Text = "Gestión de Habitaciones";
             // 
             // button1
             // 
@@ -65,15 +65,15 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(59, 50);
+            label2.Location = new Point(597, 23);
             label2.Name = "label2";
-            label2.Size = new Size(114, 15);
+            label2.Size = new Size(48, 15);
             label2.TabIndex = 2;
-            label2.Text = "Buscar por nombre: ";
+            label2.Text = "Buscar: ";
             // 
             // txtFiltroHabitacion
             // 
-            txtFiltroHabitacion.Location = new Point(208, 46);
+            txtFiltroHabitacion.Location = new Point(651, 19);
             txtFiltroHabitacion.Margin = new Padding(3, 2, 3, 2);
             txtFiltroHabitacion.Name = "txtFiltroHabitacion";
             txtFiltroHabitacion.Size = new Size(110, 23);
@@ -83,19 +83,21 @@
             // dgtDatosHabitaciones
             // 
             dgtDatosHabitaciones.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            dgtDatosHabitaciones.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgtDatosHabitaciones.BackgroundColor = SystemColors.ControlLightLight;
             dgtDatosHabitaciones.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgtDatosHabitaciones.Location = new Point(31, 83);
+            dgtDatosHabitaciones.Location = new Point(12, 57);
             dgtDatosHabitaciones.Name = "dgtDatosHabitaciones";
             dgtDatosHabitaciones.RowHeadersVisible = false;
             dgtDatosHabitaciones.RowHeadersWidth = 51;
-            dgtDatosHabitaciones.Size = new Size(900, 332);
+            dgtDatosHabitaciones.Size = new Size(750, 341);
             dgtDatosHabitaciones.TabIndex = 0;
             // 
             // lblRegistroHabitaciones
             // 
             lblRegistroHabitaciones.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             lblRegistroHabitaciones.BorderStyle = BorderStyle.FixedSingle;
-            lblRegistroHabitaciones.Location = new Point(815, 429);
+            lblRegistroHabitaciones.Location = new Point(119, 425);
             lblRegistroHabitaciones.Name = "lblRegistroHabitaciones";
             lblRegistroHabitaciones.Size = new Size(84, 22);
             lblRegistroHabitaciones.TabIndex = 4;
@@ -104,22 +106,23 @@
             // 
             label3.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             label3.AutoSize = true;
-            label3.Location = new Point(665, 436);
+            label3.Location = new Point(11, 426);
             label3.Name = "label3";
             label3.Size = new Size(102, 15);
             label3.TabIndex = 2;
             label3.Text = "Total de registros: ";
+            label3.Click += label3_Click;
             // 
             // btnAgregarHabitacion
             // 
             btnAgregarHabitacion.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btnAgregarHabitacion.AutoSize = true;
-            btnAgregarHabitacion.Location = new Point(494, 469);
+            btnAgregarHabitacion.Location = new Point(681, 417);
             btnAgregarHabitacion.Margin = new Padding(3, 2, 3, 2);
             btnAgregarHabitacion.Name = "btnAgregarHabitacion";
-            btnAgregarHabitacion.Size = new Size(122, 38);
+            btnAgregarHabitacion.Size = new Size(80, 30);
             btnAgregarHabitacion.TabIndex = 5;
-            btnAgregarHabitacion.Text = "AGREGAR";
+            btnAgregarHabitacion.Text = "Crear";
             btnAgregarHabitacion.UseVisualStyleBackColor = true;
             btnAgregarHabitacion.Click += btnAgregarHabitacion_Click;
             // 
@@ -127,12 +130,12 @@
             // 
             btnActualizar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btnActualizar.AutoSize = true;
-            btnActualizar.Location = new Point(652, 469);
+            btnActualizar.Location = new Point(589, 417);
             btnActualizar.Margin = new Padding(3, 2, 3, 2);
             btnActualizar.Name = "btnActualizar";
-            btnActualizar.Size = new Size(122, 38);
+            btnActualizar.Size = new Size(86, 30);
             btnActualizar.TabIndex = 5;
-            btnActualizar.Text = "ACTUALIZAR";
+            btnActualizar.Text = "Editar";
             btnActualizar.UseVisualStyleBackColor = true;
             btnActualizar.Click += btnActualizar_Click;
             // 
@@ -140,12 +143,12 @@
             // 
             btnEliminar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btnEliminar.AutoSize = true;
-            btnEliminar.Location = new Point(794, 469);
+            btnEliminar.Location = new Point(503, 417);
             btnEliminar.Margin = new Padding(3, 2, 3, 2);
             btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(122, 38);
+            btnEliminar.Size = new Size(80, 30);
             btnEliminar.TabIndex = 5;
-            btnEliminar.Text = "ELIMINAR";
+            btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = true;
             btnEliminar.Click += btnEliminar_Click;
             // 
@@ -153,7 +156,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(954, 524);
+            ClientSize = new Size(774, 458);
             Controls.Add(btnEliminar);
             Controls.Add(btnActualizar);
             Controls.Add(btnAgregarHabitacion);
