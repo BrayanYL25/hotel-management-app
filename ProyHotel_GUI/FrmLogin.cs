@@ -16,34 +16,32 @@ namespace ProyHotel_GUI
             InitializeComponent();
         }
 
-        private void btnAceptar_Click(object sender, EventArgs e)
+        private void Login()
         {
             try
             {
-                if (txtLogin.Text.Trim() != String.Empty && txtPassword.Text.Trim() != String.Empty)
-                {
-                    objUsuarioBE = objUsuarioBL.IngresoUsuario(txtLogin.Text.Trim(), txtPassword.Text.Trim());
-                    if (objUsuarioBE.usuarioNombre == null)
-                    {
-                        intentos += 1;
-                        throw new Exception("El usuario no existe o la contraseña es incorrecta");
-                    }
-                    else
-                    {
-                        this.Hide();
-                        timer1.Enabled = false;
-                        clsCredenciales.id = objUsuarioBE.usuarioId;
-                        clsCredenciales.Usuario = objUsuarioBE.usuarioNombre;
-                        clsCredenciales.Password = objUsuarioBE.usuarioContraseña;
-                        clsCredenciales.Nivel = objUsuarioBE.usuarioEstado;
-                        Menu men = new Menu();
-                        men.ShowDialog();
-                    }
-                }
-                else
+                if (txtLogin.Text.Trim() == String.Empty && txtPassword.Text.Trim() == String.Empty)
                 {
                     intentos += 1;
                     throw new Exception("El ingreso del usuario y contraseña es obligatorio");
+                }
+
+                objUsuarioBE = objUsuarioBL.IngresoUsuario(txtLogin.Text.Trim(), txtPassword.Text.Trim());
+                if (objUsuarioBE.usuarioNombre == null)
+                {
+                    intentos += 1;
+                    throw new Exception("El usuario no existe o la contraseña es incorrecta");
+                }
+                else
+                {
+                    this.Hide();
+                    timer1.Enabled = false;
+                    clsCredenciales.id = objUsuarioBE.usuarioId;
+                    clsCredenciales.Usuario = objUsuarioBE.usuarioNombre;
+                    clsCredenciales.Password = objUsuarioBE.usuarioContraseña;
+                    clsCredenciales.Nivel = objUsuarioBE.usuarioEstado;
+                    Menu men = new Menu();
+                    men.ShowDialog();
                 }
             }
             catch (Exception ex)
@@ -55,6 +53,11 @@ namespace ProyHotel_GUI
                     Application.Exit();
                 }
             }
+        }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            Login();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -80,11 +83,20 @@ namespace ProyHotel_GUI
             Application.Exit();
         }
 
-        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        private void FrmLogin_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
+            if (e.KeyChar == (char)Keys.Enter)
             {
-                btnAceptar.PerformClick();
+                Login();
+            }
+        }
+
+        private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                e.Handled = true;
+                Login();
             }
         }
     }
