@@ -170,7 +170,7 @@
             botonCrear.Name = "botonCrear";
             botonCrear.Size = new Size(98, 30);
             botonCrear.TabIndex = 4;
-            botonCrear.Text = "Crear Reserva";
+            botonCrear.Text = "Crear";
             botonCrear.UseVisualStyleBackColor = true;
             botonCrear.Click += botonCrear_Click;
             // 
@@ -180,7 +180,7 @@
             botonEditar.Name = "botonEditar";
             botonEditar.Size = new Size(98, 30);
             botonEditar.TabIndex = 5;
-            botonEditar.Text = "Editar Reserva";
+            botonEditar.Text = "Editar";
             botonEditar.UseVisualStyleBackColor = true;
             botonEditar.Click += botonEditar_Click;
             // 

@@ -58,7 +58,7 @@
             gridServicios.Name = "gridServicios";
             gridServicios.ReadOnly = true;
             gridServicios.RowHeadersVisible = false;
-            gridServicios.Size = new Size(772, 382);
+            gridServicios.Size = new Size(772, 378);
             gridServicios.TabIndex = 0;
             // 
             // Id
@@ -99,7 +99,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(13, 481);
+            label1.Location = new Point(13, 476);
             label1.Name = "label1";
             label1.Size = new Size(55, 15);
             label1.TabIndex = 1;
@@ -108,7 +108,7 @@
             // recordsCount
             // 
             recordsCount.BorderStyle = BorderStyle.FixedSingle;
-            recordsCount.Location = new Point(74, 480);
+            recordsCount.Location = new Point(80, 471);
             recordsCount.Name = "recordsCount";
             recordsCount.Size = new Size(100, 25);
             recordsCount.TabIndex = 2;
@@ -116,7 +116,7 @@
             // 
             // botonCrear
             // 
-            botonCrear.Location = new Point(606, 481);
+            botonCrear.Location = new Point(705, 471);
             botonCrear.Name = "botonCrear";
             botonCrear.Size = new Size(80, 25);
             botonCrear.TabIndex = 3;
@@ -126,7 +126,7 @@
             // 
             // botonEditar
             // 
-            botonEditar.Location = new Point(705, 481);
+            botonEditar.Location = new Point(619, 471);
             botonEditar.Name = "botonEditar";
             botonEditar.Size = new Size(80, 25);
             botonEditar.TabIndex = 4;
@@ -140,13 +140,13 @@
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.Location = new Point(13, 26);
             label2.Name = "label2";
-            label2.Size = new Size(79, 21);
+            label2.Size = new Size(156, 21);
             label2.TabIndex = 5;
-            label2.Text = "Servicios";
+            label2.Text = "Gestionar Servicios";
             // 
             // botonEliminar
             // 
-            botonEliminar.Location = new Point(511, 481);
+            botonEliminar.Location = new Point(531, 471);
             botonEliminar.Name = "botonEliminar";
             botonEliminar.Size = new Size(80, 25);
             botonEliminar.TabIndex = 6;
@@ -176,7 +176,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(797, 535);
+            ClientSize = new Size(797, 505);
             Controls.Add(buscarServicioTextbox);
             Controls.Add(botonBuscar);
             Controls.Add(botonEliminar);

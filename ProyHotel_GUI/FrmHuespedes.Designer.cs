@@ -105,7 +105,7 @@
             btnActualizarHuesped.Name = "btnActualizarHuesped";
             btnActualizarHuesped.Size = new Size(82, 25);
             btnActualizarHuesped.TabIndex = 4;
-            btnActualizarHuesped.Text = "Actualizar";
+            btnActualizarHuesped.Text = "Editar";
             btnActualizarHuesped.UseVisualStyleBackColor = true;
             btnActualizarHuesped.Click += btnActualizarHuesped_Click;
             // 
