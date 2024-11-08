@@ -121,6 +121,7 @@
             txtPassword.PasswordChar = '*';
             txtPassword.Size = new Size(164, 23);
             txtPassword.TabIndex = 11;
+            txtPassword.KeyPress += txtPassword_KeyPress;
             // 
             // label2
             // 
@@ -192,7 +193,6 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             FormClosed += Form1_FormClosed;
-            KeyDown += Form1_KeyDown;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();

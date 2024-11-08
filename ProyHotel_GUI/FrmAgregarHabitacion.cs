@@ -32,7 +32,6 @@ namespace ProyHotel_GUI
         {
             try
             {
-                //codigo
                 DataTable dt = objTipoHabitacionesBL.ListarTipoHabitaciones();
                 DataRow dr;
 
@@ -46,7 +45,6 @@ namespace ProyHotel_GUI
                 cboTipo.ValueMember = "tipo_habitacion_id";
                 cboTipo.DisplayMember = "tipo_habitacion_descripcion";
 
-
             }
             catch (Exception ex)
             {
@@ -54,14 +52,10 @@ namespace ProyHotel_GUI
             }
         }
 
-        //grabar
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             try
             {
-                //codigo 
-                //validamos
-
                 if (txtNombre.Text.Trim() == String.Empty)
                 {
                     throw new Exception("El campo de nombre es obligatoria");
@@ -75,7 +69,6 @@ namespace ProyHotel_GUI
                     throw new Exception("El Precio es obligatorio");
                 }
                 
-                //si todo esta OK .. . cargamos el obj 
 
                 objHabitacionBE.habitacion_nombre = txtNombre.Text.Trim();
                 objHabitacionBE.tipo_habitacion_id = Convert.ToInt16(cboTipo.SelectedIndex);
@@ -83,9 +76,6 @@ namespace ProyHotel_GUI
                 objHabitacionBE.estado_habitacion = Convert.ToInt16(chkActivo.Checked);
                 objHabitacionBE.habitacion_aforo = Convert.ToInt16(txtAforo.Text);
 
-
-                //usuario que registro
-                //objHabitacionBE.Usuario_registro = "vincent";
                 if (objHabitacionBL.InsertarHabitacion(objHabitacionBE) == true)
                 {
                     this.Close();
@@ -94,13 +84,10 @@ namespace ProyHotel_GUI
                 {
                     throw new Exception("no se realizo la insercion contactate con soporte");
                 }
-
-
-
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message);
+                MessageBox.Show($"Hubo un error: {ex.Message}");
             }
         }
 
