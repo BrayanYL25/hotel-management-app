@@ -89,6 +89,7 @@
             botonEditar.TabIndex = 5;
             botonEditar.Text = "Editar";
             botonEditar.UseVisualStyleBackColor = true;
+            botonEditar.Click += botonEditar_Click;
             // 
             // botonCancelar
             // 
@@ -98,6 +99,7 @@
             botonCancelar.TabIndex = 6;
             botonCancelar.Text = "Cancelar";
             botonCancelar.UseVisualStyleBackColor = true;
+            botonCancelar.Click += botonCancelar_Click;
             // 
             // FrmActualizarTipoUsuario
             // 
@@ -113,6 +115,7 @@
             Controls.Add(label1);
             Name = "FrmActualizarTipoUsuario";
             Text = "Editar tipo de usuario";
+            Load += FrmActualizarTipoUsuario_Load;
             ResumeLayout(false);
             PerformLayout();
         }

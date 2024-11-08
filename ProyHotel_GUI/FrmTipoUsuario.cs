@@ -38,5 +38,20 @@ namespace ProyHotel_GUI
         {
             CargarDatos(textboxTipoUsuario.Text);
         }
+
+        private void botonCrearTipoUsuario_Click(object sender, EventArgs e)
+        {
+            FrmAgregarTipoUsuario frmAgregarTipoUsuario = new();
+            frmAgregarTipoUsuario.ShowDialog();
+            CargarDatos("");
+        }
+
+        private void botonEditar_Click(object sender, EventArgs e)
+        {
+            int id = int.Parse(gridTipoUsuario.CurrentRow.Cells[0].Value.ToString());
+            FrmActualizarTipoUsuario frmActualizarTipoUsuario = new(id);
+            frmActualizarTipoUsuario.ShowDialog();
+            CargarDatos("");
+        }
     }
 }

@@ -91,6 +91,7 @@
             botonCrearTipoUsuario.TabIndex = 2;
             botonCrearTipoUsuario.Text = "Crear";
             botonCrearTipoUsuario.UseVisualStyleBackColor = true;
+            botonCrearTipoUsuario.Click += botonCrearTipoUsuario_Click;
             // 
             // botonEditar
             // 
@@ -100,6 +101,7 @@
             botonEditar.TabIndex = 3;
             botonEditar.Text = "Editar";
             botonEditar.UseVisualStyleBackColor = true;
+            botonEditar.Click += botonEditar_Click;
             // 
             // labelResultado
             // 
