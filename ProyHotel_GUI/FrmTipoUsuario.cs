@@ -53,5 +53,18 @@ namespace ProyHotel_GUI
             frmActualizarTipoUsuario.ShowDialog();
             CargarDatos("");
         }
+
+        private void botonEliminar_Click(object sender, EventArgs e)
+        {
+            int id = int.Parse(gridTipoUsuario.CurrentRow.Cells[0].Value.ToString());
+            try
+            {
+                tipoUsuarioBL.BorrarTipoUsuario(id);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Hubo un error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); 
+            }
+        }
     }
 }

@@ -130,6 +130,7 @@
             botonEliminar.TabIndex = 6;
             botonEliminar.Text = "Eliminar";
             botonEliminar.UseVisualStyleBackColor = true;
+            botonEliminar.Click += botonEliminar_Click;
             // 
             // textboxTipoUsuario
             // 
