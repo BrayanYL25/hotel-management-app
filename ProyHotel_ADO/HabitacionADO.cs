@@ -124,15 +124,12 @@ namespace ProyHotel_ADO
 
                 cmd.Parameters.AddWithValue("@tipo_habitacion_id", objHabitacionBE.tipo_habitacion_id);
                 cmd.Parameters.AddWithValue("@habitacion_nombre", objHabitacionBE.habitacion_nombre);
-                cmd.Parameters.AddWithValue("@precio_noche", objHabitacionBE.precio_noche);
                 cmd.Parameters.AddWithValue("@habitacion_aforo", objHabitacionBE.habitacion_aforo);
                 cmd.Parameters.AddWithValue("@estado_habitacion", objHabitacionBE.estado_habitacion);
 
                 cnx.Open();
                 cmd.ExecuteNonQuery();
                 return true;
-
-
             }
             catch (SqlException x)
             {
