@@ -64,17 +64,11 @@ namespace ProyHotel_GUI
                 {
                     throw new Exception("El campo de Tipo es obligatoria");
                 }
-                if (txtPrecioPorNoche.Text.Trim() == String.Empty)
-                {
-                    throw new Exception("El Precio es obligatorio");
-                }
-                
 
                 objHabitacionBE.habitacion_nombre = txtNombre.Text.Trim();
                 objHabitacionBE.tipo_habitacion_id = Convert.ToInt16(cboTipo.SelectedIndex);
-                objHabitacionBE.precio_noche = Convert.ToSingle(txtPrecioPorNoche.Text);
                 objHabitacionBE.estado_habitacion = Convert.ToInt16(chkActivo.Checked);
-                objHabitacionBE.habitacion_aforo = Convert.ToInt16(txtAforo.Text);
+                objHabitacionBE.habitacion_aforo = Convert.ToInt16(numericoAforo.Value);
 
                 if (objHabitacionBL.InsertarHabitacion(objHabitacionBE) == true)
                 {
@@ -103,19 +97,6 @@ namespace ProyHotel_GUI
             e.Handled = !(char.IsDigit(e.KeyChar)
                 || e.KeyChar == (char)Keys.Back
                 || e.KeyChar.ToString() == cc.NumberFormat.NumberDecimalSeparator);
-        }
-
-        private void txtAforo_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (txtAforo.Text.Length >= 1 && e.KeyChar != (char)Keys.Back)
-            {
-                e.Handled = true; // Bloquea la entrada si ya hay un carácter
-            }
-            else
-            {
-                e.Handled = !(e.KeyChar >= '1' && e.KeyChar <= '9' || e.KeyChar == (char)Keys.Back);
-            }
-
         }
     }
 }
