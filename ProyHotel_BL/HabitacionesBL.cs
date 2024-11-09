@@ -33,9 +33,9 @@ namespace ProyHotel_BL
         {
             return objHabitacionADO.InsertarHabitacion(objHabitacionBE);
         }
-        public Boolean ActualizarHabitacion(HabitacionBE objHabitacioBE)
+        public Boolean ActualizarHabitacion(HabitacionBE objHabitacioBE, int usuarioId)
         {
-            return objHabitacionADO.ActualizarHabitacion(objHabitacioBE);
+            return objHabitacionADO.ActualizarHabitacion(objHabitacioBE, usuarioId);
         }
         public Boolean EliminarHabitacion(String strCodigo)
         {
