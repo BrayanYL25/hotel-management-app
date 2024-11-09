@@ -9,6 +9,7 @@ namespace ProyHotel_BE
     public class ReservaBE
     {
         public int reservaId { get; set; }
+        public int usuarioUltimaModificacion { get; set; }
         public string reservaNombre { get; set; }
         public int usuarioId { get; set; }
         public string usuarioDni { get; set; }

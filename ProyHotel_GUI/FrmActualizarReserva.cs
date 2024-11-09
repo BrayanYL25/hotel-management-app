@@ -1,5 +1,6 @@
 ﻿using ProyHotel_BE;
 using ProyHotel_BL;
+using ProyVentas_GUI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,22 +17,18 @@ namespace ProyHotel_GUI
     {
         ReservasBL objReservasBL = new ReservasBL();
         ReservaBE objReservaBE = new ReservaBE();
+        public int Codigo { get; set; }
+
         public FrmActualizarReserva()
         {
             InitializeComponent();
         }
-        //referencia para editar reserva
-        public int Codigo { get; set; }
 
-        //cargar datos en la pantalla
         private void FrmActualizarReserva_Load(object sender, EventArgs e)
         {
             try
             {
-                // instanciamos para mostrar datos en la pantalla
                 objReservaBE = objReservasBL.ConsultarReserva(Codigo);
-
-                //mostramos
                 txtNombre.Text = objReservaBE.reservaNombre;
                 txtDNI.Text = objReservaBE.usuarioDni;
                 txtTelefono.Text = objReservaBE.usuarioTelefono;
@@ -44,38 +41,31 @@ namespace ProyHotel_GUI
             }
         }
 
-        //boton cerrar
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        //boton actualizar
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-
-            //validamos
-            // Validación de campos obligatorios
             if (string.IsNullOrWhiteSpace(txtNombre.Text) || string.IsNullOrWhiteSpace(txtDNI.Text) || string.IsNullOrWhiteSpace(txtTelefono.Text))
             {
                 MessageBox.Show("Todos los campos son obligatorios.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            // Validación del campo de teléfono
             if (txtTelefono.Text.Trim().Length != 9 || !txtTelefono.Text.All(char.IsDigit))
             {
                 MessageBox.Show("El campo de teléfono tiene que tener 9 dígitos y solo números.", "Validación de Teléfono", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-
             objReservaBE.reservaNombre = txtNombre.Text.Trim();
             objReservaBE.usuarioTelefono = txtTelefono.Text.Trim();
             objReservaBE.usuarioDni = txtDNI.Text.Trim();
             objReservaBE.reservaEstado = chkActivo.Checked;
             objReservaBE.estadoPago = chkPagado.Checked;
-
+            objReservaBE.usuarioUltimaModificacion = clsCredenciales.id;
 
             try
             {
