@@ -148,7 +148,7 @@ namespace ProyHotel_ADO
                 cmd.Parameters.AddWithValue("@usuario_dni", reserva.usuarioDni);
                 cmd.Parameters.AddWithValue("@reserva_nombre", reserva.reservaNombre);
                 cmd.Parameters.AddWithValue("@usuario_telefono", reserva.usuarioTelefono);
-                //cmd.Parameters.AddWithValue("@precio_total", reserva.precioTotal);
+                cmd.Parameters.AddWithValue("@usuario_ult_modificacion", reserva.usuarioUltimaModificacion);
                 cmd.Parameters.AddWithValue("@reserva_estado", reserva.reservaEstado);
                 cmd.Parameters.AddWithValue("@estado_pago", reserva.estadoPago);
 
