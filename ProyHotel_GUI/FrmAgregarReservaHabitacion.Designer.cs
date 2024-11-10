@@ -152,7 +152,7 @@
             btnAgregar.Name = "btnAgregar";
             btnAgregar.Size = new Size(96, 30);
             btnAgregar.TabIndex = 4;
-            btnAgregar.Text = "Agregar";
+            btnAgregar.Text = "Reservar";
             btnAgregar.UseVisualStyleBackColor = true;
             btnAgregar.Click += btnAgregar_Click;
             // 
