@@ -36,21 +36,23 @@
             dtpCheckOut = new DateTimePicker();
             cbxTipoHabitacion = new ComboBox();
             labelTipoHabitacion = new Label();
-            lblPrecioEstadia = new Label();
+            labelPrecioNoche = new Label();
             label6 = new Label();
             btnAgregar = new Button();
             btnCancelar = new Button();
             label5 = new Label();
             labelHabitacion = new Label();
             comboboxHabitacion = new ComboBox();
+            label4 = new Label();
+            lblPrecioEstadia = new Label();
             SuspendLayout();
             // 
             // lblReservaId
             // 
             lblReservaId.BorderStyle = BorderStyle.FixedSingle;
-            lblReservaId.Location = new Point(173, 60);
+            lblReservaId.Location = new Point(173, 59);
             lblReservaId.Name = "lblReservaId";
-            lblReservaId.Size = new Size(84, 19);
+            lblReservaId.Size = new Size(219, 25);
             lblReservaId.TabIndex = 0;
             // 
             // label1
@@ -64,7 +66,8 @@
             // 
             // dtpCheckIn
             // 
-            dtpCheckIn.Location = new Point(173, 167);
+            dtpCheckIn.Format = DateTimePickerFormat.Short;
+            dtpCheckIn.Location = new Point(173, 209);
             dtpCheckIn.Margin = new Padding(3, 2, 3, 2);
             dtpCheckIn.Name = "dtpCheckIn";
             dtpCheckIn.Size = new Size(219, 23);
@@ -75,7 +78,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(12, 167);
+            label2.Location = new Point(12, 209);
             label2.Name = "label2";
             label2.Size = new Size(111, 15);
             label2.TabIndex = 1;
@@ -84,7 +87,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(12, 205);
+            label3.Location = new Point(12, 247);
             label3.Name = "label3";
             label3.Size = new Size(119, 15);
             label3.TabIndex = 1;
@@ -92,12 +95,15 @@
             // 
             // dtpCheckOut
             // 
-            dtpCheckOut.Location = new Point(173, 206);
+            dtpCheckOut.Format = DateTimePickerFormat.Short;
+            dtpCheckOut.Location = new Point(173, 248);
             dtpCheckOut.Margin = new Padding(3, 2, 3, 2);
+            dtpCheckOut.MinDate = new DateTime(1900, 1, 1, 0, 0, 0, 0);
             dtpCheckOut.Name = "dtpCheckOut";
             dtpCheckOut.Size = new Size(219, 23);
-            dtpCheckOut.TabIndex = 2;
+            dtpCheckOut.TabIndex = 3;
             dtpCheckOut.Value = new DateTime(2024, 10, 28, 19, 1, 2, 0);
+            dtpCheckOut.ValueChanged += dtpCheckOut_ValueChanged;
             // 
             // cbxTipoHabitacion
             // 
@@ -107,7 +113,8 @@
             cbxTipoHabitacion.Margin = new Padding(3, 2, 3, 2);
             cbxTipoHabitacion.Name = "cbxTipoHabitacion";
             cbxTipoHabitacion.Size = new Size(219, 23);
-            cbxTipoHabitacion.TabIndex = 3;
+            cbxTipoHabitacion.TabIndex = 0;
+            cbxTipoHabitacion.SelectedIndexChanged += cbxTipoHabitacion_SelectedIndexChanged;
             cbxTipoHabitacion.SelectionChangeCommitted += cbxTipoHabitacion_SelectionChangeCommitted;
             // 
             // labelTipoHabitacion
@@ -119,19 +126,20 @@
             labelTipoHabitacion.TabIndex = 1;
             labelTipoHabitacion.Text = "Tipo Habitacion:";
             // 
-            // lblPrecioEstadia
+            // labelPrecioNoche
             // 
-            lblPrecioEstadia.BorderStyle = BorderStyle.FixedSingle;
-            lblPrecioEstadia.Location = new Point(173, 249);
-            lblPrecioEstadia.Name = "lblPrecioEstadia";
-            lblPrecioEstadia.Size = new Size(84, 19);
-            lblPrecioEstadia.TabIndex = 0;
-            lblPrecioEstadia.Text = "S/";
+            labelPrecioNoche.BorderStyle = BorderStyle.FixedSingle;
+            labelPrecioNoche.Location = new Point(173, 167);
+            labelPrecioNoche.Name = "labelPrecioNoche";
+            labelPrecioNoche.Size = new Size(219, 25);
+            labelPrecioNoche.TabIndex = 1;
+            labelPrecioNoche.Text = "S/";
+            labelPrecioNoche.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(12, 249);
+            label6.Location = new Point(12, 172);
             label6.Name = "label6";
             label6.Size = new Size(102, 15);
             label6.TabIndex = 1;
@@ -139,21 +147,22 @@
             // 
             // btnAgregar
             // 
-            btnAgregar.Location = new Point(296, 304);
+            btnAgregar.Location = new Point(296, 345);
             btnAgregar.Margin = new Padding(3, 2, 3, 2);
             btnAgregar.Name = "btnAgregar";
             btnAgregar.Size = new Size(96, 30);
             btnAgregar.TabIndex = 4;
             btnAgregar.Text = "Agregar";
             btnAgregar.UseVisualStyleBackColor = true;
+            btnAgregar.Click += btnAgregar_Click;
             // 
             // btnCancelar
             // 
-            btnCancelar.Location = new Point(173, 304);
+            btnCancelar.Location = new Point(173, 345);
             btnCancelar.Margin = new Padding(3, 2, 3, 2);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(96, 30);
-            btnCancelar.TabIndex = 4;
+            btnCancelar.TabIndex = 5;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
             btnCancelar.Click += btnCancelar_Click;
@@ -186,13 +195,34 @@
             comboboxHabitacion.Margin = new Padding(3, 2, 3, 2);
             comboboxHabitacion.Name = "comboboxHabitacion";
             comboboxHabitacion.Size = new Size(219, 23);
-            comboboxHabitacion.TabIndex = 7;
+            comboboxHabitacion.TabIndex = 1;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(12, 295);
+            label4.Name = "label4";
+            label4.Size = new Size(71, 15);
+            label4.TabIndex = 7;
+            label4.Text = "Precio Total:";
+            // 
+            // lblPrecioEstadia
+            // 
+            lblPrecioEstadia.BorderStyle = BorderStyle.FixedSingle;
+            lblPrecioEstadia.Location = new Point(173, 290);
+            lblPrecioEstadia.Name = "lblPrecioEstadia";
+            lblPrecioEstadia.Size = new Size(219, 25);
+            lblPrecioEstadia.TabIndex = 8;
+            lblPrecioEstadia.Text = "S/";
+            lblPrecioEstadia.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // FrmAgregarReservaHabitacion
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(405, 345);
+            ClientSize = new Size(405, 386);
+            Controls.Add(lblPrecioEstadia);
+            Controls.Add(label4);
             Controls.Add(comboboxHabitacion);
             Controls.Add(labelHabitacion);
             Controls.Add(label5);
@@ -205,7 +235,7 @@
             Controls.Add(label2);
             Controls.Add(labelTipoHabitacion);
             Controls.Add(label6);
-            Controls.Add(lblPrecioEstadia);
+            Controls.Add(labelPrecioNoche);
             Controls.Add(label1);
             Controls.Add(lblReservaId);
             FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -229,12 +259,14 @@
         private DateTimePicker dtpCheckOut;
         private ComboBox cbxTipoHabitacion;
         private Label labelTipoHabitacion;
-        private Label lblPrecioEstadia;
+        private Label labelPrecioNoche;
         private Label label6;
         private Button btnAgregar;
         private Button btnCancelar;
         private Label label5;
         private Label labelHabitacion;
         private ComboBox comboboxHabitacion;
+        private Label label4;
+        private Label lblPrecioEstadia;
     }
 }

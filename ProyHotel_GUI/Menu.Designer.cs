@@ -44,6 +44,7 @@
             crearReservaToolStripMenuItem = new ToolStripMenuItem();
             reporteToolStripMenuItem = new ToolStripMenuItem();
             reporteDeUsuariosToolStripMenuItem = new ToolStripMenuItem();
+            mantenimientosToolStripMenuItem = new ToolStripMenuItem();
             statusStrip1 = new StatusStrip();
             tlblUsuario = new ToolStripStatusLabel();
             tlblComputer = new ToolStripStatusLabel();
@@ -56,7 +57,7 @@
             // 
             // menuStrip1
             // 
-            menuStrip1.Items.AddRange(new ToolStripItem[] { usuarioSeccion, servicioSeccion, habitacionesToolStripMenuItem, huespedesToolStripMenuItem, reservaToolStripMenuItem, reporteToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { usuarioSeccion, servicioSeccion, habitacionesToolStripMenuItem, huespedesToolStripMenuItem, reservaToolStripMenuItem, reporteToolStripMenuItem, mantenimientosToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(1364, 24);
@@ -166,6 +167,12 @@
             reporteDeUsuariosToolStripMenuItem.Text = "Reporte de Usuarios";
             reporteDeUsuariosToolStripMenuItem.Click += reporteDeUsuariosToolStripMenuItem_Click;
             // 
+            // mantenimientosToolStripMenuItem
+            // 
+            mantenimientosToolStripMenuItem.Name = "mantenimientosToolStripMenuItem";
+            mantenimientosToolStripMenuItem.Size = new Size(106, 20);
+            mantenimientosToolStripMenuItem.Text = "Mantenimientos";
+            // 
             // statusStrip1
             // 
             statusStrip1.Items.AddRange(new ToolStripItem[] { tlblUsuario, tlblComputer, tlblconexion, tlblsesion });
@@ -210,16 +217,20 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ControlLightLight;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Center;
             ClientSize = new Size(1364, 647);
             Controls.Add(statusStrip1);
             Controls.Add(menuStrip1);
+            DoubleBuffered = true;
             FormBorderStyle = FormBorderStyle.FixedSingle;
             IsMdiContainer = true;
             MainMenuStrip = menuStrip1;
             Name = "Menu";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Menu";
+            TransparencyKey = Color.White;
             FormClosing += Menu_FormClosing;
             FormClosed += Menu_FormClosed;
             Load += Menu_Load;
@@ -253,5 +264,6 @@
         private ToolStripMenuItem crearReservaToolStripMenuItem;
         private ToolStripMenuItem reporteToolStripMenuItem;
         private ToolStripMenuItem reporteDeUsuariosToolStripMenuItem;
+        private ToolStripMenuItem mantenimientosToolStripMenuItem;
     }
 }
