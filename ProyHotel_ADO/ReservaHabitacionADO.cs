@@ -37,6 +37,39 @@ namespace ProyHotel_ADO
                 throw new Exception(ex.Message);
             }
         }
+        public ReservaHabitacionBE ConsultarHabitacionServicio(int reservaId, int habitacionId)
+        {
+            try
+            {
+                ReservaHabitacionBE reservaHabitacionBE = new();
+
+                cnx.ConnectionString = conexion.ObtenerCadenaCnx();
+                cmd.Connection = cnx;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "usp_obtener_tb_reserva_habitacion_id";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@reserva_id", reservaId);
+                cmd.Parameters.AddWithValue("@habitacion_id", habitacionId);
+
+                cnx.Open();
+                dtr = cmd.ExecuteReader();
+                if (dtr.HasRows)
+                {
+                    dtr.Read();
+                    reservaHabitacionBE.reservaId = Convert.ToInt16(dtr["reserva_id"]);
+                    reservaHabitacionBE.habitacionId = Convert.ToInt16(dtr["habitacion_id"]);
+                    reservaHabitacionBE.tipoHabitacion = dtr["tipo_habitacion_descripcion"].ToString();
+                    reservaHabitacionBE.habitacionNombre = dtr["habitacion_nombre"].ToString();
+                    reservaHabitacionBE.costoNoche = Convert.ToSingle(dtr["costo_noche"]);
+                    reservaHabitacionBE.precioTotal = Convert.ToSingle(dtr["precio_estadia"]);
+                }
+                return reservaHabitacionBE;
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
 
         public bool AgregarHabitacionReserva(ReservaHabitacionBE reservaHabitacionBE)
         {

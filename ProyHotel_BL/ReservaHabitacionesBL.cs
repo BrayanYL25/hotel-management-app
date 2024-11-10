@@ -16,6 +16,10 @@ namespace ProyHotel_BL
         {
             return reservaHabitacionADO.ListarReservaHabitacionPorIdReserva(reservaId);
         }
+        public ReservaHabitacionBE ConsultarHabitacionServicio(int reservaId, int habitacionId)
+        {
+            return reservaHabitacionADO.ConsultarHabitacionServicio(reservaId, habitacionId);
+        }
 
         public bool AgregarHabitacionReserva(ReservaHabitacionBE reservaHabitacionBE)
         {
