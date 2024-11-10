@@ -144,5 +144,38 @@ namespace ProyHotel_GUI
                 MessageBox.Show($"Hubo un error {er.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void botonEditarHabitacion_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (gridHabitaciones.SelectedCells.Count <= 0)
+                {
+                    MessageBox.Show("La celda seleccionada está vacía.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                var cellId = gridHabitaciones.SelectedCells[0].OwningRow.Cells[0].Value ?? throw new Exception("No se hallo el id seleccionado.");
+                var cellNombre = gridHabitaciones.SelectedCells[0].OwningRow.Cells[1].Value.ToString() ?? throw new Exception("No se hallo el nombre del servicio seleccionado.");
+                int habitacionId = Convert.ToInt16(cellId);
+
+                DialogResult confirmarEdicion = MessageBox.Show("¿Seguro que desea editar esta habitación?", "Editar Habitación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (confirmarEdicion == DialogResult.Yes)
+                {
+                    ReservaHabitacionBE reservaHabitacionBE = new ReservaHabitacionBE();
+                    reservaHabitacionBE.reservaId = reservaBE.reservaId;
+                    reservaHabitacionBE.habitacionId = habitacionId;
+                    FrmActualizarHabitacionReserva frmActualizarHabitacionReserva = new(reservaHabitacionBE);
+                    frmActualizarHabitacionReserva.ShowDialog();
+                    CargarTodo();
+                }
+
+
+            }
+            catch (Exception er)
+            {
+                MessageBox.Show($"Hubo un error {er.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
