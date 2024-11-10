@@ -1,4 +1,5 @@
 ﻿using ProyHotel_ADO;
+using ProyHotel_BE;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -14,6 +15,11 @@ namespace ProyHotel_BL
         public DataTable ListarReservaHabitacionPorIdReserva(int reservaId)
         {
             return reservaHabitacionADO.ListarReservaHabitacionPorIdReserva(reservaId);
+        }
+
+        public bool AgregarHabitacionReserva(ReservaHabitacionBE reservaHabitacionBE)
+        {
+            return reservaHabitacionADO.AgregarHabitacionReserva(reservaHabitacionBE);
         }
     }
 }

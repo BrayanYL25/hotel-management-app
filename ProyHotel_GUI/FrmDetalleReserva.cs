@@ -51,8 +51,10 @@ namespace ProyHotel_GUI
 
         private void botonAgregarHabitacion_Click(object sender, EventArgs e)
         {
-            FrmAgregarReservaHabitacion agregarReservaHabitacion = new();
-            agregarReservaHabitacion.Show();
+            FrmAgregarReservaHabitacion agregarReservaHabitacion = new(reservaBE.reservaId);
+            agregarReservaHabitacion.ShowDialog();
+            CargarTodo();
+            RefrescarDatosReserva();
         }
 
         private void botonAgregarServicio_Click(object sender, EventArgs e)

@@ -38,29 +38,37 @@ namespace ProyHotel_ADO
             }
         }
 
-        //public bool AgregarHabitacionReserva(int reservaId, int habitacionId, HabitacionBE habitacionBE)
-        //{
-        //    try
-        //    {
-        //        cnx.ConnectionString = conexion.ObtenerCadenaCnx();
-        //        cmd.Connection = cnx;
-        //        cmd.CommandType = CommandType.StoredProcedure;
-        //        cmd.CommandText = "usp_crear_tb_reserva_servicio";
-        //        cmd.Parameters.Clear();
-        //        cmd.Parameters.AddWithValue("@reserva_id", reservaId);
-        //        cmd.Parameters.AddWithValue("@habitacion_id", habitacionBE.servicioId);
-        //        cmd.Parameters.AddWithValue("@cantidad", cantidad);
+        public bool AgregarHabitacionReserva(ReservaHabitacionBE reservaHabitacionBE)
+        {
+            try
+            {
+                cnx.ConnectionString = conexion.ObtenerCadenaCnx();
+                cmd.Connection = cnx;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "usp_crear_tb_reserva_habitacion";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@reserva_id", reservaHabitacionBE.reservaId);
+                cmd.Parameters.AddWithValue("@habitacion_id", reservaHabitacionBE.habitacionId);
+                cmd.Parameters.AddWithValue("@fecha_checkin", reservaHabitacionBE.fechaEntrada);
+                cmd.Parameters.AddWithValue("@fecha_checkout", reservaHabitacionBE.fechaSalida);
 
-        //        cnx.Open();
-        //        cmd.ExecuteNonQuery();
+                cnx.Open();
+                cmd.ExecuteNonQuery();
 
-        //        return true;
-        //    }
-        //    catch (SqlException ex)
-        //    {
-        //        throw new Exception(ex.Message);
-        //    }
-        //}
+                return true;
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                if (cnx.State == ConnectionState.Open)
+                {
+                    cnx.Close();
+                }
+            }
+        }
     }
 
 
