@@ -17,6 +17,7 @@ namespace ProyHotel_GUI
     {
         ReservaHabitacionBE reservaHabitacionBE;
         ReservaHabitacionesBL reservaHabitacionesBL = new();
+        int admitedChanges = 0;
         DateTime fechaCheckInInicio;
         DateTime fechaCheckOutInicio;
         public FrmActualizarHabitacionReserva(ReservaHabitacionBE reservaHabitacionBE)
@@ -38,6 +39,7 @@ namespace ProyHotel_GUI
 
             fechaCheckInInicio = reservaHabitacionBE.fechaEntrada;
             fechaCheckOutInicio = reservaHabitacionBE.fechaEntrada;
+            admitedChanges++;
         }
 
         private void FrmActualizarHabitacionReserva_Load(object sender, EventArgs e)
@@ -54,41 +56,64 @@ namespace ProyHotel_GUI
             }
 
             bool modificado = reservaHabitacionesBL.ActualizarHabitacionReserva(reservaHabitacionBE.reservaId, reservaHabitacionBE.habitacionId, dtpCheckIn.Value, dtpCheckOut.Value);
-            if (modificado)
-            {
-                MessageBox.Show("Habitación Reservada Modificada exitosamente", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close();
-            }
-            else
+            if (!modificado)
             {
                 MessageBox.Show("Habitación Reservada Modificada Sin Éxito", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
+
+            this.Close();
         }
 
         private void botonCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-        private void CalcularPrecioEstadia()
+        private void CalcularPrecioEstadia(DateTime checkin, DateTime checkout)
         {
-            TimeSpan diferencia = dtpCheckOut.Value - dtpCheckIn.Value;
+            TimeSpan diferencia = checkout.Date.Add(new TimeSpan(0, 0, 0)) - checkin.Date.Add(new TimeSpan(0, 0, 0));
+            if (diferencia.Days < 1)
+            {
+                throw new Exception("Fechas invalidas");
+            }
 
-            int diasEstadia = (diferencia.Days < 1) ? 1 : diferencia.Days;
-
+            int diasEstadia = diferencia.Days;
             float precioNoche = reservaHabitacionBE.costoNoche;
-            float precioTotal = precioNoche * diasEstadia;
+            float precioTotal = precioNoche * (float)diasEstadia;
 
             lblPrecioTotal.Text = precioTotal.ToString("C2");
         }
 
         private void dtpCheckOut_ValueChanged(object sender, EventArgs e)
         {
-            CalcularPrecioEstadia();
+            try
+            {
+                admitedChanges++;
+                CalcularPrecioEstadia(dtpCheckIn.Value, dtpCheckOut.Value);
+            }
+            catch (Exception ex)
+            {
+                if (admitedChanges > 1)
+                {
+                    MessageBox.Show($"{ex.Message}");
+                }
+            }
         }
 
         private void dtpCheckIn_ValueChanged(object sender, EventArgs e)
         {
-            CalcularPrecioEstadia();
+            try
+            {
+                admitedChanges++;
+                CalcularPrecioEstadia(dtpCheckIn.Value, dtpCheckOut.Value);
+            }
+            catch (Exception ex)
+            {
+                if (admitedChanges > 1)
+                {
+                    MessageBox.Show($"{ex.Message}");
+                }
+            }
         }
     }
 }
