@@ -137,6 +137,7 @@ namespace ProyHotel_GUI
                     FrmActualizarServicioReserva frmActualizarServicioReserva = new(reservaServicioBE);
                     frmActualizarServicioReserva.ShowDialog();
                     CargarTodo();
+                    RefrescarDatosReserva();
                 }
             }
             catch (Exception er)
@@ -168,6 +169,7 @@ namespace ProyHotel_GUI
                     FrmActualizarHabitacionReserva frmActualizarHabitacionReserva = new(reservaHabitacionBE);
                     frmActualizarHabitacionReserva.ShowDialog();
                     CargarTodo();
+                    RefrescarDatosReserva();
                 }
 
 
@@ -195,6 +197,7 @@ namespace ProyHotel_GUI
                 {
                     reservaHabitacionesBL.BorrarHabitacionReserva(reservaBE.reservaId, habitacionId);
                     CargarTodo();
+                    RefrescarDatosReserva();
                 }
             }
             catch (Exception er)
