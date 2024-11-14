@@ -36,8 +36,16 @@ namespace ProyHotel_ADO
             {
                 throw new Exception(ex.Message);
             }
+            finally
+            {
+                if (cnx.State != ConnectionState.Open)
+                {
+                    cnx.Close();
+                }
+            }
         }
-        public ReservaHabitacionBE ConsultarHabitacionServicio(int reservaId, int habitacionId)
+
+        public ReservaHabitacionBE ConsultarReservaHabitacion(int reservaId, int habitacionId)
         {
             try
             {
@@ -62,12 +70,21 @@ namespace ProyHotel_ADO
                     reservaHabitacionBE.habitacionNombre = dtr["habitacion_nombre"].ToString();
                     reservaHabitacionBE.costoNoche = Convert.ToSingle(dtr["costo_noche"]);
                     reservaHabitacionBE.precioTotal = Convert.ToSingle(dtr["precio_estadia"]);
+                    reservaHabitacionBE.fechaEntrada = Convert.ToDateTime(dtr["fecha_checkin"]);
+                    reservaHabitacionBE.fechaSalida = Convert.ToDateTime(dtr["fecha_checkout"]);
                 }
                 return reservaHabitacionBE;
             }
             catch (SqlException ex)
             {
                 throw new Exception(ex.Message);
+            }
+            finally
+            {
+                if (cnx.State == ConnectionState.Open)
+                {
+                    cnx.Close();
+                }
             }
         }
 
@@ -84,6 +101,66 @@ namespace ProyHotel_ADO
                 cmd.Parameters.AddWithValue("@habitacion_id", reservaHabitacionBE.habitacionId);
                 cmd.Parameters.AddWithValue("@fecha_checkin", reservaHabitacionBE.fechaEntrada);
                 cmd.Parameters.AddWithValue("@fecha_checkout", reservaHabitacionBE.fechaSalida);
+
+                cnx.Open();
+                cmd.ExecuteNonQuery();
+
+                return true;
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                if (cnx.State != ConnectionState.Open)
+                {
+                    cnx.Close();
+                }
+            }
+        }
+        public bool ActualizarHabitacionReserva(int reservaId, int habitacionId, DateTime fechaCheckIn, DateTime fechaCheckOut)
+        {
+            try
+            {
+                cnx.ConnectionString = conexion.ObtenerCadenaCnx();
+                cmd.Connection = cnx;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "usp_actualizar_tb_reserva_habitacion";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@reserva_id", reservaId);
+                cmd.Parameters.AddWithValue("@habitacion_id", habitacionId);
+                cmd.Parameters.AddWithValue("@fecha_checkin", fechaCheckIn);
+                cmd.Parameters.AddWithValue("@fecha_checkout", fechaCheckOut);
+
+                cnx.Open();
+                cmd.ExecuteNonQuery();
+
+                return true;
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                if (cnx.State != ConnectionState.Open)
+                {
+                    cnx.Close();
+                }
+            }
+        }
+        public bool BorrarHabitacionReserva(int reservaId, int habitacionId)
+        {
+            try
+            {
+                cnx.ConnectionString = conexion.ObtenerCadenaCnx();
+                cmd.Connection = cnx;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "usp_borrar_tb_reserva_habitacion";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@reserva_id", reservaId);
+                cmd.Parameters.AddWithValue("@habitacion_id", habitacionId);
 
                 cnx.Open();
                 cmd.ExecuteNonQuery();

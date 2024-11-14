@@ -18,12 +18,20 @@ namespace ProyHotel_BL
         }
         public ReservaHabitacionBE ConsultarHabitacionServicio(int reservaId, int habitacionId)
         {
-            return reservaHabitacionADO.ConsultarHabitacionServicio(reservaId, habitacionId);
+            return reservaHabitacionADO.ConsultarReservaHabitacion(reservaId, habitacionId);
         }
 
         public bool AgregarHabitacionReserva(ReservaHabitacionBE reservaHabitacionBE)
         {
             return reservaHabitacionADO.AgregarHabitacionReserva(reservaHabitacionBE);
+        }
+        public bool ActualizarHabitacionReserva(int reservaId, int habitacionId, DateTime fechaCheckIn, DateTime fechaCheckOut)
+        {
+            return reservaHabitacionADO.ActualizarHabitacionReserva(reservaId, habitacionId, fechaCheckIn, fechaCheckOut);
+        }
+        public bool BorrarHabitacionReserva(int reservaId, int habitacionId)
+        {
+            return reservaHabitacionADO.BorrarHabitacionReserva(reservaId, habitacionId);
         }
     }
 }

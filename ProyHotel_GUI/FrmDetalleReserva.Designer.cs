@@ -202,6 +202,7 @@
             botonBorrarHabitacion.Size = new Size(29, 33);
             botonBorrarHabitacion.TabIndex = 3;
             botonBorrarHabitacion.UseVisualStyleBackColor = true;
+            botonBorrarHabitacion.Click += botonBorrarHabitacion_Click;
             // 
             // botonEditarHabitacion
             // 

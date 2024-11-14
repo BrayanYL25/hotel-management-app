@@ -177,5 +177,30 @@ namespace ProyHotel_GUI
                 MessageBox.Show($"Hubo un error {er.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void botonBorrarHabitacion_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (gridHabitaciones.SelectedCells.Count <= 0)
+                {
+                    MessageBox.Show("La celda seleccionada está vacía.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                var cellValue = gridHabitaciones.SelectedCells[0].OwningRow.Cells[0].Value ?? throw new Exception("No se hallo el valor seleccionado.");
+                int habitacionId = Convert.ToInt16(cellValue);
+                DialogResult confirmarBorrado = MessageBox.Show("¿Seguro que desea eliminar esta habitación?", "Eliminar Habitación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (confirmarBorrado == DialogResult.Yes)
+                {
+                    reservaHabitacionesBL.BorrarHabitacionReserva(reservaBE.reservaId, habitacionId);
+                    CargarTodo();
+                }
+            }
+            catch (Exception er)
+            {
+                MessageBox.Show($"Hubo un error {er.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

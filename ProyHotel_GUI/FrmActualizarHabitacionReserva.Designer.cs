@@ -189,6 +189,7 @@
             dtpCheckIn.Size = new Size(218, 27);
             dtpCheckIn.TabIndex = 7;
             dtpCheckIn.Value = new DateTime(2024, 10, 28, 19, 0, 49, 0);
+            dtpCheckIn.ValueChanged += dtpCheckIn_ValueChanged;
             // 
             // label5
             // 
@@ -208,6 +209,7 @@
             dtpCheckOut.Size = new Size(218, 27);
             dtpCheckOut.TabIndex = 8;
             dtpCheckOut.Value = new DateTime(2024, 10, 28, 19, 1, 2, 0);
+            dtpCheckOut.ValueChanged += dtpCheckOut_ValueChanged;
             // 
             // lblPrecioTotal
             // 
@@ -237,6 +239,7 @@
             botonCancelar.TabIndex = 17;
             botonCancelar.Text = "Cancelar";
             botonCancelar.UseVisualStyleBackColor = true;
+            botonCancelar.Click += botonCancelar_Click;
             // 
             // botonEditar
             // 
@@ -247,6 +250,7 @@
             botonEditar.TabIndex = 16;
             botonEditar.Text = "Editar";
             botonEditar.UseVisualStyleBackColor = true;
+            botonEditar.Click += botonEditar_Click;
             // 
             // FrmActualizarHabitacionReserva
             // 
