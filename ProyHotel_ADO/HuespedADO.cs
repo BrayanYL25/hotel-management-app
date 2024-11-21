@@ -149,6 +149,7 @@ namespace ProyHotel_ADO
 
             catch (SqlException ex)
             {
+                
                 throw new Exception(ex.Message);
                 return false;
             }
