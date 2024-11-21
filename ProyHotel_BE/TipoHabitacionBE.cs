@@ -10,6 +10,6 @@ namespace ProyHotel_BE
     {
         public int tipo_habitacion_id { get; set;}
         public string tipo_habitacion_descripcion { get; set;}
-        public float tipo_habitacion_precio {  get; set;}
+        public float tipo_habitacion_precio { get; set;}
     }
 }

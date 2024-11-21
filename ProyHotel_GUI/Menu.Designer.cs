@@ -51,6 +51,7 @@
             tlblconexion = new ToolStripStatusLabel();
             tlblsesion = new ToolStripStatusLabel();
             timer1 = new System.Windows.Forms.Timer(components);
+            tipoDeHabitacionesToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             statusStrip1.SuspendLayout();
             SuspendLayout();
@@ -106,7 +107,7 @@
             // 
             // habitacionesToolStripMenuItem
             // 
-            habitacionesToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { habitacionToolStripMenuItem });
+            habitacionesToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { habitacionToolStripMenuItem, tipoDeHabitacionesToolStripMenuItem });
             habitacionesToolStripMenuItem.Image = (Image)resources.GetObject("habitacionesToolStripMenuItem.Image");
             habitacionesToolStripMenuItem.Name = "habitacionesToolStripMenuItem";
             habitacionesToolStripMenuItem.Size = new Size(93, 20);
@@ -116,7 +117,7 @@
             // 
             habitacionToolStripMenuItem.Image = (Image)resources.GetObject("habitacionToolStripMenuItem.Image");
             habitacionToolStripMenuItem.Name = "habitacionToolStripMenuItem";
-            habitacionToolStripMenuItem.Size = new Size(143, 22);
+            habitacionToolStripMenuItem.Size = new Size(186, 22);
             habitacionToolStripMenuItem.Text = "Habitaciones";
             habitacionToolStripMenuItem.Click += habitacionToolStripMenuItem_Click;
             // 
@@ -213,6 +214,13 @@
             timer1.Interval = 1000;
             timer1.Tick += timer1_Tick;
             // 
+            // tipoDeHabitacionesToolStripMenuItem
+            // 
+            tipoDeHabitacionesToolStripMenuItem.Name = "tipoDeHabitacionesToolStripMenuItem";
+            tipoDeHabitacionesToolStripMenuItem.Size = new Size(186, 22);
+            tipoDeHabitacionesToolStripMenuItem.Text = "Tipo De Habitaciones";
+            tipoDeHabitacionesToolStripMenuItem.Click += tipoDeHabitacionesToolStripMenuItem_Click;
+            // 
             // Menu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -265,5 +273,6 @@
         private ToolStripMenuItem reporteToolStripMenuItem;
         private ToolStripMenuItem reporteDeUsuariosToolStripMenuItem;
         private ToolStripMenuItem mantenimientosToolStripMenuItem;
+        private ToolStripMenuItem tipoDeHabitacionesToolStripMenuItem;
     }
 }

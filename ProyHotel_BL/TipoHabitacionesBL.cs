@@ -8,19 +8,36 @@ using System.Threading.Tasks;
 
 //agregar 
 using ProyHotel_ADO;
+using ProyHotel_BE;
 
 namespace ProyHotel_BL
 {
     public class TipoHabitacionesBL
     {
-        TipoHabitacion objTipoHabitacion = new TipoHabitacion();
+        TipoHabitacion objTipoHabitacionADO = new TipoHabitacion();
 
         public DataTable ListarTipoHabitaciones()
         {
-            return objTipoHabitacion.ListarHabitacion();
+            return objTipoHabitacionADO.ListarTipoHabitacion();
         }
 
 
+        public TipoHabitacionBE ConsultarTipoHabitacion(String strCodigo)
+        {
+            return objTipoHabitacionADO.ConsultarTipoHabitacion(strCodigo);
+        }
 
+        public Boolean InsertarTipoHabitacion(TipoHabitacionBE objTipoHabitacionBE)
+        {
+            return objTipoHabitacionADO.InsertarTipoHabitacion(objTipoHabitacionBE);
+        }
+        public Boolean ActualizarTipoHabitacion(TipoHabitacionBE objTipoHabitacioBE)
+        {
+            return objTipoHabitacionADO.ActualizarTipoHabitaciones(objTipoHabitacioBE);
+        }
+        public Boolean EliminarTipoHabitacion(String strCodigo)
+        {
+            return objTipoHabitacionADO.EliminarTipoHabitacion(strCodigo);
+        }
     }
 }

@@ -132,5 +132,12 @@ namespace ProyHotel_GUI
                 e.Cancel = true;
             }
         }
+
+        private void tipoDeHabitacionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmTipoHabitacion frmTipoHabitacion = new FrmTipoHabitacion();
+            frmTipoHabitacion.MdiParent = this;
+            frmTipoHabitacion.Show();
+        }
     }
 }
