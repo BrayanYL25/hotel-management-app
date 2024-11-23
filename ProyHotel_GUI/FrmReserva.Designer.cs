@@ -30,13 +30,6 @@
         {
             tituloReserva = new Label();
             gridReservas = new DataGridView();
-            textboxBuscar = new TextBox();
-            botonBuscar = new Button();
-            botonCrear = new Button();
-            botonEditar = new Button();
-            tituoResultado = new Label();
-            labelResultado = new Label();
-            botonRefrescar = new Button();
             reservaId = new DataGridViewTextBoxColumn();
             creadoPor = new DataGridViewTextBoxColumn();
             tipoUsuario = new DataGridViewTextBoxColumn();
@@ -49,6 +42,13 @@
             fechaUltimaModificacion = new DataGridViewTextBoxColumn();
             usuarioUltimaModificacion = new DataGridViewTextBoxColumn();
             estadoPago = new DataGridViewTextBoxColumn();
+            textboxBuscar = new TextBox();
+            botonBuscar = new Button();
+            botonCrear = new Button();
+            botonEditar = new Button();
+            tituoResultado = new Label();
+            labelResultado = new Label();
+            botonRefrescar = new Button();
             ((System.ComponentModel.ISupportInitialize)gridReservas).BeginInit();
             SuspendLayout();
             // 
@@ -56,9 +56,9 @@
             // 
             tituloReserva.AutoSize = true;
             tituloReserva.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            tituloReserva.Location = new Point(14, 28);
+            tituloReserva.Location = new Point(12, 21);
             tituloReserva.Name = "tituloReserva";
-            tituloReserva.Size = new Size(96, 28);
+            tituloReserva.Size = new Size(77, 21);
             tituloReserva.TabIndex = 0;
             tituloReserva.Text = "Reservas";
             // 
@@ -69,86 +69,14 @@
             gridReservas.BackgroundColor = SystemColors.ButtonHighlight;
             gridReservas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             gridReservas.Columns.AddRange(new DataGridViewColumn[] { reservaId, creadoPor, tipoUsuario, dni, telefono, aNombreDe, precio, estado, fechaCreacion, fechaUltimaModificacion, usuarioUltimaModificacion, estadoPago });
-            gridReservas.Location = new Point(14, 80);
-            gridReservas.Margin = new Padding(3, 4, 3, 4);
+            gridReservas.Location = new Point(12, 60);
             gridReservas.Name = "gridReservas";
             gridReservas.ReadOnly = true;
             gridReservas.RowHeadersVisible = false;
             gridReservas.RowHeadersWidth = 51;
-            gridReservas.Size = new Size(976, 465);
+            gridReservas.Size = new Size(854, 349);
             gridReservas.TabIndex = 1;
             gridReservas.CellDoubleClick += gridReservas_CellDoubleClick;
-            // 
-            // textboxBuscar
-            // 
-            textboxBuscar.Location = new Point(741, 28);
-            textboxBuscar.Margin = new Padding(3, 4, 3, 4);
-            textboxBuscar.Name = "textboxBuscar";
-            textboxBuscar.PlaceholderText = "Ingrese...";
-            textboxBuscar.Size = new Size(156, 27);
-            textboxBuscar.TabIndex = 2;
-            // 
-            // botonBuscar
-            // 
-            botonBuscar.Location = new Point(904, 28);
-            botonBuscar.Margin = new Padding(3, 4, 3, 4);
-            botonBuscar.Name = "botonBuscar";
-            botonBuscar.Size = new Size(86, 35);
-            botonBuscar.TabIndex = 3;
-            botonBuscar.Text = "Buscar";
-            botonBuscar.UseVisualStyleBackColor = true;
-            botonBuscar.Click += botonBuscar_Click;
-            // 
-            // botonCrear
-            // 
-            botonCrear.Location = new Point(878, 581);
-            botonCrear.Margin = new Padding(3, 4, 3, 4);
-            botonCrear.Name = "botonCrear";
-            botonCrear.Size = new Size(112, 40);
-            botonCrear.TabIndex = 4;
-            botonCrear.Text = "Crear";
-            botonCrear.UseVisualStyleBackColor = true;
-            botonCrear.Click += botonCrear_Click;
-            // 
-            // botonEditar
-            // 
-            botonEditar.Location = new Point(759, 581);
-            botonEditar.Margin = new Padding(3, 4, 3, 4);
-            botonEditar.Name = "botonEditar";
-            botonEditar.Size = new Size(112, 40);
-            botonEditar.TabIndex = 5;
-            botonEditar.Text = "Editar";
-            botonEditar.UseVisualStyleBackColor = true;
-            botonEditar.Click += botonEditar_Click;
-            // 
-            // tituoResultado
-            // 
-            tituoResultado.AutoSize = true;
-            tituoResultado.Location = new Point(14, 595);
-            tituoResultado.Name = "tituoResultado";
-            tituoResultado.Size = new Size(75, 20);
-            tituoResultado.TabIndex = 6;
-            tituoResultado.Text = "Resultado";
-            // 
-            // labelResultado
-            // 
-            labelResultado.BorderStyle = BorderStyle.FixedSingle;
-            labelResultado.Location = new Point(88, 588);
-            labelResultado.Name = "labelResultado";
-            labelResultado.Size = new Size(114, 33);
-            labelResultado.TabIndex = 7;
-            labelResultado.TextAlign = ContentAlignment.MiddleRight;
-            // 
-            // botonRefrescar
-            // 
-            botonRefrescar.Location = new Point(117, 27);
-            botonRefrescar.Margin = new Padding(3, 4, 3, 4);
-            botonRefrescar.Name = "botonRefrescar";
-            botonRefrescar.Size = new Size(86, 35);
-            botonRefrescar.TabIndex = 8;
-            botonRefrescar.Text = "Refrescar";
-            botonRefrescar.UseVisualStyleBackColor = true;
-            botonRefrescar.Click += botonRefrescar_Click;
             // 
             // reservaId
             // 
@@ -258,11 +186,77 @@
             estadoPago.ReadOnly = true;
             estadoPago.Width = 88;
             // 
+            // textboxBuscar
+            // 
+            textboxBuscar.Location = new Point(648, 21);
+            textboxBuscar.Name = "textboxBuscar";
+            textboxBuscar.PlaceholderText = "Ingrese...";
+            textboxBuscar.Size = new Size(137, 23);
+            textboxBuscar.TabIndex = 2;
+            // 
+            // botonBuscar
+            // 
+            botonBuscar.Location = new Point(791, 21);
+            botonBuscar.Name = "botonBuscar";
+            botonBuscar.Size = new Size(75, 26);
+            botonBuscar.TabIndex = 3;
+            botonBuscar.Text = "Buscar";
+            botonBuscar.UseVisualStyleBackColor = true;
+            botonBuscar.Click += botonBuscar_Click;
+            // 
+            // botonCrear
+            // 
+            botonCrear.Location = new Point(768, 436);
+            botonCrear.Name = "botonCrear";
+            botonCrear.Size = new Size(98, 30);
+            botonCrear.TabIndex = 4;
+            botonCrear.Text = "Crear";
+            botonCrear.UseVisualStyleBackColor = true;
+            botonCrear.Click += botonCrear_Click;
+            // 
+            // botonEditar
+            // 
+            botonEditar.Location = new Point(664, 436);
+            botonEditar.Name = "botonEditar";
+            botonEditar.Size = new Size(98, 30);
+            botonEditar.TabIndex = 5;
+            botonEditar.Text = "Editar";
+            botonEditar.UseVisualStyleBackColor = true;
+            botonEditar.Click += botonEditar_Click;
+            // 
+            // tituoResultado
+            // 
+            tituoResultado.AutoSize = true;
+            tituoResultado.Location = new Point(12, 446);
+            tituoResultado.Name = "tituoResultado";
+            tituoResultado.Size = new Size(59, 15);
+            tituoResultado.TabIndex = 6;
+            tituoResultado.Text = "Resultado";
+            // 
+            // labelResultado
+            // 
+            labelResultado.BorderStyle = BorderStyle.FixedSingle;
+            labelResultado.Location = new Point(77, 441);
+            labelResultado.Name = "labelResultado";
+            labelResultado.Size = new Size(100, 25);
+            labelResultado.TabIndex = 7;
+            labelResultado.TextAlign = ContentAlignment.MiddleRight;
+            // 
+            // botonRefrescar
+            // 
+            botonRefrescar.Location = new Point(102, 20);
+            botonRefrescar.Name = "botonRefrescar";
+            botonRefrescar.Size = new Size(75, 26);
+            botonRefrescar.TabIndex = 8;
+            botonRefrescar.Text = "Refrescar";
+            botonRefrescar.UseVisualStyleBackColor = true;
+            botonRefrescar.Click += botonRefrescar_Click;
+            // 
             // FrmReserva
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1003, 640);
+            ClientSize = new Size(878, 480);
             Controls.Add(botonRefrescar);
             Controls.Add(labelResultado);
             Controls.Add(tituoResultado);
@@ -273,7 +267,8 @@
             Controls.Add(gridReservas);
             Controls.Add(tituloReserva);
             FormBorderStyle = FormBorderStyle.FixedSingle;
-            Margin = new Padding(3, 4, 3, 4);
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "FrmReserva";
             Text = "FrmReserva";
             Load += FrmReserva_Load;

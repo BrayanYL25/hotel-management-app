@@ -256,6 +256,8 @@
             Controls.Add(button1);
             Controls.Add(label1);
             Margin = new Padding(3, 2, 3, 2);
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "FrmHabitaciones";
             Text = "Gestion Habitaciones";
             Load += FrmHabitaciones_Load;

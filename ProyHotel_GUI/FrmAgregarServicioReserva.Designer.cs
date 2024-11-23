@@ -165,6 +165,8 @@
             Controls.Add(label1);
             Controls.Add(botonAgregar);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "FrmAgregarServicioReserva";
             Text = "Agregar servicio a la reserva";
             Load += SeleccionarServicio_Load;

@@ -113,6 +113,8 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "FrmActualizarTipoUsuario";
             Text = "Editar tipo de usuario";
             Load += FrmActualizarTipoUsuario_Load;

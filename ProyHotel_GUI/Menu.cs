@@ -22,12 +22,6 @@ namespace ProyHotel_GUI
             this.WindowState = FormWindowState.Maximized;
         }
 
-        private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FrmUsuarios frm1 = new FrmUsuarios();
-            frm1.MdiParent = this;
-            frm1.Show();
-        }
 
         private void Menu_Load(object sender, EventArgs e)
         {
@@ -43,6 +37,12 @@ namespace ProyHotel_GUI
                 tlblconexion.Text = "Equipo sin conexion Disponible";
             }
             tlblComputer.Text = "Equipo: " + computer.Name + ".";
+        }
+        private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmUsuarios frm1 = new FrmUsuarios();
+            frm1.MdiParent = this;
+            frm1.Show();
         }
 
         private void toolStripStatusLabel1_Click(object sender, EventArgs e)
@@ -63,16 +63,54 @@ namespace ProyHotel_GUI
 
         private void cRUDToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmUsuarios usuarios = new FrmUsuarios();
-            usuarios.MdiParent = this;
-            usuarios.Show();
+            bool formularioAbierto = false;
+
+            foreach (Form frm in this.MdiChildren)
+            {
+                if (frm is FrmUsuarios)
+                {
+                    formularioAbierto = true;
+                    frm.Activate();
+                    break;
+                }
+            }
+
+            if (!formularioAbierto)
+            {
+                FrmUsuarios frmUsuarios = new FrmUsuarios();
+                frmUsuarios.MdiParent = this;
+                frmUsuarios.Show();
+            }
+
+            //FrmUsuarios usuarios = new FrmUsuarios();
+            //usuarios.MdiParent = this;
+            //usuarios.Show();
         }
 
         private void huespedesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmHuespedes frmHuespedes = new();
-            frmHuespedes.MdiParent = this;
-            frmHuespedes.Show();
+            bool formularioAbierto = false;
+
+            foreach (Form frm in this.MdiChildren)
+            {
+                if (frm is FrmHuespedes)
+                {
+                    formularioAbierto = true;
+                    frm.Activate();
+                    break;
+                }
+            }
+
+            if (!formularioAbierto)
+            {
+                FrmHuespedes frmHuesped = new FrmHuespedes();
+                frmHuesped.MdiParent = this;
+                frmHuesped.Show();
+            }
+
+            //FrmHuespedes frmHuespedes = new();
+            //frmHuespedes.MdiParent = this;
+            //frmHuespedes.Show();
         }
 
         private void usuariosToolStripMenuItem_Click_1(object sender, EventArgs e)
@@ -84,46 +122,189 @@ namespace ProyHotel_GUI
 
         private void serviciosToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            FrmServicios servicios = new();
-            servicios.MdiParent = this;
-            servicios.Show();
+            bool formularioAbierto = false;
+
+            foreach (Form frm in this.MdiChildren)
+            {
+                if (frm is FrmServicios)
+                {
+                    formularioAbierto = true;
+                    frm.Activate();
+                    break;
+                }
+            }
+
+            if (!formularioAbierto)
+            {
+                FrmServicios frmServicios = new FrmServicios();
+                frmServicios.MdiParent = this;
+                frmServicios.Show();
+            }
+
+            //FrmServicios servicios = new();
+            //servicios.MdiParent = this;
+            //servicios.Show();
         }
 
         private void habitacionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmHabitaciones frmHabitaciones = new FrmHabitaciones();
-            frmHabitaciones.MdiParent = this;
-            frmHabitaciones.Show();
+            bool formularioAbierto = false;
+
+            foreach (Form frm in this.MdiChildren)
+            {
+                if (frm is FrmHabitaciones)
+                {
+                    formularioAbierto = true;
+                    frm.Activate();
+                    break;
+                }
+            }
+
+            if (!formularioAbierto)
+            {
+                FrmHabitaciones frmHabitaciones = new FrmHabitaciones();
+                frmHabitaciones.MdiParent = this;
+                frmHabitaciones.Show();
+            }
+
+            //FrmHabitaciones frmHabitaciones = new FrmHabitaciones();
+            //frmHabitaciones.MdiParent = this;
+            //frmHabitaciones.Show();
         }
 
         private void tipoDeUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmTipoUsuario frmTipoUsuario = new();
-            frmTipoUsuario.MdiParent = this;
-            frmTipoUsuario.Show();
+            bool formularioAbierto = false;
+
+            foreach (Form frm in this.MdiChildren)
+            {
+                if (frm is FrmTipoUsuario)
+                {
+                    formularioAbierto = true;
+                    frm.Activate();
+                    break;
+                }
+            }
+
+            if (!formularioAbierto)
+            {
+                FrmTipoUsuario frmTipoUsuario = new FrmTipoUsuario();
+                frmTipoUsuario.MdiParent = this;
+                frmTipoUsuario.Show();
+            }
+
+            //FrmTipoUsuario frmTipoUsuario = new();
+            //frmTipoUsuario.MdiParent = this;
+            //frmTipoUsuario.Show();
         }
 
         private void reservToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmReserva frmReserva = new FrmReserva();
-            frmReserva.MdiParent = this;
-            frmReserva.Show();
+            bool formularioAbierto = false;
+
+            foreach (Form frm in this.MdiChildren)
+            {
+                if (frm is FrmReserva)
+                {
+                    formularioAbierto = true;
+                    frm.Activate();
+                    break;
+                }
+            }
+
+            if (!formularioAbierto)
+            {
+                FrmReserva frmReservas = new FrmReserva();
+                frmReservas.MdiParent = this;
+                frmReservas.Show();
+            }
+
+            //FrmReserva frmReserva = new FrmReserva();
+            //frmReserva.MdiParent = this;
+            //frmReserva.Show();
         }
 
         private void crearReservaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmCrearReserva frmCrearReserva = new FrmCrearReserva();
-            frmCrearReserva.MdiParent = this;
-            frmCrearReserva.Show();
+            bool formularioAbierto = false;
+
+            foreach (Form frm in this.MdiChildren)
+            {
+                if (frm is FrmCrearReserva)
+                {
+                    formularioAbierto = true;
+                    frm.Activate();
+                    break;
+                }
+            }
+
+            if (!formularioAbierto)
+            {
+                FrmCrearReserva frmCrearReservas = new FrmCrearReserva();
+                frmCrearReservas.MdiParent = this;
+                frmCrearReservas.Show();
+            }
+
+
+            //FrmCrearReserva frmCrearReserva = new FrmCrearReserva();
+            //frmCrearReserva.MdiParent = this;
+            //frmCrearReserva.Show();
         }
 
         private void reporteDeUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmReportes frmReportes = new FrmReportes();
-            frmReportes.MdiParent = this;
-            frmReportes.Show();
+            bool formularioAbierto = false;
+
+            foreach (Form frm in this.MdiChildren)
+            {
+                if (frm is FrmReportes)
+                {
+                    formularioAbierto = true;
+                    frm.Activate();
+                    break;
+                }
+            }
+
+            if (!formularioAbierto)
+            {
+                FrmReportes frmReporte = new FrmReportes();
+                frmReporte.MdiParent = this;
+                frmReporte.Show();
+            }
+
+            //FrmReportes frmReportes = new FrmReportes();
+            //frmReportes.MdiParent = this;
+            //frmReportes.Show();
         }
 
+
+        private void tipoDeHabitacionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            bool formularioAbierto = false;
+
+            foreach (Form frm in this.MdiChildren)
+            {
+                if (frm is FrmTipoHabitacion)
+                {
+                    formularioAbierto = true;
+                    frm.Activate();
+                    break;
+                }
+            }
+
+            if (!formularioAbierto)
+            {
+                FrmTipoHabitacion frmTipoHabitacioness = new FrmTipoHabitacion();
+                frmTipoHabitacioness.MdiParent = this;
+                frmTipoHabitacioness.Show();
+            }
+
+
+            //FrmTipoHabitacion frmTipoHabitacion = new FrmTipoHabitacion();
+            //frmTipoHabitacion.MdiParent = this;
+            //frmTipoHabitacion.Show();
+        }
         private void Menu_FormClosing(object sender, FormClosingEventArgs e)
         {
             DialogResult confirmarCierre = MessageBox.Show("¿Desea cerrar la aplicación?", "Confirmar cierre", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -131,13 +312,6 @@ namespace ProyHotel_GUI
             {
                 e.Cancel = true;
             }
-        }
-
-        private void tipoDeHabitacionesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FrmTipoHabitacion frmTipoHabitacion = new FrmTipoHabitacion();
-            frmTipoHabitacion.MdiParent = this;
-            frmTipoHabitacion.Show();
         }
     }
 }

@@ -168,6 +168,8 @@
             Controls.Add(gridTipoUsuario);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "FrmTipoUsuario";
             Text = "Tipos de usuario";
             Load += FrmTipoUsuario_Load;

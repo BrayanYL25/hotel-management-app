@@ -146,7 +146,7 @@
             lblFechaaaa.Size = new Size(227, 19);
             lblFechaaaa.TabIndex = 6;
             // 
-            // FrmrAgregarHuesped
+            // FrmAgregarHuesped
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -163,7 +163,9 @@
             Controls.Add(txtNombre);
             Controls.Add(label2);
             Margin = new Padding(3, 2, 3, 2);
-            Name = "FrmrAgregarHuesped";
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "FrmAgregarHuesped";
             Text = "Agregar Huesped";
             Load += FrmrAgregarHuesped_Load;
             ResumeLayout(false);

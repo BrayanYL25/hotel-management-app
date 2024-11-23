@@ -69,10 +69,9 @@
             // botonAgregarHabitacion
             // 
             botonAgregarHabitacion.Image = (Image)resources.GetObject("botonAgregarHabitacion.Image");
-            botonAgregarHabitacion.Location = new Point(450, 29);
-            botonAgregarHabitacion.Margin = new Padding(3, 4, 3, 4);
+            botonAgregarHabitacion.Location = new Point(394, 22);
             botonAgregarHabitacion.Name = "botonAgregarHabitacion";
-            botonAgregarHabitacion.Size = new Size(29, 33);
+            botonAgregarHabitacion.Size = new Size(25, 25);
             botonAgregarHabitacion.TabIndex = 0;
             botonAgregarHabitacion.UseVisualStyleBackColor = true;
             botonAgregarHabitacion.Click += botonAgregarHabitacion_Click;
@@ -81,45 +80,45 @@
             // 
             tituloDetalleReserva.AutoSize = true;
             tituloDetalleReserva.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            tituloDetalleReserva.Location = new Point(14, 12);
+            tituloDetalleReserva.Location = new Point(12, 9);
             tituloDetalleReserva.Name = "tituloDetalleReserva";
-            tituloDetalleReserva.Size = new Size(190, 28);
+            tituloDetalleReserva.Size = new Size(152, 21);
             tituloDetalleReserva.TabIndex = 2;
             tituloDetalleReserva.Text = "Detalle de Reserva";
             // 
             // labelIdReserva
             // 
             labelIdReserva.AutoSize = true;
-            labelIdReserva.Location = new Point(7, 45);
+            labelIdReserva.Location = new Point(6, 34);
             labelIdReserva.Name = "labelIdReserva";
-            labelIdReserva.Size = new Size(101, 20);
+            labelIdReserva.Size = new Size(79, 15);
             labelIdReserva.TabIndex = 3;
             labelIdReserva.Text = "Id de Reserva:";
             // 
             // labelTitularReserva
             // 
             labelTitularReserva.AutoSize = true;
-            labelTitularReserva.Location = new Point(493, 45);
+            labelTitularReserva.Location = new Point(431, 34);
             labelTitularReserva.Name = "labelTitularReserva";
-            labelTitularReserva.Size = new Size(67, 20);
+            labelTitularReserva.Size = new Size(54, 15);
             labelTitularReserva.TabIndex = 4;
             labelTitularReserva.Text = "Nombre:";
             // 
             // labelDocumento
             // 
             labelDocumento.AutoSize = true;
-            labelDocumento.Location = new Point(7, 103);
+            labelDocumento.Location = new Point(6, 77);
             labelDocumento.Name = "labelDocumento";
-            labelDocumento.Size = new Size(90, 20);
+            labelDocumento.Size = new Size(73, 15);
             labelDocumento.TabIndex = 5;
             labelDocumento.Text = "Documento:";
             // 
             // labelTelefono
             // 
             labelTelefono.AutoSize = true;
-            labelTelefono.Location = new Point(493, 104);
+            labelTelefono.Location = new Point(431, 78);
             labelTelefono.Name = "labelTelefono";
-            labelTelefono.Size = new Size(70, 20);
+            labelTelefono.Size = new Size(55, 15);
             labelTelefono.TabIndex = 6;
             labelTelefono.Text = "Telefono:";
             // 
@@ -133,11 +132,9 @@
             groupBox1.Controls.Add(labelTelefono);
             groupBox1.Controls.Add(labelTitularReserva);
             groupBox1.Controls.Add(labelDocumento);
-            groupBox1.Location = new Point(14, 59);
-            groupBox1.Margin = new Padding(3, 4, 3, 4);
+            groupBox1.Location = new Point(12, 44);
             groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new Padding(3, 4, 3, 4);
-            groupBox1.Size = new Size(897, 156);
+            groupBox1.Size = new Size(785, 117);
             groupBox1.TabIndex = 7;
             groupBox1.TabStop = false;
             groupBox1.Text = "Información del Titular:";
@@ -145,36 +142,36 @@
             // labelResultadoTelefono
             // 
             labelResultadoTelefono.BorderStyle = BorderStyle.FixedSingle;
-            labelResultadoTelefono.Location = new Point(561, 101);
+            labelResultadoTelefono.Location = new Point(491, 76);
             labelResultadoTelefono.Name = "labelResultadoTelefono";
-            labelResultadoTelefono.Size = new Size(315, 30);
+            labelResultadoTelefono.Size = new Size(276, 23);
             labelResultadoTelefono.TabIndex = 10;
             labelResultadoTelefono.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // labelResultadoDocumento
             // 
             labelResultadoDocumento.BorderStyle = BorderStyle.FixedSingle;
-            labelResultadoDocumento.Location = new Point(104, 101);
+            labelResultadoDocumento.Location = new Point(91, 76);
             labelResultadoDocumento.Name = "labelResultadoDocumento";
-            labelResultadoDocumento.Size = new Size(315, 30);
+            labelResultadoDocumento.Size = new Size(276, 23);
             labelResultadoDocumento.TabIndex = 9;
             labelResultadoDocumento.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // labelResultadoNombre
             // 
             labelResultadoNombre.BorderStyle = BorderStyle.FixedSingle;
-            labelResultadoNombre.Location = new Point(561, 45);
+            labelResultadoNombre.Location = new Point(491, 34);
             labelResultadoNombre.Name = "labelResultadoNombre";
-            labelResultadoNombre.Size = new Size(315, 30);
+            labelResultadoNombre.Size = new Size(276, 23);
             labelResultadoNombre.TabIndex = 8;
             labelResultadoNombre.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // labelResultadoId
             // 
             labelResultadoId.BorderStyle = BorderStyle.FixedSingle;
-            labelResultadoId.Location = new Point(104, 44);
+            labelResultadoId.Location = new Point(91, 33);
             labelResultadoId.Name = "labelResultadoId";
-            labelResultadoId.Size = new Size(315, 30);
+            labelResultadoId.Size = new Size(276, 23);
             labelResultadoId.TabIndex = 7;
             labelResultadoId.TextAlign = ContentAlignment.MiddleLeft;
             // 
@@ -184,11 +181,9 @@
             groupboxHabitacion.Controls.Add(botonEditarHabitacion);
             groupboxHabitacion.Controls.Add(gridHabitaciones);
             groupboxHabitacion.Controls.Add(botonAgregarHabitacion);
-            groupboxHabitacion.Location = new Point(14, 239);
-            groupboxHabitacion.Margin = new Padding(3, 4, 3, 4);
+            groupboxHabitacion.Location = new Point(12, 179);
             groupboxHabitacion.Name = "groupboxHabitacion";
-            groupboxHabitacion.Padding = new Padding(3, 4, 3, 4);
-            groupboxHabitacion.Size = new Size(486, 345);
+            groupboxHabitacion.Size = new Size(425, 259);
             groupboxHabitacion.TabIndex = 8;
             groupboxHabitacion.TabStop = false;
             groupboxHabitacion.Text = "Habitaciones";
@@ -196,10 +191,9 @@
             // botonBorrarHabitacion
             // 
             botonBorrarHabitacion.Image = (Image)resources.GetObject("botonBorrarHabitacion.Image");
-            botonBorrarHabitacion.Location = new Point(450, 304);
-            botonBorrarHabitacion.Margin = new Padding(3, 4, 3, 4);
+            botonBorrarHabitacion.Location = new Point(394, 228);
             botonBorrarHabitacion.Name = "botonBorrarHabitacion";
-            botonBorrarHabitacion.Size = new Size(29, 33);
+            botonBorrarHabitacion.Size = new Size(25, 25);
             botonBorrarHabitacion.TabIndex = 3;
             botonBorrarHabitacion.UseVisualStyleBackColor = true;
             botonBorrarHabitacion.Click += botonBorrarHabitacion_Click;
@@ -207,10 +201,9 @@
             // botonEditarHabitacion
             // 
             botonEditarHabitacion.Image = (Image)resources.GetObject("botonEditarHabitacion.Image");
-            botonEditarHabitacion.Location = new Point(450, 71);
-            botonEditarHabitacion.Margin = new Padding(3, 4, 3, 4);
+            botonEditarHabitacion.Location = new Point(394, 53);
             botonEditarHabitacion.Name = "botonEditarHabitacion";
-            botonEditarHabitacion.Size = new Size(29, 33);
+            botonEditarHabitacion.Size = new Size(25, 25);
             botonEditarHabitacion.TabIndex = 2;
             botonEditarHabitacion.UseVisualStyleBackColor = true;
             botonEditarHabitacion.Click += botonEditarHabitacion_Click;
@@ -223,13 +216,12 @@
             gridHabitaciones.BackgroundColor = SystemColors.ButtonHighlight;
             gridHabitaciones.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             gridHabitaciones.Columns.AddRange(new DataGridViewColumn[] { idReserva, habitacion, tipoHabitacion, precioTotalHabitacion });
-            gridHabitaciones.Location = new Point(7, 29);
-            gridHabitaciones.Margin = new Padding(3, 4, 3, 4);
+            gridHabitaciones.Location = new Point(6, 22);
             gridHabitaciones.Name = "gridHabitaciones";
             gridHabitaciones.ReadOnly = true;
             gridHabitaciones.RowHeadersVisible = false;
             gridHabitaciones.RowHeadersWidth = 51;
-            gridHabitaciones.Size = new Size(437, 308);
+            gridHabitaciones.Size = new Size(382, 231);
             gridHabitaciones.TabIndex = 1;
             gridHabitaciones.CellDoubleClick += gridHabitaciones_CellDoubleClick;
             // 
@@ -269,28 +261,27 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(709, 19);
+            label1.Location = new Point(620, 14);
             label1.Name = "label1";
-            label1.Size = new Size(90, 20);
+            label1.Size = new Size(71, 15);
             label1.TabIndex = 10;
             label1.Text = "Precio Total:";
             // 
             // labelResultadoPrecioTotal
             // 
             labelResultadoPrecioTotal.BorderStyle = BorderStyle.FixedSingle;
-            labelResultadoPrecioTotal.Location = new Point(797, 13);
+            labelResultadoPrecioTotal.Location = new Point(697, 10);
             labelResultadoPrecioTotal.Name = "labelResultadoPrecioTotal";
-            labelResultadoPrecioTotal.Size = new Size(114, 30);
+            labelResultadoPrecioTotal.Size = new Size(100, 23);
             labelResultadoPrecioTotal.TabIndex = 11;
             labelResultadoPrecioTotal.TextAlign = ContentAlignment.MiddleRight;
             // 
             // botonAgregarServicio
             // 
             botonAgregarServicio.Image = (Image)resources.GetObject("botonAgregarServicio.Image");
-            botonAgregarServicio.Location = new Point(369, 29);
-            botonAgregarServicio.Margin = new Padding(3, 4, 3, 4);
+            botonAgregarServicio.Location = new Point(323, 22);
             botonAgregarServicio.Name = "botonAgregarServicio";
-            botonAgregarServicio.Size = new Size(29, 33);
+            botonAgregarServicio.Size = new Size(25, 25);
             botonAgregarServicio.TabIndex = 1;
             botonAgregarServicio.UseVisualStyleBackColor = true;
             botonAgregarServicio.Click += botonAgregarServicio_Click;
@@ -303,13 +294,12 @@
             gridServiciosReserva.BackgroundColor = SystemColors.ControlLightLight;
             gridServiciosReserva.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             gridServiciosReserva.Columns.AddRange(new DataGridViewColumn[] { idServicio, Servicio, PrecioTotal, cantidad });
-            gridServiciosReserva.Location = new Point(7, 29);
-            gridServiciosReserva.Margin = new Padding(3, 4, 3, 4);
+            gridServiciosReserva.Location = new Point(6, 22);
             gridServiciosReserva.Name = "gridServiciosReserva";
             gridServiciosReserva.ReadOnly = true;
             gridServiciosReserva.RowHeadersVisible = false;
             gridServiciosReserva.RowHeadersWidth = 51;
-            gridServiciosReserva.Size = new Size(353, 308);
+            gridServiciosReserva.Size = new Size(309, 231);
             gridServiciosReserva.TabIndex = 2;
             // 
             // idServicio
@@ -351,11 +341,9 @@
             groupboxServicio.Controls.Add(botonBorrarServicio);
             groupboxServicio.Controls.Add(gridServiciosReserva);
             groupboxServicio.Controls.Add(botonAgregarServicio);
-            groupboxServicio.Location = new Point(506, 239);
-            groupboxServicio.Margin = new Padding(3, 4, 3, 4);
+            groupboxServicio.Location = new Point(443, 179);
             groupboxServicio.Name = "groupboxServicio";
-            groupboxServicio.Padding = new Padding(3, 4, 3, 4);
-            groupboxServicio.Size = new Size(405, 345);
+            groupboxServicio.Size = new Size(354, 259);
             groupboxServicio.TabIndex = 9;
             groupboxServicio.TabStop = false;
             groupboxServicio.Text = "Servicios";
@@ -363,10 +351,9 @@
             // botonEditarServicio
             // 
             botonEditarServicio.Image = (Image)resources.GetObject("botonEditarServicio.Image");
-            botonEditarServicio.Location = new Point(369, 71);
-            botonEditarServicio.Margin = new Padding(3, 4, 3, 4);
+            botonEditarServicio.Location = new Point(323, 53);
             botonEditarServicio.Name = "botonEditarServicio";
-            botonEditarServicio.Size = new Size(29, 33);
+            botonEditarServicio.Size = new Size(25, 25);
             botonEditarServicio.TabIndex = 4;
             botonEditarServicio.Text = "e";
             botonEditarServicio.UseVisualStyleBackColor = true;
@@ -375,19 +362,18 @@
             // botonBorrarServicio
             // 
             botonBorrarServicio.Image = (Image)resources.GetObject("botonBorrarServicio.Image");
-            botonBorrarServicio.Location = new Point(369, 304);
-            botonBorrarServicio.Margin = new Padding(3, 4, 3, 4);
+            botonBorrarServicio.Location = new Point(323, 228);
             botonBorrarServicio.Name = "botonBorrarServicio";
-            botonBorrarServicio.Size = new Size(29, 33);
+            botonBorrarServicio.Size = new Size(25, 25);
             botonBorrarServicio.TabIndex = 3;
             botonBorrarServicio.UseVisualStyleBackColor = true;
             botonBorrarServicio.Click += botonBorrarServicio_Click;
             // 
             // FrmDetalleReserva
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(925, 600);
+            ClientSize = new Size(809, 450);
             Controls.Add(labelResultadoPrecioTotal);
             Controls.Add(label1);
             Controls.Add(groupboxServicio);
@@ -395,7 +381,8 @@
             Controls.Add(groupBox1);
             Controls.Add(tituloDetalleReserva);
             FormBorderStyle = FormBorderStyle.FixedSingle;
-            Margin = new Padding(3, 4, 3, 4);
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "FrmDetalleReserva";
             Text = "Gestionar Detalle de Reserva";
             Load += FrmDetalleReserva_Load;

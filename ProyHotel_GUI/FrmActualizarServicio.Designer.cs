@@ -166,6 +166,8 @@
             Controls.Add(button1);
             Controls.Add(label2);
             Controls.Add(label1);
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "FrmActualizarServicio";
             Text = "Editar Servicio";
             Load += EditarServicio_Load;

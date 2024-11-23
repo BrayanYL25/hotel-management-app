@@ -91,6 +91,8 @@
             Controls.Add(textboxTipoUsuario);
             Controls.Add(label2);
             Controls.Add(label1);
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "FrmAgregarTipoUsuario";
             Text = "Crear tipo usuario";
             ResumeLayout(false);

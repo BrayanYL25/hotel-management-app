@@ -1,4 +1,4 @@
-﻿namespace ProyHotel_GUI
+namespace ProyHotel_GUI
 {
     partial class FrmDetalleHuespedHabitacionReserva
     {
@@ -76,9 +76,9 @@
             // labelIdReserva
             // 
             labelIdReserva.BorderStyle = BorderStyle.FixedSingle;
-            labelIdReserva.Location = new Point(91, 39);
+            labelIdReserva.Location = new Point(80, 29);
             labelIdReserva.Name = "labelIdReserva";
-            labelIdReserva.Size = new Size(295, 30);
+            labelIdReserva.Size = new Size(258, 23);
             labelIdReserva.TabIndex = 3;
             labelIdReserva.Text = "A101";
             labelIdReserva.TextAlign = ContentAlignment.MiddleLeft;
@@ -86,18 +86,18 @@
             // labelReserva
             // 
             labelReserva.AutoSize = true;
-            labelReserva.Location = new Point(7, 44);
+            labelReserva.Location = new Point(6, 33);
             labelReserva.Name = "labelReserva";
-            labelReserva.Size = new Size(80, 20);
+            labelReserva.Size = new Size(63, 15);
             labelReserva.TabIndex = 2;
             labelReserva.Text = "Id Reserva:";
             // 
             // labelNombreHabitacion
             // 
             labelNombreHabitacion.BorderStyle = BorderStyle.FixedSingle;
-            labelNombreHabitacion.Location = new Point(490, 39);
+            labelNombreHabitacion.Location = new Point(429, 29);
             labelNombreHabitacion.Name = "labelNombreHabitacion";
-            labelNombreHabitacion.Size = new Size(283, 30);
+            labelNombreHabitacion.Size = new Size(248, 23);
             labelNombreHabitacion.TabIndex = 1;
             labelNombreHabitacion.Text = "A101";
             labelNombreHabitacion.TextAlign = ContentAlignment.MiddleLeft;
@@ -105,9 +105,9 @@
             // labelHabitacion
             // 
             labelHabitacion.AutoSize = true;
-            labelHabitacion.Location = new Point(406, 44);
+            labelHabitacion.Location = new Point(355, 33);
             labelHabitacion.Name = "labelHabitacion";
-            labelHabitacion.Size = new Size(85, 20);
+            labelHabitacion.Size = new Size(68, 15);
             labelHabitacion.TabIndex = 0;
             labelHabitacion.Text = "Habitacion:";
             // 
@@ -205,6 +205,8 @@
             Controls.Add(groupBox1);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
+            MinimizeBox = false;
             Margin = new Padding(3, 4, 3, 4);
             Name = "FrmDetalleHuespedHabitacionReserva";
             Text = "Huespedes por Habitacion";
