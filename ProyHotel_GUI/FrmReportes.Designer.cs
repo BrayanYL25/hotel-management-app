@@ -42,14 +42,16 @@
             btn_Usuarios.UseVisualStyleBackColor = true;
             btn_Usuarios.Click += btn_Usuarios_Click;
             // 
-            // Reportes
+            // FrmReportes
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(597, 521);
             Controls.Add(btn_Usuarios);
-            Name = "Reportes";
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "FrmReportes";
             Text = "Reportes";
             Load += Reportes_Load;
             ResumeLayout(false);

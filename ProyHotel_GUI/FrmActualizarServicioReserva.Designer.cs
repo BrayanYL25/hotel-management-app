@@ -194,6 +194,8 @@
             Controls.Add(numericoCantidad);
             Controls.Add(groupboxReserva);
             Controls.Add(labelTitulo);
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "FrmActualizarServicioReserva";
             Text = "Editar Servicio de Reserva";
             Load += FrmActualizarServicioReserva_Load;

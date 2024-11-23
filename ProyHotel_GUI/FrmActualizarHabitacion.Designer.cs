@@ -191,6 +191,8 @@
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Margin = new Padding(3, 2, 3, 2);
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "FrmActualizarHabitacion";
             Text = "Editar Habitacion";
             Load += FrmActualizarHabitacion_Load;

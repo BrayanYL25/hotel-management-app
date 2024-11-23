@@ -176,6 +176,8 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Margin = new Padding(3, 2, 3, 2);
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "FrmActualizarReserva";
             Text = "FrmActualizarReserva";
             Load += FrmActualizarReserva_Load;

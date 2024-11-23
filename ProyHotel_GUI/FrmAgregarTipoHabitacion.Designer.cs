@@ -112,6 +112,8 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(label3);
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "FrmAgregarTipoHabitacion";
             Text = "FrmAgregarTipoHabitacion";
             Load += FrmAgregarTipoHabitacion_Load;

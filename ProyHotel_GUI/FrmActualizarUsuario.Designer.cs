@@ -205,6 +205,8 @@
             Controls.Add(txtUsuario);
             Controls.Add(label2);
             Controls.Add(label1);
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "FrmActualizarUsuario";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Editar Usuario";

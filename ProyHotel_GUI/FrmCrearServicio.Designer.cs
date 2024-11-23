@@ -145,6 +145,8 @@
             Controls.Add(label1);
             Controls.Add(textboxServicio);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "FrmCrearServicio";
             Text = "Crear Servicio";
             groupBox1.ResumeLayout(false);

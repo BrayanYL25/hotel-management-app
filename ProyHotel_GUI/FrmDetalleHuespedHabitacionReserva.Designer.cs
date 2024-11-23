@@ -30,16 +30,16 @@
         {
             label1 = new Label();
             groupBox1 = new GroupBox();
+            labelIdReserva = new Label();
+            labelReserva = new Label();
+            labelNombreHabitacion = new Label();
+            labelHabitacion = new Label();
             groupBox2 = new GroupBox();
             botonAgregarHuesped = new Button();
             gridHuespedes = new DataGridView();
             Huesped = new DataGridViewTextBoxColumn();
             Estado = new DataGridViewTextBoxColumn();
             Comentarios = new DataGridViewTextBoxColumn();
-            labelHabitacion = new Label();
-            labelNombreHabitacion = new Label();
-            labelReserva = new Label();
-            labelIdReserva = new Label();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)gridHuespedes).BeginInit();
@@ -67,6 +67,44 @@
             groupBox1.TabIndex = 1;
             groupBox1.TabStop = false;
             groupBox1.Text = "Información de Reserva";
+            // 
+            // labelIdReserva
+            // 
+            labelIdReserva.BorderStyle = BorderStyle.FixedSingle;
+            labelIdReserva.Location = new Point(80, 29);
+            labelIdReserva.Name = "labelIdReserva";
+            labelIdReserva.Size = new Size(258, 23);
+            labelIdReserva.TabIndex = 3;
+            labelIdReserva.Text = "A101";
+            labelIdReserva.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // labelReserva
+            // 
+            labelReserva.AutoSize = true;
+            labelReserva.Location = new Point(6, 33);
+            labelReserva.Name = "labelReserva";
+            labelReserva.Size = new Size(63, 15);
+            labelReserva.TabIndex = 2;
+            labelReserva.Text = "Id Reserva:";
+            // 
+            // labelNombreHabitacion
+            // 
+            labelNombreHabitacion.BorderStyle = BorderStyle.FixedSingle;
+            labelNombreHabitacion.Location = new Point(429, 29);
+            labelNombreHabitacion.Name = "labelNombreHabitacion";
+            labelNombreHabitacion.Size = new Size(248, 23);
+            labelNombreHabitacion.TabIndex = 1;
+            labelNombreHabitacion.Text = "A101";
+            labelNombreHabitacion.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // labelHabitacion
+            // 
+            labelHabitacion.AutoSize = true;
+            labelHabitacion.Location = new Point(355, 33);
+            labelHabitacion.Name = "labelHabitacion";
+            labelHabitacion.Size = new Size(68, 15);
+            labelHabitacion.TabIndex = 0;
+            labelHabitacion.Text = "Habitacion:";
             // 
             // groupBox2
             // 
@@ -124,44 +162,6 @@
             Comentarios.Name = "Comentarios";
             Comentarios.ReadOnly = true;
             // 
-            // labelHabitacion
-            // 
-            labelHabitacion.AutoSize = true;
-            labelHabitacion.Location = new Point(355, 33);
-            labelHabitacion.Name = "labelHabitacion";
-            labelHabitacion.Size = new Size(68, 15);
-            labelHabitacion.TabIndex = 0;
-            labelHabitacion.Text = "Habitacion:";
-            // 
-            // labelNombreHabitacion
-            // 
-            labelNombreHabitacion.BorderStyle = BorderStyle.FixedSingle;
-            labelNombreHabitacion.Location = new Point(429, 29);
-            labelNombreHabitacion.Name = "labelNombreHabitacion";
-            labelNombreHabitacion.Size = new Size(248, 23);
-            labelNombreHabitacion.TabIndex = 1;
-            labelNombreHabitacion.Text = "A101";
-            labelNombreHabitacion.TextAlign = ContentAlignment.MiddleLeft;
-            // 
-            // labelReserva
-            // 
-            labelReserva.AutoSize = true;
-            labelReserva.Location = new Point(6, 33);
-            labelReserva.Name = "labelReserva";
-            labelReserva.Size = new Size(63, 15);
-            labelReserva.TabIndex = 2;
-            labelReserva.Text = "Id Reserva:";
-            // 
-            // labelIdReserva
-            // 
-            labelIdReserva.BorderStyle = BorderStyle.FixedSingle;
-            labelIdReserva.Location = new Point(80, 29);
-            labelIdReserva.Name = "labelIdReserva";
-            labelIdReserva.Size = new Size(258, 23);
-            labelIdReserva.TabIndex = 3;
-            labelIdReserva.Text = "A101";
-            labelIdReserva.TextAlign = ContentAlignment.MiddleLeft;
-            // 
             // FrmDetalleHuespedHabitacionReserva
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -171,6 +171,8 @@
             Controls.Add(groupBox1);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "FrmDetalleHuespedHabitacionReserva";
             Text = "Huespedes por Habitacion";
             Load += FrmDetalleHuespedHabitacionReserva_Load;

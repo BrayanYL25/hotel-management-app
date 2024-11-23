@@ -50,6 +50,7 @@
             gridServicios.AllowUserToAddRows = false;
             gridServicios.AllowUserToDeleteRows = false;
             gridServicios.AllowUserToOrderColumns = true;
+            gridServicios.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             gridServicios.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             gridServicios.BackgroundColor = SystemColors.ControlLightLight;
             gridServicios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -98,6 +99,7 @@
             // 
             // label1
             // 
+            label1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             label1.AutoSize = true;
             label1.Location = new Point(13, 476);
             label1.Name = "label1";
@@ -107,6 +109,7 @@
             // 
             // recordsCount
             // 
+            recordsCount.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             recordsCount.BorderStyle = BorderStyle.FixedSingle;
             recordsCount.Location = new Point(80, 471);
             recordsCount.Name = "recordsCount";
@@ -116,6 +119,7 @@
             // 
             // botonCrear
             // 
+            botonCrear.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             botonCrear.Location = new Point(705, 471);
             botonCrear.Name = "botonCrear";
             botonCrear.Size = new Size(80, 25);
@@ -126,6 +130,7 @@
             // 
             // botonEditar
             // 
+            botonEditar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             botonEditar.Location = new Point(619, 471);
             botonEditar.Name = "botonEditar";
             botonEditar.Size = new Size(80, 25);
@@ -146,6 +151,7 @@
             // 
             // botonEliminar
             // 
+            botonEliminar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             botonEliminar.Location = new Point(531, 471);
             botonEliminar.Name = "botonEliminar";
             botonEliminar.Size = new Size(80, 25);
@@ -156,6 +162,7 @@
             // 
             // botonBuscar
             // 
+            botonBuscar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             botonBuscar.Location = new Point(705, 26);
             botonBuscar.Name = "botonBuscar";
             botonBuscar.Size = new Size(80, 25);
@@ -166,6 +173,7 @@
             // 
             // buscarServicioTextbox
             // 
+            buscarServicioTextbox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             buscarServicioTextbox.Location = new Point(531, 28);
             buscarServicioTextbox.Name = "buscarServicioTextbox";
             buscarServicioTextbox.PlaceholderText = "Ingrese el servicio";
@@ -187,6 +195,8 @@
             Controls.Add(label1);
             Controls.Add(gridServicios);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "FrmServicios";
             Text = "Gestion Servicios";
             Load += Servicios_Load;

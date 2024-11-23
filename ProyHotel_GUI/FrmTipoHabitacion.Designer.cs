@@ -160,6 +160,8 @@
             Controls.Add(btnAgregarTipoHabitacion);
             Controls.Add(lblRegistroTipoHabitaciones);
             Controls.Add(label3);
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "FrmTipoHabitacion";
             Text = "FrmTipoHabitacion";
             Load += FrmTipoHabitacion_Load;

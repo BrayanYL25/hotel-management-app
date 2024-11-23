@@ -272,6 +272,7 @@
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Margin = new Padding(3, 2, 3, 2);
             MaximizeBox = false;
+            MinimizeBox = false;
             Name = "FrmActualizarHabitacionReserva";
             Text = "Actualizar Habitación de Reserva";
             Load += FrmActualizarHabitacionReserva_Load;
