@@ -44,5 +44,35 @@ namespace ProyHotel_ADO
                 }
             }
         }
+
+        public bool EliminarReservaHabitacionHuesped(int reservaId, int habitacionId, int huespedId)
+        {
+            try
+            {
+                cnx.ConnectionString = conexion.ObtenerCadenaCnx();
+                cmd.Connection = cnx;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "usp_borrar_tb_reserva_habitacion_huesped";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@reserva_id", reservaId);
+                cmd.Parameters.AddWithValue("@habitacion_id", habitacionId);
+                cmd.Parameters.AddWithValue("@huesped_id", huespedId);
+
+                cnx.Open();
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                if (cnx.State == ConnectionState.Open)
+                {
+                    cnx.Close();
+                }
+            }
+        }
     }
 }

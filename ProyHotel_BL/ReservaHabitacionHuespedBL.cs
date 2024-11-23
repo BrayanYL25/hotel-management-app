@@ -16,5 +16,9 @@ namespace ProyHotel_BL
         {
             return reservaHabitacionHuespedADO.ListarReservaHabitacionHuesped(reservaId, habitacionId);
         }
+        public bool BorrarReservaHabitacionHuesped(int reservaId, int habitacionId, int huespedId)
+        {
+            return reservaHabitacionHuespedADO.EliminarReservaHabitacionHuesped(reservaId, habitacionId, huespedId);
+        }
     }
 }

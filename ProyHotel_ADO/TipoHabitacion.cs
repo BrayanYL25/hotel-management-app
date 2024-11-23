@@ -56,7 +56,7 @@ namespace ProyHotel_ADO
                 cnx.ConnectionString= Miconexion.ObtenerCadenaCnx();
                 cmd.Connection = cnx;
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = "usp_obtener_tb_habitacion_tipo_id";
+                cmd.CommandText = "usp_obtener_tb_tipo_habitacion_id";
                 cmd.Parameters.Clear();
 
                 cmd.Parameters.AddWithValue("@tipo_habitacion_id", strCodigo);
