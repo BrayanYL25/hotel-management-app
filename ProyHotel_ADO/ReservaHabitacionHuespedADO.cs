@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProyHotel_BE;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -31,6 +32,38 @@ namespace ProyHotel_ADO
 
                 ada.Fill(dts, "ReservaHabitacionHuesped");
                 return dts.Tables["ReservaHabitacionHuesped"];
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                if (cnx.State == ConnectionState.Open)
+                {
+                    cnx.Close();
+                }
+            }
+        }
+
+        public bool InsertarReservaHabitacionHuesped(int reservaId, int habitacionId, int huespedId, bool asistencia, string comentario)
+        {
+            try
+            {
+                cnx.ConnectionString = conexion.ObtenerCadenaCnx();
+                cmd.Connection = cnx;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "usp_crear_tb_reserva_habitacion_huesped";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@reserva_id", reservaId);
+                cmd.Parameters.AddWithValue("@habitacion_id", habitacionId);
+                cmd.Parameters.AddWithValue("@huesped_id", huespedId);
+                cmd.Parameters.AddWithValue("@asistencia_confirmada", asistencia);
+                cmd.Parameters.AddWithValue("@comentario_huesped", comentario);
+
+                cnx.Open();
+                cmd.ExecuteNonQuery();
+                return true;
             }
             catch (SqlException ex)
             {

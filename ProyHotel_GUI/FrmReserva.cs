@@ -49,7 +49,8 @@ namespace ProyHotel_GUI
         private void botonCrear_Click(object sender, EventArgs e)
         {
             FrmCrearReserva frmCrearReserva = new();
-            frmCrearReserva.Show();
+            frmCrearReserva.ShowDialog();
+            CargarDatos("");
         }
 
         private void gridReservas_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -78,7 +79,8 @@ namespace ProyHotel_GUI
             {
                 FrmActualizarReserva frmActualizarReserva = new();
                 frmActualizarReserva.Codigo = int.Parse(gridReservas.CurrentRow.Cells[0].Value.ToString());
-                frmActualizarReserva.Show();
+                frmActualizarReserva.ShowDialog();
+                CargarDatos("");
             }
             catch (Exception ex)
             {

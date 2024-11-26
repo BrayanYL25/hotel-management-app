@@ -20,5 +20,10 @@ namespace ProyHotel_BL
         {
             return reservaHabitacionHuespedADO.EliminarReservaHabitacionHuesped(reservaId, habitacionId, huespedId);
         }
+
+        public bool InsertarReservaHabitacionHuesped(int reservaId, int habitacionId, int huespedId, bool asistencia, string comentario)
+        {
+            return reservaHabitacionHuespedADO.InsertarReservaHabitacionHuesped(reservaId, habitacionId, huespedId , asistencia, comentario);
+        }
     }
 }

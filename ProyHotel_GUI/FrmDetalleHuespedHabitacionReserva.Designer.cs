@@ -52,9 +52,9 @@ namespace ProyHotel_GUI
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(14, 12);
+            label1.Location = new Point(12, 9);
             label1.Name = "label1";
-            label1.Size = new Size(372, 28);
+            label1.Size = new Size(299, 21);
             label1.TabIndex = 0;
             label1.Text = "Gestion los Huespedes por Habitacion";
             // 
@@ -64,11 +64,9 @@ namespace ProyHotel_GUI
             groupBox1.Controls.Add(labelReserva);
             groupBox1.Controls.Add(labelNombreHabitacion);
             groupBox1.Controls.Add(labelHabitacion);
-            groupBox1.Location = new Point(14, 44);
-            groupBox1.Margin = new Padding(3, 4, 3, 4);
+            groupBox1.Location = new Point(12, 33);
             groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new Padding(3, 4, 3, 4);
-            groupBox1.Size = new Size(781, 96);
+            groupBox1.Size = new Size(683, 72);
             groupBox1.TabIndex = 1;
             groupBox1.TabStop = false;
             groupBox1.Text = "Información de Reserva";
@@ -76,9 +74,9 @@ namespace ProyHotel_GUI
             // labelIdReserva
             // 
             labelIdReserva.BorderStyle = BorderStyle.FixedSingle;
-            labelIdReserva.Location = new Point(80, 29);
+            labelIdReserva.Location = new Point(70, 22);
             labelIdReserva.Name = "labelIdReserva";
-            labelIdReserva.Size = new Size(258, 23);
+            labelIdReserva.Size = new Size(226, 18);
             labelIdReserva.TabIndex = 3;
             labelIdReserva.Text = "A101";
             labelIdReserva.TextAlign = ContentAlignment.MiddleLeft;
@@ -86,7 +84,7 @@ namespace ProyHotel_GUI
             // labelReserva
             // 
             labelReserva.AutoSize = true;
-            labelReserva.Location = new Point(6, 33);
+            labelReserva.Location = new Point(5, 25);
             labelReserva.Name = "labelReserva";
             labelReserva.Size = new Size(63, 15);
             labelReserva.TabIndex = 2;
@@ -95,9 +93,9 @@ namespace ProyHotel_GUI
             // labelNombreHabitacion
             // 
             labelNombreHabitacion.BorderStyle = BorderStyle.FixedSingle;
-            labelNombreHabitacion.Location = new Point(429, 29);
+            labelNombreHabitacion.Location = new Point(375, 22);
             labelNombreHabitacion.Name = "labelNombreHabitacion";
-            labelNombreHabitacion.Size = new Size(248, 23);
+            labelNombreHabitacion.Size = new Size(217, 18);
             labelNombreHabitacion.TabIndex = 1;
             labelNombreHabitacion.Text = "A101";
             labelNombreHabitacion.TextAlign = ContentAlignment.MiddleLeft;
@@ -105,7 +103,7 @@ namespace ProyHotel_GUI
             // labelHabitacion
             // 
             labelHabitacion.AutoSize = true;
-            labelHabitacion.Location = new Point(355, 33);
+            labelHabitacion.Location = new Point(311, 25);
             labelHabitacion.Name = "labelHabitacion";
             labelHabitacion.Size = new Size(68, 15);
             labelHabitacion.TabIndex = 0;
@@ -116,11 +114,9 @@ namespace ProyHotel_GUI
             groupBox2.Controls.Add(botonBorrarHabitacion);
             groupBox2.Controls.Add(botonAgregarHuesped);
             groupBox2.Controls.Add(gridHuespedes);
-            groupBox2.Location = new Point(14, 148);
-            groupBox2.Margin = new Padding(3, 4, 3, 4);
+            groupBox2.Location = new Point(12, 111);
             groupBox2.Name = "groupBox2";
-            groupBox2.Padding = new Padding(3, 4, 3, 4);
-            groupBox2.Size = new Size(781, 369);
+            groupBox2.Size = new Size(683, 277);
             groupBox2.TabIndex = 2;
             groupBox2.TabStop = false;
             groupBox2.Text = "Huespedes";
@@ -128,23 +124,22 @@ namespace ProyHotel_GUI
             // botonBorrarHabitacion
             // 
             botonBorrarHabitacion.Image = (Image)resources.GetObject("botonBorrarHabitacion.Image");
-            botonBorrarHabitacion.Location = new Point(747, 330);
-            botonBorrarHabitacion.Margin = new Padding(3, 4, 3, 4);
+            botonBorrarHabitacion.Location = new Point(654, 248);
             botonBorrarHabitacion.Name = "botonBorrarHabitacion";
-            botonBorrarHabitacion.Size = new Size(26, 31);
+            botonBorrarHabitacion.Size = new Size(23, 23);
             botonBorrarHabitacion.TabIndex = 4;
             botonBorrarHabitacion.UseVisualStyleBackColor = true;
             botonBorrarHabitacion.Click += botonBorrarHabitacion_Click;
             // 
             // botonAgregarHuesped
             // 
-            botonAgregarHuesped.Location = new Point(747, 29);
-            botonAgregarHuesped.Margin = new Padding(3, 4, 3, 4);
+            botonAgregarHuesped.Location = new Point(654, 22);
             botonAgregarHuesped.Name = "botonAgregarHuesped";
-            botonAgregarHuesped.Size = new Size(26, 31);
+            botonAgregarHuesped.Size = new Size(23, 23);
             botonAgregarHuesped.TabIndex = 3;
             botonAgregarHuesped.Text = "+";
             botonAgregarHuesped.UseVisualStyleBackColor = true;
+            botonAgregarHuesped.Click += botonAgregarHuesped_Click;
             // 
             // gridHuespedes
             // 
@@ -154,13 +149,12 @@ namespace ProyHotel_GUI
             gridHuespedes.BackgroundColor = SystemColors.ControlLightLight;
             gridHuespedes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             gridHuespedes.Columns.AddRange(new DataGridViewColumn[] { huespedId, Huesped, Estado, Comentarios });
-            gridHuespedes.Location = new Point(7, 29);
-            gridHuespedes.Margin = new Padding(3, 4, 3, 4);
+            gridHuespedes.Location = new Point(6, 22);
             gridHuespedes.Name = "gridHuespedes";
             gridHuespedes.ReadOnly = true;
             gridHuespedes.RowHeadersVisible = false;
             gridHuespedes.RowHeadersWidth = 51;
-            gridHuespedes.Size = new Size(734, 332);
+            gridHuespedes.Size = new Size(642, 249);
             gridHuespedes.TabIndex = 0;
             // 
             // huespedId
@@ -198,16 +192,15 @@ namespace ProyHotel_GUI
             // 
             // FrmDetalleHuespedHabitacionReserva
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(808, 536);
+            ClientSize = new Size(707, 402);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
             MinimizeBox = false;
-            Margin = new Padding(3, 4, 3, 4);
             Name = "FrmDetalleHuespedHabitacionReserva";
             Text = "Huespedes por Habitacion";
             Load += FrmDetalleHuespedHabitacionReserva_Load;
