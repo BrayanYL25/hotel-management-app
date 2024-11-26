@@ -14,7 +14,7 @@ namespace ProyHotel_GUI
             Application.SetCompatibleTextRenderingDefault(false);
             //
             ApplicationConfiguration.Initialize();
-            Application.Run(new FrmUsuarios());
+            Application.Run(new FrmLogin());
         }
     }
 }
