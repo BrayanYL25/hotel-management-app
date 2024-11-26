@@ -48,6 +48,7 @@ namespace ProyHotel_GUI
         private void CargarDatos()
         {
             objentidades = objusuario.ConsultarUsuario(Convert.ToInt16(this.idUsuario));
+            checkEstado.Checked = objentidades.usuarioEstado;
             txtUsuario.Text = objentidades.usuarioNombre;
             txtCorreo.Text = objentidades.usuarioCorreo;
             txtContraseña.Text = objentidades.usuarioContraseña;

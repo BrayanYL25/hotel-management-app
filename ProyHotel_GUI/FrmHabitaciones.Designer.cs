@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
             dgtDatosHabitaciones = new DataGridView();
             habitacionId = new DataGridViewTextBoxColumn();
             tipoHabitacionId = new DataGridViewTextBoxColumn();
@@ -50,17 +49,6 @@
             ((System.ComponentModel.ISupportInitialize)dgtDatosHabitaciones).BeginInit();
             SuspendLayout();
             // 
-            // button1
-            // 
-            button1.Location = new Point(816, 40);
-            button1.Margin = new Padding(3, 2, 3, 2);
-            button1.Name = "button1";
-            button1.Size = new Size(82, 22);
-            button1.TabIndex = 1;
-            button1.Text = "cerrar";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
-            // 
             // dgtDatosHabitaciones
             // 
             dgtDatosHabitaciones.AllowUserToAddRows = false;
@@ -70,7 +58,7 @@
             dgtDatosHabitaciones.BackgroundColor = SystemColors.ControlLightLight;
             dgtDatosHabitaciones.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgtDatosHabitaciones.Columns.AddRange(new DataGridViewColumn[] { habitacionId, tipoHabitacionId, habitacionNombre, costoNoche, tipoHabitacion, habitacionAforo, fechaUltimaModificacion, usuarioUltimaModificacion, estado });
-            dgtDatosHabitaciones.Location = new Point(105, 71);
+            dgtDatosHabitaciones.Location = new Point(12, 71);
             dgtDatosHabitaciones.Name = "dgtDatosHabitaciones";
             dgtDatosHabitaciones.ReadOnly = true;
             dgtDatosHabitaciones.RowHeadersVisible = false;
@@ -154,7 +142,7 @@
             // 
             // lblRegistroHabitaciones
             // 
-            lblRegistroHabitaciones.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            lblRegistroHabitaciones.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             lblRegistroHabitaciones.BorderStyle = BorderStyle.FixedSingle;
             lblRegistroHabitaciones.Location = new Point(119, 425);
             lblRegistroHabitaciones.Name = "lblRegistroHabitaciones";
@@ -164,7 +152,7 @@
             // 
             // label3
             // 
-            label3.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            label3.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             label3.AutoSize = true;
             label3.Location = new Point(11, 426);
             label3.Name = "label3";
@@ -223,6 +211,7 @@
             // 
             // botonBuscar
             // 
+            botonBuscar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             botonBuscar.Location = new Point(686, 15);
             botonBuscar.Name = "botonBuscar";
             botonBuscar.Size = new Size(75, 23);
@@ -233,6 +222,7 @@
             // 
             // txtFiltroHabitacion
             // 
+            txtFiltroHabitacion.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             txtFiltroHabitacion.Location = new Point(503, 15);
             txtFiltroHabitacion.Margin = new Padding(3, 2, 3, 2);
             txtFiltroHabitacion.Name = "txtFiltroHabitacion";
@@ -253,8 +243,8 @@
             Controls.Add(dgtDatosHabitaciones);
             Controls.Add(txtFiltroHabitacion);
             Controls.Add(label3);
-            Controls.Add(button1);
             Controls.Add(label1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Margin = new Padding(3, 2, 3, 2);
             MaximizeBox = false;
             MinimizeBox = false;
@@ -267,7 +257,6 @@
         }
 
         #endregion
-        private Button button1;
         private DataGridView dgtDatosHabitaciones;
         private Label lblRegistroHabitaciones;
         private Label label3;
