@@ -44,10 +44,6 @@
             botonBorrarHabitacion = new Button();
             botonEditarHabitacion = new Button();
             gridHabitaciones = new DataGridView();
-            idReserva = new DataGridViewTextBoxColumn();
-            habitacion = new DataGridViewTextBoxColumn();
-            tipoHabitacion = new DataGridViewTextBoxColumn();
-            precioTotalHabitacion = new DataGridViewTextBoxColumn();
             label1 = new Label();
             labelResultadoPrecioTotal = new Label();
             botonAgregarServicio = new Button();
@@ -59,6 +55,10 @@
             groupboxServicio = new GroupBox();
             botonEditarServicio = new Button();
             botonBorrarServicio = new Button();
+            habitacionId = new DataGridViewTextBoxColumn();
+            habitacion = new DataGridViewTextBoxColumn();
+            tipoHabitacion = new DataGridViewTextBoxColumn();
+            precioTotalHabitacion = new DataGridViewTextBoxColumn();
             groupBox1.SuspendLayout();
             groupboxHabitacion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)gridHabitaciones).BeginInit();
@@ -215,7 +215,7 @@
             gridHabitaciones.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             gridHabitaciones.BackgroundColor = SystemColors.ButtonHighlight;
             gridHabitaciones.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            gridHabitaciones.Columns.AddRange(new DataGridViewColumn[] { idReserva, habitacion, tipoHabitacion, precioTotalHabitacion });
+            gridHabitaciones.Columns.AddRange(new DataGridViewColumn[] { habitacionId, habitacion, tipoHabitacion, precioTotalHabitacion });
             gridHabitaciones.Location = new Point(6, 22);
             gridHabitaciones.Name = "gridHabitaciones";
             gridHabitaciones.ReadOnly = true;
@@ -224,39 +224,6 @@
             gridHabitaciones.Size = new Size(382, 231);
             gridHabitaciones.TabIndex = 1;
             gridHabitaciones.CellDoubleClick += gridHabitaciones_CellDoubleClick;
-            // 
-            // idReserva
-            // 
-            idReserva.DataPropertyName = "habitacion_id";
-            idReserva.HeaderText = "Id";
-            idReserva.MinimumWidth = 6;
-            idReserva.Name = "idReserva";
-            idReserva.ReadOnly = true;
-            idReserva.Visible = false;
-            // 
-            // habitacion
-            // 
-            habitacion.DataPropertyName = "habitacion_nombre";
-            habitacion.HeaderText = "Habitación";
-            habitacion.MinimumWidth = 6;
-            habitacion.Name = "habitacion";
-            habitacion.ReadOnly = true;
-            // 
-            // tipoHabitacion
-            // 
-            tipoHabitacion.DataPropertyName = "tipo_habitacion_descripcion";
-            tipoHabitacion.HeaderText = "Tipo de Habitación";
-            tipoHabitacion.MinimumWidth = 6;
-            tipoHabitacion.Name = "tipoHabitacion";
-            tipoHabitacion.ReadOnly = true;
-            // 
-            // precioTotalHabitacion
-            // 
-            precioTotalHabitacion.DataPropertyName = "precio_estadia";
-            precioTotalHabitacion.HeaderText = "Precio Total";
-            precioTotalHabitacion.MinimumWidth = 6;
-            precioTotalHabitacion.Name = "precioTotalHabitacion";
-            precioTotalHabitacion.ReadOnly = true;
             // 
             // label1
             // 
@@ -369,6 +336,39 @@
             botonBorrarServicio.UseVisualStyleBackColor = true;
             botonBorrarServicio.Click += botonBorrarServicio_Click;
             // 
+            // habitacionId
+            // 
+            habitacionId.DataPropertyName = "habitacion_id";
+            habitacionId.HeaderText = "Id";
+            habitacionId.MinimumWidth = 6;
+            habitacionId.Name = "habitacionId";
+            habitacionId.ReadOnly = true;
+            habitacionId.Visible = false;
+            // 
+            // habitacion
+            // 
+            habitacion.DataPropertyName = "habitacion_nombre";
+            habitacion.HeaderText = "Habitación";
+            habitacion.MinimumWidth = 6;
+            habitacion.Name = "habitacion";
+            habitacion.ReadOnly = true;
+            // 
+            // tipoHabitacion
+            // 
+            tipoHabitacion.DataPropertyName = "tipo_habitacion_descripcion";
+            tipoHabitacion.HeaderText = "Tipo de Habitación";
+            tipoHabitacion.MinimumWidth = 6;
+            tipoHabitacion.Name = "tipoHabitacion";
+            tipoHabitacion.ReadOnly = true;
+            // 
+            // precioTotalHabitacion
+            // 
+            precioTotalHabitacion.DataPropertyName = "precio_estadia";
+            precioTotalHabitacion.HeaderText = "Precio Total";
+            precioTotalHabitacion.MinimumWidth = 6;
+            precioTotalHabitacion.Name = "precioTotalHabitacion";
+            precioTotalHabitacion.ReadOnly = true;
+            // 
             // FrmDetalleReserva
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -424,7 +424,7 @@
         private Button botonEditarServicio;
         private Button botonEditarHabitacion;
         private Button botonBorrarHabitacion;
-        private DataGridViewTextBoxColumn idReserva;
+        private DataGridViewTextBoxColumn habitacionId;
         private DataGridViewTextBoxColumn habitacion;
         private DataGridViewTextBoxColumn tipoHabitacion;
         private DataGridViewTextBoxColumn precioTotalHabitacion;

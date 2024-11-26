@@ -64,5 +64,14 @@ namespace ProyHotel_GUI
                 MessageBox.Show($"Hubo un error {er.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void botonAgregarHuesped_Click(object sender, EventArgs e)
+        {
+            FrmBuscarHuespedHabitacion frmBuscarHuespedHabitacion = new(this.reservaId, habitacionId);
+            frmBuscarHuespedHabitacion.ShowDialog();
+            CargarDatos();
+            labelNombreHabitacion.Text = habitacionNombre;
+            labelIdReserva.Text = reservaId.ToString();
+        }
     }
 }
