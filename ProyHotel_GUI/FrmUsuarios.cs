@@ -49,14 +49,10 @@ namespace ProyHotel_GUI
 
         private void btn_Editar_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Estas seguro de Editar los datos de la fila Selecciona", "Confirmacion", MessageBoxButtons.YesNo);
-            if (result == DialogResult.Yes)
-            {
                 FrmActualizarUsuario frm1 = new FrmActualizarUsuario();
                 frm1.idUsuario = dtgUsuarios.CurrentRow.Cells[0].Value.ToString();
                 frm1.ShowDialog();
                 CargarDatos("");
-            }
         }
 
         private void botonBuscar_Click(object sender, EventArgs e)
