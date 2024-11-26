@@ -1,4 +1,5 @@
 ﻿using OfficeOpenXml;
+using OfficeOpenXml.Style;
 using ProyHotel_BL;
 using ProyVentas_GUI;
 using System;
@@ -21,6 +22,9 @@ namespace ProyHotel_GUI
         }
 
         UsuarioBL objusuario = new UsuarioBL();
+        HabitacionesBL objhabitacion = new HabitacionesBL();
+        ServicioBL objservicios = new ServicioBL();
+        HuespedBL objhuespedes = new HuespedBL();
 
         // **************** IMPORTANT ****************
         // Cambiar las rutas por las que ustedes requieran
@@ -29,52 +33,97 @@ namespace ProyHotel_GUI
         {
             try
             {
-                //  
-                String strRuta = "C:\\hotel_proyecto\\Reportes\\plantilla_usuario.xlsx";
-                DataTable dtusuario = objusuario.ListarUsuarios();
+                
+                DataTable dtDatos = Reporte(comboBoxPlantillas.Text.Trim()) ; // Implementa esta función
 
-                Int16 fila = 5;
-
-                using var pck = new ExcelPackage(new FileInfo(strRuta));
-                ExcelWorksheet ws = pck.Workbook.Worksheets["Hoja1"];
-
-                foreach (DataRow row in dtusuario.Rows)
+                if (dtDatos == null || dtDatos.Rows.Count == 0)
                 {
-                    ws.Cells[fila, 1].Value = row["Id"].ToString();
-                    ws.Cells[fila, 2].Value = row["Usuario"].ToString();
-                    ws.Cells[fila, 3].Value = row["Contraseña"].ToString();
-                    ws.Cells[fila, 4].Value = row["tipo"].ToString();
-                    ws.Cells[fila, 5].Value = row["Correo"].ToString();
-                    ws.Cells[fila, 6].Value = row["Estado"].ToString();
-                    fila += 1;
+                    MessageBox.Show("No hay datos para generar el reporte.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
                 }
 
-                ws.Column(1).Width = 10;
-                ws.Column(2).Width = 40;
-                ws.Column(3).Width = 40;
-                ws.Column(4).Width = 40;
-                ws.Column(5).Width = 40;
-                ws.Column(6).Width = 40;
+                // Crear un nuevo archivo Excel
+                using ExcelPackage package = new ExcelPackage();
 
-                String strFileName = "Listado Usuario_" + clsCredenciales.Usuario + ".xlsx";
+                // Crear una hoja de trabajo con un nombre
+                var worksheet = package.Workbook.Worksheets.Add("Reporte");
 
-                FileStream fs = new FileStream(@"C:\hotel_proyecto\Reportes\" + strFileName, FileMode.Create);
-                pck.SaveAs(fs);
-                fs.Dispose();
-                pck.Dispose();
-                MessageBox.Show("El Reporte " + strFileName + " Se ha generado con Exito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                var rangeTitle = worksheet.Cells["C1:F2"];
+                rangeTitle.Merge = true; // Combinar celdas
+                rangeTitle.Value = "REPORTE "+comboBoxPlantillas.Text; // Texto del título
+                rangeTitle.Style.Font.Name = "Arial"; // Fuente Arial
+                rangeTitle.Style.Font.Size = 20; // Tamaño de la fuente
+                rangeTitle.Style.Font.Bold = true; // Negrita
+                rangeTitle.Style.HorizontalAlignment = ExcelHorizontalAlignment.Center; // Centrar horizontalmente
+                rangeTitle.Style.VerticalAlignment = ExcelVerticalAlignment.Center; // Centrar verticalmente
+
+                // Agregar cabeceras
+                for (int col = 0; col < dtDatos.Columns.Count; col++)
+                {
+                    worksheet.Cells[4, col + 1].Value = dtDatos.Columns[col].ColumnName;
+                    worksheet.Cells[4, col + 1].Style.Font.Bold = true;
+                    worksheet.Cells[4, col + 1].Style.Fill.PatternType = ExcelFillStyle.Solid;
+                    worksheet.Cells[4, col + 1].Style.Fill.BackgroundColor.SetColor(Color.LightGray);
+                    worksheet.Cells[4, col + 1].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+                }
+
+                // Agregar datos 
+                for (int row = 0; row < dtDatos.Rows.Count; row++)
+                {
+                    for (int col = 0; col < dtDatos.Columns.Count; col++)
+                    {
+                        worksheet.Cells[row + 5, col + 1].Value = dtDatos.Rows[row][col].ToString();
+                    }
+                }
+
+                // Ajustar automáticamente el ancho de las columnas
+                worksheet.Cells.AutoFitColumns();
+                string nombrearchivo= clsCredenciales.Usuario.ToString()+"-"+comboBoxPlantillas.Text;
+
+                // Guardar el archivo Excel
+                SaveFileDialog saveFileDialog = new SaveFileDialog
+                {
+                    Title = "Guardar reporte como",
+                    Filter = "Archivos Excel (*.xlsx)|*.xlsx",
+                    FileName = $"{nombrearchivo}.xlsx"
+                    
+                };
+
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    package.SaveAs(new FileInfo(saveFileDialog.FileName));
+                    MessageBox.Show("Reporte generado con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("ERROR " + ex.Message);
+                MessageBox.Show("Error al generar el archivo Excel: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
 
         }
 
         private void Reportes_Load(object sender, EventArgs e)
         {
             ExcelPackage.LicenseContext= OfficeOpenXml.LicenseContext.NonCommercial;
+
+            
+        }
+
+        private DataTable Reporte(string nombre)
+        {
+            switch (nombre)
+            {
+                case "Usuarios": return objusuario.ListarUsuarios();
+                    
+                case "Habitacion por Reserva": return objhabitacion.listarHabitacion();
+
+                case "Servicios por Reserva": return objservicios.ListarServicio();
+
+                case "Huespesdes en Habitacion por Reserva": return objhuespedes.listarHuesped();
+
+
+                default: return null;
+            }
         }
     }
 }
