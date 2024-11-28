@@ -41,11 +41,6 @@ namespace ProyHotel_GUI
             CargarDatos(textboxBuscar.Text.Trim());
         }
 
-        private void botonRefrescar_Click(object sender, EventArgs e)
-        {
-            CargarDatos("");
-        }
-
         private void botonCrear_Click(object sender, EventArgs e)
         {
             FrmCrearReserva frmCrearReserva = new();
