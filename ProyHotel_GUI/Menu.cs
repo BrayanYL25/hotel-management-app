@@ -241,7 +241,7 @@ namespace ProyHotel_GUI
             if (!formularioAbierto)
             {
                 FrmCrearReserva frmCrearReservas = new FrmCrearReserva();
-                frmCrearReservas.MdiParent = this;
+                //frmCrearReservas.MdiParent = this;
                 frmCrearReservas.Show();
             }
 
