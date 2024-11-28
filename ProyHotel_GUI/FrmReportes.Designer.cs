@@ -74,6 +74,8 @@
             Controls.Add(label1);
             Controls.Add(comboBoxPlantillas);
             Controls.Add(btn_Usuarios);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
             Name = "FrmReportes";
             Text = "Reportes";
             Load += Reportes_Load;

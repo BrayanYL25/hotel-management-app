@@ -158,7 +158,9 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Margin = new Padding(3, 2, 3, 2);
+            MaximizeBox = false;
             Name = "FrmActualizarHuesped";
             Text = "Actualizar Huesped";
             Load += FrmActualizarHuesped_Load;
