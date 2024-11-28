@@ -83,9 +83,11 @@
             txtDNI.Location = new Point(85, 88);
             txtDNI.Margin = new Padding(3, 2, 3, 2);
             txtDNI.Name = "txtDNI";
+            txtDNI.PlaceholderText = "8 digitos";
             txtDNI.Size = new Size(167, 23);
             txtDNI.TabIndex = 2;
             txtDNI.KeyPress += txtDNI_KeyPress;
+            txtDNI.Validating += txtDNI_Validating;
             // 
             // label4
             // 
@@ -101,9 +103,11 @@
             txtTelefono.Location = new Point(85, 129);
             txtTelefono.Margin = new Padding(3, 2, 3, 2);
             txtTelefono.Name = "txtTelefono";
+            txtTelefono.PlaceholderText = "9 digitos";
             txtTelefono.Size = new Size(167, 23);
             txtTelefono.TabIndex = 2;
             txtTelefono.KeyPress += txtTelefono_KeyPress;
+            txtTelefono.Validating += txtTelefono_Validating;
             // 
             // btnGuardar
             // 
@@ -180,6 +184,7 @@
             MinimizeBox = false;
             Name = "FrmActualizarReserva";
             Text = "FrmActualizarReserva";
+            FormClosing += FrmActualizarReserva_FormClosing;
             Load += FrmActualizarReserva_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();

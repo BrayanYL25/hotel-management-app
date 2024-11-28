@@ -43,6 +43,7 @@ namespace ProyHotel_GUI
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
+            this.AutoValidate = AutoValidate.Disable;
             this.Close();
         }
 
@@ -86,26 +87,29 @@ namespace ProyHotel_GUI
 
         private void txtDNI_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
-            {
-                e.Handled = true;
-            }
-            else if (txtDNI.Text.Length >= 8 && e.KeyChar != (char)Keys.Back)
-            {
-                e.Handled = true;
-            }
+            e.Handled = (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back);
+
         }
 
         private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
-            {
-                e.Handled = true;
-            }
-            else if (txtTelefono.Text.Length >= 9 && e.KeyChar != (char)Keys.Back)
-            {
-                e.Handled = true;
-            }
+            e.Handled = (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back);
+
+        }
+
+        private void txtDNI_Validating(object sender, CancelEventArgs e)
+        {
+            e.Cancel = txtDNI.Text.Trim().Length != 8;
+        }
+
+        private void txtTelefono_Validating(object sender, CancelEventArgs e)
+        {
+            e.Cancel = txtTelefono.Text.Trim().Length != 9;
+        }
+
+        private void FrmActualizarReserva_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.AutoValidate = AutoValidate.Disable;
         }
     }
 }
