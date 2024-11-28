@@ -107,6 +107,7 @@ namespace ProyHotel_GUI
                 {
                     reservaServicioBL.BorrarServicioReserva(reservaBE.reservaId, servicioId);
                     CargarTodo();
+                    RefrescarDatosReserva();
                 }
             }
             catch (Exception er)
