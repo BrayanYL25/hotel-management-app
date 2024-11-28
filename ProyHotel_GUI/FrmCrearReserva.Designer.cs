@@ -72,9 +72,11 @@
             // 
             textboxDNI.Location = new Point(188, 102);
             textboxDNI.Name = "textboxDNI";
+            textboxDNI.PlaceholderText = "8 digitos";
             textboxDNI.Size = new Size(211, 23);
             textboxDNI.TabIndex = 1;
             textboxDNI.KeyPress += textBox1_KeyPress;
+            textboxDNI.Validating += textboxDNI_Validating;
             // 
             // textboxNombre
             // 
@@ -97,9 +99,11 @@
             // 
             textboxTelefono.Location = new Point(188, 140);
             textboxTelefono.Name = "textboxTelefono";
+            textboxTelefono.PlaceholderText = "9 digitos";
             textboxTelefono.Size = new Size(211, 23);
             textboxTelefono.TabIndex = 2;
             textboxTelefono.KeyPress += textBox3_KeyPress;
+            textboxTelefono.Validating += textboxTelefono_Validating;
             // 
             // botonGuardar
             // 
@@ -113,17 +117,20 @@
             // 
             // button8
             // 
+            button8.CausesValidation = false;
             button8.Location = new Point(245, 199);
             button8.Name = "button8";
             button8.Size = new Size(75, 23);
             button8.TabIndex = 9;
             button8.Text = "Cancelar";
             button8.UseVisualStyleBackColor = true;
+            button8.Click += button8_Click;
             // 
             // FrmCrearReserva
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            CausesValidation = false;
             ClientSize = new Size(413, 234);
             Controls.Add(button8);
             Controls.Add(botonGuardar);
@@ -139,6 +146,7 @@
             MinimizeBox = false;
             Name = "FrmCrearReserva";
             Text = "Crear Reserva";
+            FormClosing += FrmCrearReserva_FormClosing;
             ResumeLayout(false);
             PerformLayout();
         }

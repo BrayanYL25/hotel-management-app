@@ -16,6 +16,7 @@ namespace ProyHotel_GUI
     public partial class FrmCrearReserva : Form
     {
         ReservasBL reservasBL = new();
+        private bool isClosing = false;
         public FrmCrearReserva()
         {
             InitializeComponent();
@@ -28,7 +29,7 @@ namespace ProyHotel_GUI
 
         private void textBox3_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = !char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back;
+            e.Handled = !char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back && textboxTelefono.Text.Trim().Length <= 9;
         }
 
         private void botonGuardar_Click(object sender, EventArgs e)
@@ -54,6 +55,27 @@ namespace ProyHotel_GUI
             {
                 this.Close();
             }
+        }
+
+        private void textboxDNI_Validating(object sender, CancelEventArgs e)
+        {
+            e.Cancel = textboxDNI.Text.Trim().Length != 8;
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            this.AutoValidate = AutoValidate.Disable;
+            this.Close();
+        }
+
+        private void textboxTelefono_Validating(object sender, CancelEventArgs e)
+        {
+            e.Cancel = textboxTelefono.Text.Trim().Length != 9;
+        }
+
+        private void FrmCrearReserva_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.AutoValidate = AutoValidate.Disable;
         }
     }
 }
