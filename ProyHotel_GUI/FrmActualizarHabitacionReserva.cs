@@ -71,18 +71,22 @@ namespace ProyHotel_GUI
         }
         private void CalcularPrecioEstadia(DateTime checkin, DateTime checkout)
         {
-            TimeSpan diferencia = checkout.Date.Add(new TimeSpan(0, 0, 0)) - checkin.Date.Add(new TimeSpan(0, 0, 0));
-            if (diferencia.Days < 1)
+            TimeSpan diferencia = checkout.Date - checkin.Date;
+            int diasEstadia = diferencia.Days;
+
+            if (diasEstadia < 1)
             {
-                throw new Exception("Fechas invalidas");
+                throw new Exception("La fecha de check-out debe ser al menos un día después del check-in.");
             }
 
-            int diasEstadia = diferencia.Days;
             float precioNoche = reservaHabitacionBE.costoNoche;
-            float precioTotal = precioNoche * (float)diasEstadia;
+            float precioTotal = precioNoche * diasEstadia;
 
             lblPrecioTotal.Text = precioTotal.ToString("C2");
+            reservaHabitacionBE.precioTotal = precioTotal;
         }
+
+
 
         private void dtpCheckOut_ValueChanged(object sender, EventArgs e)
         {
