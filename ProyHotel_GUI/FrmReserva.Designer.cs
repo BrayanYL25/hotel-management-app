@@ -48,7 +48,6 @@
             botonEditar = new Button();
             tituoResultado = new Label();
             labelResultado = new Label();
-            botonRefrescar = new Button();
             ((System.ComponentModel.ISupportInitialize)gridReservas).BeginInit();
             SuspendLayout();
             // 
@@ -242,22 +241,11 @@
             labelResultado.TabIndex = 7;
             labelResultado.TextAlign = ContentAlignment.MiddleRight;
             // 
-            // botonRefrescar
-            // 
-            botonRefrescar.Location = new Point(102, 20);
-            botonRefrescar.Name = "botonRefrescar";
-            botonRefrescar.Size = new Size(75, 26);
-            botonRefrescar.TabIndex = 8;
-            botonRefrescar.Text = "Refrescar";
-            botonRefrescar.UseVisualStyleBackColor = true;
-            botonRefrescar.Click += botonRefrescar_Click;
-            // 
             // FrmReserva
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(878, 480);
-            Controls.Add(botonRefrescar);
             Controls.Add(labelResultado);
             Controls.Add(tituoResultado);
             Controls.Add(botonEditar);
@@ -287,7 +275,6 @@
         private Button botonEditar;
         private Label tituoResultado;
         private Label labelResultado;
-        private Button botonRefrescar;
         private DataGridViewTextBoxColumn reservaId;
         private DataGridViewTextBoxColumn creadoPor;
         private DataGridViewTextBoxColumn tipoUsuario;
