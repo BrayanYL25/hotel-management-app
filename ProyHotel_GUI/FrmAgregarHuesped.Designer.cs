@@ -162,9 +162,9 @@
             Controls.Add(TxtDni);
             Controls.Add(txtNombre);
             Controls.Add(label2);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Margin = new Padding(3, 2, 3, 2);
             MaximizeBox = false;
-            MinimizeBox = false;
             Name = "FrmAgregarHuesped";
             Text = "Agregar Huesped";
             Load += FrmrAgregarHuesped_Load;
