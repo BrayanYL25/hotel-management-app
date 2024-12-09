@@ -31,148 +31,123 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
             menuStrip1 = new MenuStrip();
-            usuarioSeccion = new ToolStripMenuItem();
-            usuariosToolStripMenuItem = new ToolStripMenuItem();
-            tipoDeUsuarioToolStripMenuItem = new ToolStripMenuItem();
-            servicioSeccion = new ToolStripMenuItem();
-            serviciosToolStripMenuItem1 = new ToolStripMenuItem();
-            habitacionesToolStripMenuItem = new ToolStripMenuItem();
-            habitacionToolStripMenuItem = new ToolStripMenuItem();
-            huespedesToolStripMenuItem = new ToolStripMenuItem();
-            reservaToolStripMenuItem = new ToolStripMenuItem();
-            reservToolStripMenuItem = new ToolStripMenuItem();
-            crearReservaToolStripMenuItem = new ToolStripMenuItem();
-            reporteToolStripMenuItem = new ToolStripMenuItem();
-            reporteDeUsuariosToolStripMenuItem = new ToolStripMenuItem();
-            mantenimientosToolStripMenuItem = new ToolStripMenuItem();
+            mantenimientoToolStripMenuItem = new ToolStripMenuItem();
+            usuarioToolStripMenuItem = new ToolStripMenuItem();
+            usuariosToolStripMenuItem1 = new ToolStripMenuItem();
+            tipoUsuariosToolStripMenuItem = new ToolStripMenuItem();
+            servicioToolStripMenuItem = new ToolStripMenuItem();
+            habitacionToolStripMenuItem1 = new ToolStripMenuItem();
+            habitacionesToolStripMenuItem1 = new ToolStripMenuItem();
+            tipoDeHabitacionesToolStripMenuItem1 = new ToolStripMenuItem();
+            huespedesToolStripMenuItem1 = new ToolStripMenuItem();
+            reservaToolStripMenuItem1 = new ToolStripMenuItem();
+            reporteToolStripMenuItem1 = new ToolStripMenuItem();
             statusStrip1 = new StatusStrip();
             tlblUsuario = new ToolStripStatusLabel();
             tlblComputer = new ToolStripStatusLabel();
             tlblconexion = new ToolStripStatusLabel();
             tlblsesion = new ToolStripStatusLabel();
             timer1 = new System.Windows.Forms.Timer(components);
-            tipoDeHabitacionesToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             statusStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
             // 
-            menuStrip1.Items.AddRange(new ToolStripItem[] { usuarioSeccion, servicioSeccion, habitacionesToolStripMenuItem, huespedesToolStripMenuItem, reservaToolStripMenuItem, reporteToolStripMenuItem, mantenimientosToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { mantenimientoToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(1364, 24);
             menuStrip1.TabIndex = 2;
             menuStrip1.Text = "menuStrip1";
             // 
-            // usuarioSeccion
+            // mantenimientoToolStripMenuItem
             // 
-            usuarioSeccion.DropDownItems.AddRange(new ToolStripItem[] { usuariosToolStripMenuItem, tipoDeUsuarioToolStripMenuItem });
-            usuarioSeccion.Image = (Image)resources.GetObject("usuarioSeccion.Image");
-            usuarioSeccion.Name = "usuarioSeccion";
-            usuarioSeccion.Size = new Size(75, 20);
-            usuarioSeccion.Text = "Usuario";
+            mantenimientoToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { usuarioToolStripMenuItem, servicioToolStripMenuItem, habitacionToolStripMenuItem1, huespedesToolStripMenuItem1, reservaToolStripMenuItem1, reporteToolStripMenuItem1 });
+            mantenimientoToolStripMenuItem.Image = (Image)resources.GetObject("mantenimientoToolStripMenuItem.Image");
+            mantenimientoToolStripMenuItem.Name = "mantenimientoToolStripMenuItem";
+            mantenimientoToolStripMenuItem.Size = new Size(117, 20);
+            mantenimientoToolStripMenuItem.Text = "Mantenimiento";
             // 
-            // usuariosToolStripMenuItem
+            // usuarioToolStripMenuItem
             // 
-            usuariosToolStripMenuItem.Image = (Image)resources.GetObject("usuariosToolStripMenuItem.Image");
-            usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            usuariosToolStripMenuItem.Size = new Size(156, 22);
-            usuariosToolStripMenuItem.Text = "Usuarios";
-            usuariosToolStripMenuItem.Click += usuariosToolStripMenuItem_Click_1;
+            usuarioToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { usuariosToolStripMenuItem1, tipoUsuariosToolStripMenuItem });
+            usuarioToolStripMenuItem.Image = (Image)resources.GetObject("usuarioToolStripMenuItem.Image");
+            usuarioToolStripMenuItem.Name = "usuarioToolStripMenuItem";
+            usuarioToolStripMenuItem.Size = new Size(180, 22);
+            usuarioToolStripMenuItem.Text = "Usuario";
             // 
-            // tipoDeUsuarioToolStripMenuItem
+            // usuariosToolStripMenuItem1
             // 
-            tipoDeUsuarioToolStripMenuItem.Image = (Image)resources.GetObject("tipoDeUsuarioToolStripMenuItem.Image");
-            tipoDeUsuarioToolStripMenuItem.Name = "tipoDeUsuarioToolStripMenuItem";
-            tipoDeUsuarioToolStripMenuItem.Size = new Size(156, 22);
-            tipoDeUsuarioToolStripMenuItem.Text = "Tipo de Usuario";
-            tipoDeUsuarioToolStripMenuItem.Click += tipoDeUsuarioToolStripMenuItem_Click;
+            usuariosToolStripMenuItem1.Image = (Image)resources.GetObject("usuariosToolStripMenuItem1.Image");
+            usuariosToolStripMenuItem1.Name = "usuariosToolStripMenuItem1";
+            usuariosToolStripMenuItem1.Size = new Size(162, 22);
+            usuariosToolStripMenuItem1.Text = "Usuarios";
+            usuariosToolStripMenuItem1.Click += usuariosToolStripMenuItem_Click;
             // 
-            // servicioSeccion
+            // tipoUsuariosToolStripMenuItem
             // 
-            servicioSeccion.DropDownItems.AddRange(new ToolStripItem[] { serviciosToolStripMenuItem1 });
-            servicioSeccion.Image = (Image)resources.GetObject("servicioSeccion.Image");
-            servicioSeccion.Name = "servicioSeccion";
-            servicioSeccion.Size = new Size(76, 20);
-            servicioSeccion.Text = "Servicio";
+            tipoUsuariosToolStripMenuItem.Image = (Image)resources.GetObject("tipoUsuariosToolStripMenuItem.Image");
+            tipoUsuariosToolStripMenuItem.Name = "tipoUsuariosToolStripMenuItem";
+            tipoUsuariosToolStripMenuItem.Size = new Size(162, 22);
+            tipoUsuariosToolStripMenuItem.Text = "Tipo De Usuarios";
+            tipoUsuariosToolStripMenuItem.Click += tipoDeUsuarioToolStripMenuItem_Click;
             // 
-            // serviciosToolStripMenuItem1
+            // servicioToolStripMenuItem
             // 
-            serviciosToolStripMenuItem1.Image = (Image)resources.GetObject("serviciosToolStripMenuItem1.Image");
-            serviciosToolStripMenuItem1.Name = "serviciosToolStripMenuItem1";
-            serviciosToolStripMenuItem1.Size = new Size(120, 22);
-            serviciosToolStripMenuItem1.Text = "Servicios";
-            serviciosToolStripMenuItem1.Click += serviciosToolStripMenuItem1_Click;
+            servicioToolStripMenuItem.Image = (Image)resources.GetObject("servicioToolStripMenuItem.Image");
+            servicioToolStripMenuItem.Name = "servicioToolStripMenuItem";
+            servicioToolStripMenuItem.Size = new Size(180, 22);
+            servicioToolStripMenuItem.Text = "Servicio";
+            servicioToolStripMenuItem.Click += serviciosToolStripMenuItem1_Click;
             // 
-            // habitacionesToolStripMenuItem
+            // habitacionToolStripMenuItem1
             // 
-            habitacionesToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { habitacionToolStripMenuItem, tipoDeHabitacionesToolStripMenuItem });
-            habitacionesToolStripMenuItem.Image = (Image)resources.GetObject("habitacionesToolStripMenuItem.Image");
-            habitacionesToolStripMenuItem.Name = "habitacionesToolStripMenuItem";
-            habitacionesToolStripMenuItem.Size = new Size(93, 20);
-            habitacionesToolStripMenuItem.Text = "Habitacion";
+            habitacionToolStripMenuItem1.DropDownItems.AddRange(new ToolStripItem[] { habitacionesToolStripMenuItem1, tipoDeHabitacionesToolStripMenuItem1 });
+            habitacionToolStripMenuItem1.Image = (Image)resources.GetObject("habitacionToolStripMenuItem1.Image");
+            habitacionToolStripMenuItem1.Name = "habitacionToolStripMenuItem1";
+            habitacionToolStripMenuItem1.Size = new Size(180, 22);
+            habitacionToolStripMenuItem1.Text = "Habitacion";
             // 
-            // habitacionToolStripMenuItem
+            // habitacionesToolStripMenuItem1
             // 
-            habitacionToolStripMenuItem.Image = (Image)resources.GetObject("habitacionToolStripMenuItem.Image");
-            habitacionToolStripMenuItem.Name = "habitacionToolStripMenuItem";
-            habitacionToolStripMenuItem.Size = new Size(186, 22);
-            habitacionToolStripMenuItem.Text = "Habitaciones";
-            habitacionToolStripMenuItem.Click += habitacionToolStripMenuItem_Click;
+            habitacionesToolStripMenuItem1.Image = (Image)resources.GetObject("habitacionesToolStripMenuItem1.Image");
+            habitacionesToolStripMenuItem1.Name = "habitacionesToolStripMenuItem1";
+            habitacionesToolStripMenuItem1.Size = new Size(186, 22);
+            habitacionesToolStripMenuItem1.Text = "Habitaciones";
+            habitacionesToolStripMenuItem1.Click += habitacionToolStripMenuItem_Click;
             // 
-            // huespedesToolStripMenuItem
+            // tipoDeHabitacionesToolStripMenuItem1
             // 
-            huespedesToolStripMenuItem.Image = (Image)resources.GetObject("huespedesToolStripMenuItem.Image");
-            huespedesToolStripMenuItem.Name = "huespedesToolStripMenuItem";
-            huespedesToolStripMenuItem.Size = new Size(93, 20);
-            huespedesToolStripMenuItem.Text = "Huespedes";
-            huespedesToolStripMenuItem.Click += huespedesToolStripMenuItem_Click;
+            tipoDeHabitacionesToolStripMenuItem1.Image = (Image)resources.GetObject("tipoDeHabitacionesToolStripMenuItem1.Image");
+            tipoDeHabitacionesToolStripMenuItem1.Name = "tipoDeHabitacionesToolStripMenuItem1";
+            tipoDeHabitacionesToolStripMenuItem1.Size = new Size(186, 22);
+            tipoDeHabitacionesToolStripMenuItem1.Text = "Tipo De Habitaciones";
+            tipoDeHabitacionesToolStripMenuItem1.Click += tipoDeHabitacionesToolStripMenuItem_Click;
             // 
-            // reservaToolStripMenuItem
+            // huespedesToolStripMenuItem1
             // 
-            reservaToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { reservToolStripMenuItem, crearReservaToolStripMenuItem });
-            reservaToolStripMenuItem.Image = (Image)resources.GetObject("reservaToolStripMenuItem.Image");
-            reservaToolStripMenuItem.Name = "reservaToolStripMenuItem";
-            reservaToolStripMenuItem.Size = new Size(75, 20);
-            reservaToolStripMenuItem.Text = "Reserva";
+            huespedesToolStripMenuItem1.Image = (Image)resources.GetObject("huespedesToolStripMenuItem1.Image");
+            huespedesToolStripMenuItem1.Name = "huespedesToolStripMenuItem1";
+            huespedesToolStripMenuItem1.Size = new Size(180, 22);
+            huespedesToolStripMenuItem1.Text = "Huespedes";
+            huespedesToolStripMenuItem1.Click += huespedesToolStripMenuItem_Click;
             // 
-            // reservToolStripMenuItem
+            // reservaToolStripMenuItem1
             // 
-            reservToolStripMenuItem.Image = (Image)resources.GetObject("reservToolStripMenuItem.Image");
-            reservToolStripMenuItem.Name = "reservToolStripMenuItem";
-            reservToolStripMenuItem.Size = new Size(145, 22);
-            reservToolStripMenuItem.Text = "Reservas";
-            reservToolStripMenuItem.Click += reservToolStripMenuItem_Click;
+            reservaToolStripMenuItem1.Image = (Image)resources.GetObject("reservaToolStripMenuItem1.Image");
+            reservaToolStripMenuItem1.Name = "reservaToolStripMenuItem1";
+            reservaToolStripMenuItem1.Size = new Size(180, 22);
+            reservaToolStripMenuItem1.Text = "Reserva";
+            reservaToolStripMenuItem1.Click += reservToolStripMenuItem_Click;
             // 
-            // crearReservaToolStripMenuItem
+            // reporteToolStripMenuItem1
             // 
-            crearReservaToolStripMenuItem.Image = (Image)resources.GetObject("crearReservaToolStripMenuItem.Image");
-            crearReservaToolStripMenuItem.Name = "crearReservaToolStripMenuItem";
-            crearReservaToolStripMenuItem.Size = new Size(145, 22);
-            crearReservaToolStripMenuItem.Text = "Crear Reserva";
-            crearReservaToolStripMenuItem.Click += crearReservaToolStripMenuItem_Click;
-            // 
-            // reporteToolStripMenuItem
-            // 
-            reporteToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { reporteDeUsuariosToolStripMenuItem });
-            reporteToolStripMenuItem.Image = (Image)resources.GetObject("reporteToolStripMenuItem.Image");
-            reporteToolStripMenuItem.Name = "reporteToolStripMenuItem";
-            reporteToolStripMenuItem.Size = new Size(76, 20);
-            reporteToolStripMenuItem.Text = "Reporte";
-            // 
-            // reporteDeUsuariosToolStripMenuItem
-            // 
-            reporteDeUsuariosToolStripMenuItem.Name = "reporteDeUsuariosToolStripMenuItem";
-            reporteDeUsuariosToolStripMenuItem.Size = new Size(179, 22);
-            reporteDeUsuariosToolStripMenuItem.Text = "Reporte de Usuarios";
-            reporteDeUsuariosToolStripMenuItem.Click += reporteDeUsuariosToolStripMenuItem_Click;
-            // 
-            // mantenimientosToolStripMenuItem
-            // 
-            mantenimientosToolStripMenuItem.Name = "mantenimientosToolStripMenuItem";
-            mantenimientosToolStripMenuItem.Size = new Size(106, 20);
-            mantenimientosToolStripMenuItem.Text = "Mantenimientos";
+            reporteToolStripMenuItem1.Image = (Image)resources.GetObject("reporteToolStripMenuItem1.Image");
+            reporteToolStripMenuItem1.Name = "reporteToolStripMenuItem1";
+            reporteToolStripMenuItem1.Size = new Size(180, 22);
+            reporteToolStripMenuItem1.Text = "Reporte";
+            reporteToolStripMenuItem1.Click += reporteDeUsuariosToolStripMenuItem_Click;
             // 
             // statusStrip1
             // 
@@ -214,13 +189,6 @@
             timer1.Interval = 1000;
             timer1.Tick += timer1_Tick;
             // 
-            // tipoDeHabitacionesToolStripMenuItem
-            // 
-            tipoDeHabitacionesToolStripMenuItem.Name = "tipoDeHabitacionesToolStripMenuItem";
-            tipoDeHabitacionesToolStripMenuItem.Size = new Size(186, 22);
-            tipoDeHabitacionesToolStripMenuItem.Text = "Tipo De Habitaciones";
-            tipoDeHabitacionesToolStripMenuItem.Click += tipoDeHabitacionesToolStripMenuItem_Click;
-            // 
             // Menu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -253,26 +221,22 @@
         #endregion
 
         private MenuStrip menuStrip1;
-        private ToolStripMenuItem usuarioSeccion;
         private StatusStrip statusStrip1;
         private ToolStripStatusLabel tlblUsuario;
         private System.Windows.Forms.Timer timer1;
         private ToolStripStatusLabel tlblComputer;
         private ToolStripStatusLabel tlblconexion;
         private ToolStripStatusLabel tlblsesion;
-        private ToolStripMenuItem servicioSeccion;
-        private ToolStripMenuItem habitacionesToolStripMenuItem;
-        private ToolStripMenuItem huespedesToolStripMenuItem;
-        private ToolStripMenuItem tipoDeUsuarioToolStripMenuItem;
-        private ToolStripMenuItem usuariosToolStripMenuItem;
-        private ToolStripMenuItem serviciosToolStripMenuItem1;
-        private ToolStripMenuItem habitacionToolStripMenuItem;
-        private ToolStripMenuItem reservaToolStripMenuItem;
-        private ToolStripMenuItem reservToolStripMenuItem;
-        private ToolStripMenuItem crearReservaToolStripMenuItem;
-        private ToolStripMenuItem reporteToolStripMenuItem;
-        private ToolStripMenuItem reporteDeUsuariosToolStripMenuItem;
-        private ToolStripMenuItem mantenimientosToolStripMenuItem;
-        private ToolStripMenuItem tipoDeHabitacionesToolStripMenuItem;
+        private ToolStripMenuItem mantenimientoToolStripMenuItem;
+        private ToolStripMenuItem usuarioToolStripMenuItem;
+        private ToolStripMenuItem usuariosToolStripMenuItem1;
+        private ToolStripMenuItem tipoUsuariosToolStripMenuItem;
+        private ToolStripMenuItem servicioToolStripMenuItem;
+        private ToolStripMenuItem habitacionToolStripMenuItem1;
+        private ToolStripMenuItem habitacionesToolStripMenuItem1;
+        private ToolStripMenuItem tipoDeHabitacionesToolStripMenuItem1;
+        private ToolStripMenuItem huespedesToolStripMenuItem1;
+        private ToolStripMenuItem reservaToolStripMenuItem1;
+        private ToolStripMenuItem reporteToolStripMenuItem1;
     }
 }
